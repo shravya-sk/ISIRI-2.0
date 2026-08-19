@@ -1,5 +1,5 @@
 import re
-
+from rapidfuzz import process
 def extract_entities(text):
 
     original_text = text.strip()      # Preserve original capitalization
@@ -11,30 +11,34 @@ def extract_entities(text):
     # Actor Detection
     # --------------------------
 
-    actor_patterns = {
-        "Shah Rukh Khan": [
-            r"\bshahrukh\b",
-            r"\bshah\s*rukh\b",
-            r"\bsha\s*rukh\b",
-            r"\bsrk\b"
-        ],
+    patterns = [
+        r"who\s+is\s+(.+)",
+        r"who\s+was\s+(.+)",
+        r"what\s+is\s+(.+)",
+        r"tell\s+me\s+about\s+(.+)",
+        r"information\s+about\s+(.+)",
+        r"describe\s+(.+)",
+        r"explain\s+(.+)",
+        r"^is(.+)",
+        r"^o\s+(.+)",
+        r"^oh\s+(.+)",
+        r"^hui\s+(.+)"
+    ]
 
-        "Salman Khan": [
-            r"\bsalman\b",
-            r"\bsalman\s*khan\b"
-        ],
+    for pattern in patterns:
 
-        "Allu Arjun": [
-            r"\ballu\b",
-            r"\ballu\s*arjun\b"
-        ]
-    }
+        match = re.search(pattern, text, re.IGNORECASE)
 
-    for actor, patterns in actor_patterns.items():
-        for pattern in patterns:
-            if re.search(pattern, text):
-                entities["actor"] = actor
-                break
+        if match:
+
+            query = match.group(1).strip()
+
+            query = re.sub(r"^[^\w]+", "", query)
+            query = query.replace("-", " ")
+
+            entities["query"] = query
+
+            break
 
     # --------------------------
     # Google Search Detection
@@ -43,14 +47,20 @@ def extract_entities(text):
     search_patterns = [
         r"search (.+)",
         r"google (.+)",
-        r"find (.+)"
+        r"find (.+)",
+        r"who is (.+)",
+        r"what is (.+)",
+        r"who was (.+)",
+        r"where is (.+)",
+        r"when is (.+)",
+        r"tell me about (.+)"
     ]
 
     for pattern in search_patterns:
         match = re.search(pattern, original_text, re.IGNORECASE)
 
         if match:
-            entities["query"] = match.group(1).strip()
+            entities["query"] = match.group(1).strip().rstrip("?")
             break
 
     # --------------------------
@@ -87,7 +97,15 @@ def extract_entities(text):
         if site in text:
             entities["website"] = site
             break
-            
+
+    system_match = re.search(
+        r"open\s+(.+)",
+        original_text,
+        re.IGNORECASE
+    )
+
+    if system_match:
+        entities["app"] = system_match.group(1).strip()       
     # --------------------------
     # Location Detection
     # --------------------------
@@ -110,10 +128,10 @@ def extract_entities(text):
     # Time Detection
     # --------------------------
 
-    if any(word in text for word in ["today", "ivattu", "indu"]):
+    if any(word in text for word in ["today", "ini"]):
         entities["time"] = "today"
 
-    elif any(word in text for word in ["tomorrow", "naale", "yelleda"]):
+    elif any(word in text for word in ["tomorrow", "yelle", "yelle da"]):
         entities["time"] = "tomorrow"
 
     return entities

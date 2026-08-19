@@ -1,6 +1,7 @@
 def plan(intent, entities):
 
-    intent_name = intent.get("intent")
+    # intent is already a string
+    intent_name = intent
 
     if intent_name == "weather":
         return {
@@ -20,6 +21,12 @@ def plan(intent, entities):
             "entities": entities
         }
 
+    elif intent_name == "system":
+        return {
+            "plugin": "system",
+            "entities": entities
+        }
+
     elif intent_name == "google_search":
         return {
             "plugin": "search",
@@ -27,9 +34,14 @@ def plan(intent, entities):
         }
 
     elif intent_name == "browser":
-
         return {
             "plugin": "browser",
+            "entities": entities
+        }
+
+    elif intent_name == "knowledge":
+        return {
+            "plugin": "knowledge",
             "entities": entities
         }
 

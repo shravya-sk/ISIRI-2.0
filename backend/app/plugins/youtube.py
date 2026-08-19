@@ -1,39 +1,22 @@
 import webbrowser
-from yt_dlp import YoutubeDL
+from urllib.parse import quote
 
 
 def execute(data):
-    video = data.get("video")
 
-    if not video:
-        webbrowser.open("https://www.youtube.com")
-        return {
-            "success": True,
-            "reply": "Opening YouTube..."
-        }
+    query = data.get("video", "")
 
-    try:
-        ydl_opts = {
-            "quiet": True,
-            "default_search": "ytsearch1"
-        }
-
-        with YoutubeDL(ydl_opts) as ydl:
-            info = ydl.extract_info(video, download=False)
-
-            first_video = info["entries"][0]
-
-            video_url = first_video["webpage_url"]
-
-        webbrowser.open(video_url)
-
-        return {
-            "success": True,
-            "reply": f"Playing {first_video['title']}"
-        }
-
-    except Exception as e:
+    if not query:
         return {
             "success": False,
-            "reply": str(e)
+            "reply": "What would you like me to play?"
         }
+
+    url = f"https://www.youtube.com/results?search_query={quote(query)}"
+
+    webbrowser.open(url)
+
+    return {
+        "success": True,
+        "reply": f"Playing {query} on YouTube."
+    }

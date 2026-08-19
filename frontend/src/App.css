@@ -1,261 +1,549 @@
-.landing-page {
+/* =========================================
+   ISIRI 2.0
+   Main Application Styling
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #242424;
+}
+
+#root {
   min-height: 100vh;
+  width: 100%;
+}
+
+.app {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.top-header {
+  height: 112px;
+  width: 100%;
+  background: #f5ead7;
+
   display: flex;
-  flex-direction: column;
-  padding: 40px 20px;
+  align-items: center;
+
+  padding: 12px 32px;
+
+  position: relative;
+  z-index: 10;
 }
 
-.header {
-  text-align: center;
-  margin-bottom: 60px;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
-.title {
-  font-size: 64px;
+.brand-logo {
+  width: 86px;
+  height: 86px;
+  flex-shrink: 0;
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand h1 {
+  margin: 0;
+
+  font-size: 34px;
   font-weight: 700;
-  color: var(--text-h);
-  margin: 0 0 16px 0;
-  letter-spacing: -2px;
+
+  color: #333333;
 }
 
-.subtitle {
-  font-size: 20px;
-  color: var(--text);
-  margin: 0;
-  font-weight: 400;
+.brand p {
+  margin: 4px 0 0;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  color: #111111;
 }
 
-.backend-status {
-  margin-top: 16px;
+.brand p span {
+  color: #c98955;
 }
 
-.status-text {
-  font-size: 14px;
-  margin: 0;
-  padding: 8px 16px;
-  border-radius: 8px;
-  display: inline-block;
-}
 
-.status-text.loading {
-  color: var(--text);
-  background: var(--code-bg);
-}
-
-.status-text.error {
-  color: #ef4444;
-  background: rgba(239, 68, 68, 0.1);
-}
-
-.status-text.success {
-  color: #22c55e;
-  background: rgba(34, 197, 94, 0.1);
-}
+/* =========================================
+   MAIN CONTENT
+========================================= */
 
 .main-content {
-  max-width: 900px;
-  margin: 0 auto;
   width: 100%;
-  flex: 1;
-}
 
-.interaction-area {
+  min-height: calc(100vh - 112px);
+
   display: flex;
   flex-direction: column;
+
   align-items: center;
-  gap: 32px;
-  margin-bottom: 80px;
+
+  position: relative;
+
+  z-index: 5;
+
+  padding-top: 34px;
 }
 
-.microphone-button {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent) 0%, #9333ea 100%);
-  border: none;
-  cursor: pointer;
+
+/* =========================================
+   DECORATIVE IMAGES
+========================================= */
+
+.decoration {
+  position: absolute;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  z-index: 1;
+
+  opacity: 0.65;
+}
+
+/* ROOSTERS */
+
+.rooster {
+  width: 430px;
+
+  left: 30px;
+  top: 210px;
+}
+
+/* FARMER + BUFFALO */
+
+.farmer {
+  width: 450px;
+
+  left: -10px;
+  bottom: -10px;
+}
+
+/* COCONUT */
+
+.coconut {
+  width: 450px;
+
+  right: -10px;
+  bottom: -10px;
+}
+
+
+/* =========================================
+   ISIRI CARD
+========================================= */
+
+.isiri-card {
+  width: 375px;
+  min-height: 530px;
+
+  background: #f5ead7;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.18);
+
+  padding: 40px 32px 24px;
+
   display: flex;
+  flex-direction: column;
+
   align-items: center;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+
+/* =========================================
+   MICROPHONE
+========================================= */
+
+.microphone-button {
+  width: 155px;
+  height: 155px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  display: flex;
   justify-content: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 8px 32px rgba(192, 132, 252, 0.3);
+  align-items: center;
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+
+  margin-bottom: 38px;
+}
+
+.mic-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
 }
 
 .microphone-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 40px rgba(192, 132, 252, 0.4);
+  transform: scale(1.04);
 }
 
 .microphone-button:active {
-  transform: scale(0.98);
+  transform: scale(0.96);
 }
 
-.microphone-icon {
-  width: 56px;
-  height: 56px;
-  color: white;
+.microphone-button.recording-active {
+  animation: micPulse 1.2s infinite;
 }
+
+@keyframes micPulse {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+/* =========================================
+   CONVERSATION
+========================================= */
+
+.message-block {
+  width: 100%;
+
+  margin-bottom: 20px;
+}
+
+.message-block h3 {
+  margin: 0 0 7px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: #c17d43;
+}
+
+.message {
+  width: 100%;
+
+  border-radius: 10px;
+
+  padding: 12px 14px;
+
+  font-size: 14px;
+
+  line-height: 1.45;
+}
+
+.user-message {
+  background: #fff9ef;
+
+  border: 1px solid #eadcc7;
+}
+
+.isiri-message {
+  background: #fff9ef;
+
+  border: 1px solid #eadcc7;
+}
+
+.isiri-message p {
+  margin: 0;
+}
+
+
+/* =========================================
+   OPEN RESULT BUTTON
+========================================= */
+
+.open-result {
+  margin-top: 14px;
+
+  padding: 10px 18px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #bd8050;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.open-result:hover {
+  background: #a96e42;
+}
+
+
+/* =========================================
+   RECORDING STATUS
+========================================= */
 
 .recording-status {
-  margin-top: 16px;
+  margin-top: auto;
+
+  padding-top: 15px;
 }
 
-.recording-status-text {
+.status {
   font-size: 14px;
-  margin: 0;
-  padding: 8px 16px;
-  border-radius: 8px;
+
+  color: #555555;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
   display: inline-block;
-  font-weight: 500;
 }
 
-.recording-status-text.ready {
-  color: var(--text);
-  background: var(--code-bg);
+.status.complete {
+  color: #4d7552;
 }
 
-.recording-status-text.recording {
-  color: #ef4444;
-  background: rgba(239, 68, 68, 0.1);
-  animation: pulse 1.5s ease-in-out infinite;
+.status.complete .status-dot {
+  background: #38a35a;
 }
 
-.recording-status-text.complete {
-  color: #22c55e;
-  background: rgba(34, 197, 94, 0.1);
+.status.recording {
+  color: #c33b32;
 }
 
-@keyframes pulse {
-  0%, 100% {
+.status.recording .status-dot {
+  background: #d33d32;
+
+  animation: statusPulse 1s infinite;
+}
+
+@keyframes statusPulse {
+
+  0% {
     opacity: 1;
   }
+
   50% {
-    opacity: 0.5;
+    opacity: 0.3;
   }
+
+  100% {
+    opacity: 1;
+  }
+
 }
 
+
+/* =========================================
+   INPUT AREA
+========================================= */
+
 .input-area {
+  width: 690px;
+
   display: flex;
-  gap: 12px;
-  width: 100%;
-  max-width: 600px;
+
+  gap: 16px;
+
+  margin-top: 32px;
+
+  position: relative;
+
+  z-index: 6;
 }
 
 .text-input {
   flex: 1;
-  padding: 16px 20px;
-  border: 2px solid var(--border);
+
+  height: 56px;
+
+  padding: 0 18px;
+
+  border: 2px solid #d7d1ca;
+
   border-radius: 12px;
-  background: var(--code-bg);
-  color: var(--text-h);
+
+  background: white;
+
   font-size: 16px;
-  font-family: var(--sans);
+
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+
+  color: #333333;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .text-input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-bg);
+  border-color: #bd8050;
+
+  box-shadow:
+    0 0 0 3px rgba(189, 128, 80, 0.12);
 }
 
 .text-input::placeholder {
-  color: var(--text);
+  color: #999999;
 }
 
+
+/* =========================================
+   SEND BUTTON
+========================================= */
+
 .send-button {
-  padding: 16px 32px;
-  background: var(--accent);
-  color: white;
+  width: 110px;
+
+  height: 56px;
+
   border: none;
+
   border-radius: 12px;
-  font-size: 16px;
+
+  background: #bd8050;
+
+  color: white;
+
+  font-size: 17px;
+
   font-weight: 600;
+
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
-  font-family: var(--sans);
+
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.12);
+
+  transition:
+    background 0.2s,
+    transform 0.1s;
 }
 
 .send-button:hover {
-  background: #a855f7;
+  background: #aa7044;
 }
 
 .send-button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
-.recent-conversations {
-  margin-top: 40px;
-}
 
-.section-title {
-  font-size: 28px;
-  font-weight: 600;
-  color: var(--text-h);
-  margin: 0 0 24px 0;
-  text-align: center;
-}
+/* =========================================
+   RESPONSIVE
+========================================= */
 
-.conversation-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
+@media (max-width: 900px) {
 
-.conversation-card {
-  background: var(--code-bg);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 24px;
-  text-align: left;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
+  .rooster {
+    width: 350px;
 
-.conversation-card:hover {
-  border-color: var(--accent);
-  box-shadow: var(--shadow);
-}
-
-.card-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-h);
-  margin: 0 0 8px 0;
-}
-
-.card-preview {
-  font-size: 14px;
-  color: var(--text);
-  margin: 0 0 12px 0;
-  line-height: 1.5;
-}
-
-.card-time {
-  font-size: 12px;
-  color: var(--text);
-  opacity: 0.7;
-}
-
-@media (max-width: 768px) {
-  .title {
-    font-size: 48px;
+    left: -20px;
   }
 
-  .subtitle {
-    font-size: 18px;
+  .farmer {
+    width: 350px;
   }
 
-  .microphone-button {
-    width: 100px;
-    height: 100px;
-  }
-
-  .microphone-icon {
-    width: 48px;
-    height: 48px;
+  .coconut {
+    width: 350px;
   }
 
   .input-area {
+    width: 70%;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .top-header {
+    height: auto;
+
+    padding: 16px 20px;
+  }
+
+  .brand-logo {
+    width: 65px;
+    height: 65px;
+  }
+
+  .brand h1 {
+    font-size: 25px;
+  }
+
+  .brand p {
+    font-size: 13px;
+  }
+
+  .isiri-card {
+    width: 90%;
+
+    min-height: 520px;
+  }
+
+  .microphone-button {
+    width: 130px;
+    height: 130px;
+  }
+
+  .input-area {
+    width: 90%;
+
     flex-direction: column;
   }
 
@@ -263,30 +551,27 @@
     width: 100%;
   }
 
-  .conversation-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .landing-page {
-    padding: 24px 16px;
+  .decoration {
+    opacity: 0.2;
   }
 
-  .title {
-    font-size: 36px;
+  .rooster {
+    width: 280px;
+
+    left: -80px;
+
+    top: 230px;
   }
 
-  .subtitle {
-    font-size: 16px;
+  .farmer {
+    width: 260px;
+
+    left: -60px;
   }
 
-  .header {
-    margin-bottom: 40px;
-  }
+  .coconut {
+    width: 280px;
 
-  .interaction-area {
-    gap: 24px;
-    margin-bottom: 60px;
+    right: -90px;
   }
 }

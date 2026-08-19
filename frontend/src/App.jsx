@@ -7,15 +7,16 @@ function App() {
   const [backendMessage, setBackendMessage] = useState('')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [transcription, setTranscription] = useState("");
-  const [intent, setIntent] = useState("");
-const [entities, setEntities] = useState({});
+
+  const [transcription, setTranscription] = useState('')
+  const [intent, setIntent] = useState('')
+  const [entities, setEntities] = useState({})
   const [recordingStatus, setRecordingStatus] = useState('ready')
   const [mediaRecorder, setMediaRecorder] = useState(null)
-  const [audioChunks, setAudioChunks] = useState([])
   const [audioBlob, setAudioBlob] = useState(null)
   const [uploadStatus, setUploadStatus] = useState(null)
-  const [reply, setReply] = useState("");
+  const [reply, setReply] = useState('')
+  const [link, setLink] = useState('')
 
   useEffect(() => {
     const fetchMessage = async () => {
@@ -34,40 +35,43 @@ const [entities, setEntities] = useState({});
   }, [])
 
   const startRecording = async () => {
-  try {
-    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: true
+      })
 
-    const recorder = new MediaRecorder(stream);
+      const recorder = new MediaRecorder(stream)
+      const chunks = []
 
-    const chunks = [];   // <-- Local array
-
-    recorder.ondataavailable = (event) => {
-      if (event.data.size > 0) {
-        chunks.push(event.data);
+      recorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          chunks.push(event.data)
+        }
       }
-    };
 
-    recorder.onstop = () => {
-      const blob = new Blob(chunks, { type: "audio/webm" });
+      recorder.onstop = () => {
+        const blob = new Blob(chunks, {
+          type: 'audio/webm'
+        })
 
-      console.log("Blob size:", blob.size);
+        setAudioBlob(blob)
 
-      setAudioBlob(blob);
+        stream.getTracks().forEach((track) => track.stop())
 
-      stream.getTracks().forEach(track => track.stop());
+        uploadAudio(blob)
+      }
 
-      uploadAudio(blob);
-    };
+      recorder.start()
 
-    recorder.start();
+      setMediaRecorder(recorder)
+      setRecordingStatus('recording')
+      setUploadStatus(null)
 
-    setMediaRecorder(recorder);
-    setRecordingStatus("recording");
-
-  } catch (err) {
-    console.error(err);
+    } catch (err) {
+      console.error(err)
+      setError('Microphone permission is required.')
+    }
   }
-};
 
   const stopRecording = () => {
     if (mediaRecorder && mediaRecorder.state !== 'inactive') {
@@ -77,8 +81,10 @@ const [entities, setEntities] = useState({});
   }
 
   const handleMicrophoneClick = () => {
-    if (recordingStatus === 'ready' || recordingStatus === 'complete') {
-      setAudioChunks([])
+    if (
+      recordingStatus === 'ready' ||
+      recordingStatus === 'complete'
+    ) {
       setAudioBlob(null)
       setUploadStatus(null)
       startRecording()
@@ -88,148 +94,192 @@ const [entities, setEntities] = useState({});
   }
 
   const uploadAudio = async (blob) => {
-  try {
-    console.log("Uploading blob size:", blob.size);
-    const formData = new FormData();
-    formData.append("audio", blob, "recording.webm");
+    try {
+      const formData = new FormData()
 
-    const response = await fetch("http://127.0.0.1:8000/upload-audio", {
-      method: "POST",
-      body: formData,
-    });
+      formData.append(
+        'audio',
+        blob,
+        'recording.webm'
+      )
 
-    const data = await response.json();
+      const response = await fetch(
+        'http://127.0.0.1:8000/upload-audio',
+        {
+          method: 'POST',
+          body: formData
+        }
+      )
 
-    console.log("Backend Response:", data);
+      const data = await response.json()
 
-    if (response.ok && data.success) {
-    setUploadStatus("Upload Successful ✅");
+      console.log('Backend Response:', data)
 
-    setTranscription(data.transcription);
-    setIntent(data.intent);
-    setEntities(data.entities);
-    setReply(data.reply);
+      if (response.ok && data.success) {
+        setUploadStatus('success')
 
-    console.log("Intent:", data.intent);
-    console.log("Entities:", data.entities);
-  } else {
-      setUploadStatus("Upload Failed ❌");
-      console.log(data);
+        setTranscription(data.transcription || '')
+        setIntent(data.intent || '')
+        setEntities(data.entities || {})
+        setReply(data.reply || '')
+        setLink(data.link || '')
+
+      } else {
+        setUploadStatus('failed')
+      }
+
+    } catch (err) {
+      console.error(err)
+      setUploadStatus('failed')
     }
-  } catch (err) {
-    console.error(err);
-    setUploadStatus("Upload Failed ❌");
   }
-};
+
+  const handleSend = () => {
+    if (!inputText.trim()) return
+
+    // Your current backend is voice based.
+    // We are keeping the text box as part of the UI for now.
+    console.log('Text entered:', inputText)
+  }
 
   return (
-    <div className="landing-page">
-      <header className="header">
-        <h1 className="title">ISIRI 2.0</h1>
-        <p className="subtitle">Intelligent Speech Interface for Regional Interaction</p>
-        <div className="backend-status">
-          {loading ? (
-            <p className="status-text loading">Connecting to backend...</p>
-          ) : error ? (
-            <p className="status-text error">{error}</p>
-          ) : (
-            <p className="status-text success">{backendMessage}</p>
+  <div className="app">
+
+    {/* HEADER */}
+    <header className="top-header">
+      <div className="brand">
+        <div className="brand-logo">
+          <img src="/images/logo.png" alt="ISIRI Logo" />
+        </div>
+
+        <div>
+          <h1>ISIRI 2.0</h1>
+          <p>
+            Intelligent Speech Interface
+          </p>
+        </div>
+      </div>
+    </header>
+
+    {/* DECORATIVE IMAGES */}
+
+    <img
+      src="/images/roosters.png"
+      alt=""
+      className="decoration rooster"
+    />
+
+    <img
+      src="/images/farmer-buffalo.png"
+      alt=""
+      className="decoration farmer"
+    />
+
+    <img
+      src="/images/coconut.png"
+      alt=""
+      className="decoration coconut"
+    />
+
+    {/* MAIN CONTENT */}
+    <main className="main-content">
+
+      {/* MAIN ISIRI CARD */}
+      <div className="isiri-card">
+
+        {/* MICROPHONE */}
+        <button
+          className={`microphone-button ${
+            recordingStatus === "recording" ? "recording-active" : ""
+          }`}
+          aria-label="Microphone"
+          onClick={handleMicrophoneClick}
+        >
+          <img
+            src="/images/mic.png"
+            alt="Microphone"
+            className="mic-image"
+          />
+        </button>
+
+        {/* CONVERSATION */}
+
+        {transcription && (
+          <div className="message-block">
+            <h3>You</h3>
+
+            <div className="message user-message">
+              {transcription}
+            </div>
+          </div>
+        )}
+
+        {reply && (
+          <div className="message-block">
+            <h3>ISIRI</h3>
+
+            <div className="message isiri-message">
+              <p>{reply}</p>
+
+              {link && (
+                <button
+                  className="open-result"
+                  onClick={() => window.open(link, "_blank")}
+                >
+                  Open Result →
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* STATUS */}
+        <div className="recording-status">
+
+          {recordingStatus === "ready" && (
+            <span className="status ready">
+              Ready
+            </span>
           )}
-        </div>
-      </header>
 
-      <main className="main-content">
-        <div className="interaction-area">
-          <button 
-            className="microphone-button" 
-            aria-label="Microphone"
-            onClick={handleMicrophoneClick}
-          >
-            <svg className="microphone-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 1C9.23858 1 7 3.23858 7 6V12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12V6C17 3.23858 14.7614 1 12 1Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M12 19C8.13401 19 5 15.866 5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M19 12C19 15.866 15.866 19 12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M12 23V19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M8 23H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          <div className="recording-status">
-            {transcription && (
-  <div style={{ marginTop: "20px" }}>
-    <h3>Transcription</h3>
-    <p>{transcription}</p>
-  </div>
-)}
+          {recordingStatus === "recording" && (
+            <span className="status recording">
+              <span className="status-dot"></span>
+              Recording...
+            </span>
+          )}
 
-{reply && (
-  <div style={{ marginTop: "20px" }}>
-    <h3>ISIRI Response</h3>
-    <p>{reply}</p>
-  </div>
-)}
+          {recordingStatus === "complete" && uploadStatus && (
+            <span className="status complete">
+              <span className="status-dot"></span>
+              Done
+            </span>
+          )}
 
-{intent && (
-  <div style={{ marginTop: "20px" }}>
-    <h3>Intent</h3>
-    <p>{intent}</p>
-  </div>
-)}
-
-{Object.keys(entities).length > 0 && (
-  <div style={{ marginTop: "20px" }}>
-    <h3>Entities</h3>
-    <pre>{JSON.stringify(entities, null, 2)}</pre>
-  </div>
-)}
-            {recordingStatus === 'ready' && (
-              <p className="recording-status-text ready">Ready</p>
-            )}
-            {recordingStatus === 'recording' && (
-              <p className="recording-status-text recording">Recording...</p>
-            )}
-            {recordingStatus === 'complete' && uploadStatus && (
-              <p className="recording-status-text complete">{uploadStatus}</p>
-            )}
-            {recordingStatus === 'complete' && !uploadStatus && (
-              <p className="recording-status-text complete">Recording Complete</p>
-            )}
-          </div>
-
-          <div className="input-area">
-            <input
-              type="text"
-              className="text-input"
-              placeholder="Type your message..."
-              value={inputText}
-              onChange={(e) => setInputText(e.target.value)}
-            />
-            <button className="send-button">Send</button>
-          </div>
         </div>
 
-        <section className="recent-conversations">
-          <h2 className="section-title">Recent Conversations</h2>
-          <div className="conversation-cards">
-            <div className="conversation-card">
-              <h3 className="card-title">Weather Inquiry</h3>
-              <p className="card-preview">"What's the weather like today?"</p>
-              <span className="card-time">2 hours ago</span>
-            </div>
-            <div className="conversation-card">
-              <h3 className="card-title">Translation Request</h3>
-              <p className="card-preview">"Translate this to Spanish..."</p>
-              <span className="card-time">Yesterday</span>
-            </div>
-            <div className="conversation-card">
-              <h3 className="card-title">General Question</h3>
-              <p className="card-preview">"How does the system work?"</p>
-              <span className="card-time">3 days ago</span>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-  )
+      </div>
+
+      {/* TEXT INPUT */}
+      <div className="input-area">
+
+        <input
+          type="text"
+          className="text-input"
+          placeholder="Type your message..."
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+        />
+
+        <button className="send-button">
+          Send
+        </button>
+
+      </div>
+
+    </main>
+
+  </div>
+)
 }
-
 export default App

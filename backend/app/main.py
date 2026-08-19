@@ -1,10 +1,10 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
-from app.intent import detect_intent
-from app.planner import execute
+from backend.app.voice.tts import speak
 import uuid
 import whisper
+from backend.app.voice.pipeline import VoicePipeline, PipelineConfig
 
 app = FastAPI(
     title="ISIRI 2.0 Backend",
@@ -26,6 +26,17 @@ UPLOAD_DIR.mkdir(exist_ok=True)
 
 # Load Whisper model once at startup
 model = whisper.load_model("base")
+
+# Initialize VoicePipeline once at startup
+pipeline_config = PipelineConfig(
+    wake_word_enabled=False,
+    vad_enabled=False,
+    translation_enabled=False,
+    language="en",
+    hardware_integration=False
+)
+pipeline = VoicePipeline(pipeline_config)
+pipeline.initialize()
 
 
 @app.get("/")
@@ -56,25 +67,31 @@ async def upload_audio(audio: UploadFile = File(...)):
         print(result)
 
         transcription = result["text"]
-        intent_data = detect_intent(transcription)
-        plugin_response = execute(
-    intent_data["intent"],
-    intent_data["entities"]
-)
-
-print("Plugin Response:", plugin_response)
+        
+        # Process transcription through VoicePipeline
+        ai_result = pipeline.process_with_ai(transcription)
+        
+        print("AI Result:", ai_result)
 
     except Exception as e:
-        print("WHISPER ERROR:", e)
+        print("ERROR:", e)
         return {
             "success": False,
             "error": str(e)
         }
 
+    import asyncio
+
+    if ai_result.get("response"):
+        asyncio.create_task(
+            speak(ai_result["response"])
+        )
+
     return {
-    "success": True,
-    "transcription": transcription,
-    "intent": intent_data["intent"],
-    "entities": intent_data["entities"],
-    "reply": plugin_response["reply"]
-}
+        "success": True,
+        "transcription": transcription,
+        "intent": ai_result["intent"],
+        "entities": ai_result["entities"],
+        "reply": ai_result["response"],
+        "link": ai_result.get("link", "")
+    }

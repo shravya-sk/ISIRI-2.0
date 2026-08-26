@@ -291,6 +291,36 @@ body {
   margin: 0;
 }
 
+.weather-card {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid #e4cda9;
+  border-radius: 10px;
+  background: #fff4df;
+}
+
+.weather-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #85542d;
+  font-size: 14px;
+}
+
+.weather-temperature {
+  margin: 10px 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #bd8050;
+}
+
+.weather-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #5e5146;
+  font-size: 13px;
+}
 
 /* =========================================
    OPEN RESULT BUTTON

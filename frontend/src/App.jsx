@@ -17,6 +17,7 @@ function App() {
   const [uploadStatus, setUploadStatus] = useState(null)
   const [reply, setReply] = useState('')
   const [link, setLink] = useState('')
+  const [weather, setWeather] = useState(null)
 
   useEffect(() => {
     const fetchMessage = async () => {
@@ -37,8 +38,18 @@ function App() {
   const startRecording = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
-        audio: true
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true,
+          channelCount: 1,
+          sampleRate: 16000,
+        },
       })
+
+      const [audioTrack] = stream.getAudioTracks()
+      console.log("Microphone settings:", audioTrack.getSettings())
+
 
       const recorder = new MediaRecorder(stream)
       const chunks = []
@@ -123,6 +134,7 @@ function App() {
         setEntities(data.entities || {})
         setReply(data.reply || '')
         setLink(data.link || '')
+        setWeather(data.weather || null)
 
       } else {
         setUploadStatus('failed')
@@ -220,6 +232,32 @@ function App() {
 
             <div className="message isiri-message">
               <p>{reply}</p>
+              {weather && (
+  <div className="weather-card">
+    <div className="weather-card-header">
+      <span>{weather.condition}</span>
+      <strong>{weather.location}</strong>
+    </div>
+
+    <div className="weather-temperature">
+      {weather.temperature}°C
+    </div>
+
+    <div className="weather-details">
+      {weather.humidity !== null && (
+        <span>💧 {weather.humidity}% humidity</span>
+      )}
+
+      {weather.wind_speed !== null && (
+        <span>💨 {weather.wind_speed} km/h wind</span>
+      )}
+
+      {weather.rain_chance !== null && (
+        <span>☔ {weather.rain_chance}% rain chance</span>
+      )}
+    </div>
+  </div>
+)}
 
               {link && (
                 <button
@@ -259,24 +297,7 @@ function App() {
         </div>
 
       </div>
-
-      {/* TEXT INPUT */}
-      <div className="input-area">
-
-        <input
-          type="text"
-          className="text-input"
-          placeholder="Type your message..."
-          value={inputText}
-          onChange={(e) => setInputText(e.target.value)}
-        />
-
-        <button className="send-button">
-          Send
-        </button>
-
-      </div>
-
+      
     </main>
 
   </div>

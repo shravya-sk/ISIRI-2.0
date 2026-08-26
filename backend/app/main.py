@@ -93,5 +93,6 @@ async def upload_audio(audio: UploadFile = File(...)):
         "intent": ai_result["intent"],
         "entities": ai_result["entities"],
         "reply": ai_result["response"],
-        "link": ai_result.get("link", "")
+        "link": ai_result.get("link", ""),
+        "weather": ai_result.get("weather")
     }

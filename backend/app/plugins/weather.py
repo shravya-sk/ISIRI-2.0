@@ -16,63 +16,137 @@ WEATHER_CODES = {
     71: "❄ Light Snow",
     80: "🌦 Rain Showers",
     81: "🌧 Heavy Showers",
-    95: "⛈ Thunderstorm"
+    95: "⛈ Thunderstorm",
 }
 
+LOCATION_ALIASES = {
+    "bangalore": "Bengaluru",
+    "bombay": "Mumbai",
+    "calcutta": "Kolkata",
+    "mysore": "Mysuru",
+}
+
+
 def execute(data):
-    location = data.get("location", "Mangalore")
+    location = data.get("location")
+    requested_time = data.get("time", "today")
+
+    if not location:
+        return {
+            "success": False,
+            "reply": "Please tell me the city for the weather forecast.",
+        }
+
+    lookup_location = LOCATION_ALIASES.get(
+        location.lower().strip(),
+        location.strip(),
+    )
 
     try:
-        # Step 1: Convert city name to latitude & longitude
-        geo_url = (
-            f"https://geocoding-api.open-meteo.com/v1/search?"
-            f"name={location}"
-            f"&count=1"
-            f"&countryCode=IN"
-            f"&language=en"
-            f"&format=json"
-        )
+        geo = requests.get(
+            "https://geocoding-api.open-meteo.com/v1/search",
+            params={
+                "name": lookup_location,
+                "count": 1,
+                "countryCode": "IN",
+                "language": "en",
+                "format": "json",
+            },
+            timeout=10,
+        ).json()
 
-        geo = requests.get(geo_url).json()
-        #print(geo)
+        if not geo.get("results"):
+            print("Geocoding failed for:", repr(lookup_location))
+            print("Geocoding response:", geo)
 
-
-        if "results" not in geo:
             return {
                 "success": False,
-                "reply": f"Couldn't find {location}."
+                "reply": f"Couldn't find {location}. Please try the city name again.",
             }
 
-        latitude = geo["results"][0]["latitude"]
-        longitude = geo["results"][0]["longitude"]
+        place = geo["results"][0]
 
-        # Step 2: Fetch live weather
-        weather_url = (
-            f"https://api.open-meteo.com/v1/forecast?"
-            f"latitude={latitude}&longitude={longitude}"
-            f"&current=temperature_2m,relative_humidity_2m,"
-            f"wind_speed_10m,weather_code"
-        )
+        weather = requests.get(
+            "https://api.open-meteo.com/v1/forecast",
+            params={
+                "latitude": place["latitude"],
+                "longitude": place["longitude"],
+                "current": (
+                    "temperature_2m,relative_humidity_2m,"
+                    "wind_speed_10m,weather_code"
+                ),
+                "daily": (
+                    "weather_code,temperature_2m_max,"
+                    "temperature_2m_min,precipitation_probability_max,"
+                    "wind_speed_10m_max"
+                ),
+                "forecast_days": 2,
+                "timezone": "auto",
+                "temperature_unit": "celsius",
+                "wind_speed_unit": "kmh",
+            },
+            timeout=10,
+        ).json()
 
-        weather = requests.get(weather_url).json()
+        location_name = place["name"]
+
+        # Tomorrow uses the second daily item: index 1.
+        if requested_time == "tomorrow":
+            daily = weather["daily"]
+            condition = WEATHER_CODES.get(
+                daily["weather_code"][1],
+                "Unknown",
+            )
+            minimum = daily["temperature_2m_min"][1]
+            maximum = daily["temperature_2m_max"][1]
+            rain_chance = daily["precipitation_probability_max"][1]
+            wind_speed = daily["wind_speed_10m_max"][1]
+
+            return {
+                "success": True,
+                "reply": (
+                    f"Tomorrow's weather in {location_name}: {condition}. "
+                    f"Temperature will range from {minimum} to {maximum} degrees Celsius. "
+                    f"Chance of rain is {rain_chance} percent."
+                ),
+                "weather": {
+                    "location": location_name,
+                    "period": "Tomorrow",
+                    "condition": condition,
+                    "temperature": f"{minimum}–{maximum}",
+                    "humidity": None,
+                    "wind_speed": wind_speed,
+                    "rain_chance": rain_chance,
+                },
+            }
 
         current = weather["current"]
         condition = WEATHER_CODES.get(
             current["weather_code"],
-            "Unknown"
+            "Unknown",
         )
 
         return {
             "success": True,
-            "reply":
-                f"Weather in {location}\n\n"
-                f"🌡 Temperature : {current['temperature_2m']}°C\n"
-                f"💧 Humidity : {current['relative_humidity_2m']}%\n"
-                f"💨 Wind Speed : {current['wind_speed_10m']} km/h"
+            "reply": (
+                f"Weather in {location_name}: {condition}. "
+                f"Temperature is {current['temperature_2m']} degrees Celsius."
+            ),
+            "weather": {
+                "location": location_name,
+                "period": "Now",
+                "condition": condition,
+                "temperature": current["temperature_2m"],
+                "humidity": current["relative_humidity_2m"],
+                "wind_speed": current["wind_speed_10m"],
+                "rain_chance": None,
+            },
         }
 
     except Exception as e:
+        print("Weather error:", e)
+
         return {
             "success": False,
-            "reply": str(e)
+            "reply": "Sorry, I could not fetch the weather right now.",
         }

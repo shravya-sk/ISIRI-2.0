@@ -63,18 +63,31 @@ def extract_entities(text):
             entities["query"] = match.group(1).strip().rstrip("?")
             break
 
-    # --------------------------
+    # --------------------------    
     # YouTube Video Detection
     # --------------------------
 
     youtube_match = re.search(
-        r"(?:play|watch)\s+(.+)",
+        r"(?:play|watch)\s+(.+?)(?:\s+on\s+youtube)?$",
         original_text,
         re.IGNORECASE
     )
 
     if youtube_match:
         entities["video"] = youtube_match.group(1).strip()
+
+    # --------------------------
+    # Spotify Search Detection
+    # --------------------------
+
+    spotify_match = re.search(
+        r"(?:search|find)\s+(.+?)\s+(?:on|in)\s+spotify",
+        original_text,
+        re.IGNORECASE
+    )
+
+    if spotify_match:
+        entities["query"] = spotify_match.group(1).strip()
 
 
     # --------------------------
@@ -83,6 +96,7 @@ def extract_entities(text):
 
     websites = [
         "youtube",
+        "google",
         "instagram",
         "gmail",
         "github",

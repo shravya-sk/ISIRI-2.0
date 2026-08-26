@@ -5,19 +5,27 @@ def detect_intent(text):
     text = text.lower().strip()
 
     # Weather
-    if re.search(r"\b(weather|temperature|forecast)\b", text):
+    if re.search(
+        r"\b(weather|temperature|forecast|rain|raining|humidity|wind)\b",
+        text,
+    ):
         return {"intent": "weather", "confidence": 0.95}
 
+    # Spotify
+    elif re.search(r"\b(spotify|song|music)\b", text):
+        return {"intent": "spotify", "confidence": 0.95}
+    
     # YouTube
-    elif re.search(r"\b(play|watch)\b", text):
-        return {"intent": "youtube", "confidence": 0.95}
+    elif re.search(r"\b(play|watch)\b.*\b(on\s+)?youtube\b", text):
+        return {"intent": "youtube", "confidence": 0.98}
 
-    # Browser Websites
+
+    # Open Websites
     elif re.search(
-        r"\bopen\b.*\b(youtube|instagram|gmail|github|linkedin|spotify|chatgpt|netflix|facebook)\b",
+        r"\bopen\b.*\b(youtube|instagram|gmail|github|linkedin|spotify|chatgpt|netflix|facebook|google)\b",
         text
     ):
-        return {"intent": "browser", "confidence": 0.95}
+        return {"intent": "browser", "confidence": 0.98}
 
     # Desktop Applications
     elif re.search(

@@ -25,6 +25,7 @@ from ai_engine.plugin_executor import execute_plugin
 from typing import Optional, Dict, Any
 from dataclasses import dataclass
 import logging
+import re
 
 
 logger = logging.getLogger(__name__)
@@ -123,16 +124,39 @@ class AIEngine:
             "entities": None,
             "response": None,
             "context": self.context,
-            "error": None
+            "error": None,
+            "weather": None
         }
         
         try:
-            # Step 1: Detect intent
             intent = self._detect_intent(text)
-            result["intent"] = intent
-            
-            # Step 2: Extract entities
             entities = self._extract_entities(text, intent)
+
+            # Handle a city supplied as the follow-up to a weather question.
+            if (
+                intent == "unknown"
+                and self.context.get("pending_intent") == "weather"
+            ):
+                location = entities.get("location")
+
+                # Supports a city not present in the hard-coded location list,
+                # for example: Kolkata, Chennai, Hyderabad, Pune.
+                if not location and re.fullmatch(
+                    r"[A-Za-z][A-Za-z\s-]{1,60}",
+                    text.strip(),
+                ):
+                    location = text.strip().title()
+
+                if location:
+                    intent = "weather"
+                    entities["location"] = location
+
+                    previous_entities = self.context.get("last_entities", {})
+
+                    if "time" in previous_entities and "time" not in entities:
+                        entities["time"] = previous_entities["time"]
+
+            result["intent"] = intent
             result["entities"] = entities
             
             # Step 3: Plan execution
@@ -141,6 +165,7 @@ class AIEngine:
             # Step 4: Execute plugin
             plugin_result = self._execute_plugin(plan)
             result["link"] = plugin_result.get("link", "")
+            result["weather"] = plugin_result.get("weather")
             
             # Step 5: Generate response
             print("PLUGIN RESULT:", plugin_result)
@@ -300,7 +325,14 @@ class AIEngine:
         # TODO: Add conversation turn to context
         # TODO: Prune old context if exceeds max turns
         # TODO: Update relevant context variables
-        pass
+        self.context["last_intent"] = intent
+        self.context["last_entities"] = entities.copy()
+
+        # Keep weather active only when ISIRI asked the user for a city.
+        if intent == "weather" and not entities.get("location"):
+            self.context["pending_intent"] = "weather"
+        else:
+            self.context.pop("pending_intent", None)
     
     def _fallback_response(self, text: str) -> str:
         """

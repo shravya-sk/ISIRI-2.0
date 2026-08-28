@@ -31,7 +31,7 @@ model = whisper.load_model("base")
 pipeline_config = PipelineConfig(
     wake_word_enabled=False,
     vad_enabled=False,
-    translation_enabled=False,
+    translation_enabled=True,
     language="en",
     hardware_integration=False
 )
@@ -62,7 +62,11 @@ async def upload_audio(audio: UploadFile = File(...)):
 
     try:
         print("Starting Whisper...")
-        result = model.transcribe(str(file_path))
+        result = model.transcribe(
+            str(file_path),
+            language="en",
+            fp16=False,
+        )
         print("Whisper finished!")
         print(result)
 

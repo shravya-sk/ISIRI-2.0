@@ -35,6 +35,7 @@ from ai_engine.engine import AIEngine, AIEngineConfig
 from backend.app.voice.state import AssistantState, StateManager
 from backend.app.voice.speech_to_text import SpeechToTextEngine, STTConfig
 from backend.app.voice.text_to_speech import TextToSpeechEngine, TTSConfig
+from ai_engine.translator import translate_to_english
 
 
 logger = logging.getLogger(__name__)
@@ -213,6 +214,7 @@ class VoicePipeline:
                 # Delegate to SpeechToTextEngine
                 transcription = self.stt_engine.transcribe_audio(audio_data)
                 
+                
                 if self.config.translation_enabled:
                     self.state_manager.transition_to(AssistantState.TRANSLATING)
                 else:
@@ -228,63 +230,63 @@ class VoicePipeline:
             raise RuntimeError(f"Transcription failed: {e}")
     
     def translate_command(self, text: str) -> str:
-        """
-        Translate command text if needed.
-        
-        This method delegates to TranslationModule to translate the transcribed
-        text to the target language if translation is enabled.
-        
-        State Transition: TRANSLATING -> UNDERSTANDING
-        
-        Args:
-            text: Text to translate
-            
-        Returns:
-            Translated text (or original if no translation needed)
-            
-        Raises:
-            RuntimeError: If translation fails
-        """
         logger.info(f"Translating command: {text}")
-        
-        # TODO: Delegate to TranslationModule
-        # TODO: Handle translation errors
-        
-        self.state_manager.transition_to(AssistantState.UNDERSTANDING)
-        logger.debug("Translation completed")
-        return text
-    
-    def process_with_ai(self, text: str) -> Dict[str, Any]:
-        logger.info(f"Processing text with AI engine: {text}")
 
-    # Reset if previous request finished
+        translated_text = translate_to_english(text)
+
+        logger.info(
+            f"Command after translation: {translated_text}"
+        )
+
+        return translated_text
+
+    def process_with_ai(self, text: str) -> Dict[str, Any]:
+        logger.info(
+            f"Processing text with AI engine: {text}"
+        )
+
         if self.state_manager.current_state == AssistantState.RESPONDING:
             self.state_manager.transition_to(AssistantState.IDLE)
 
-    # Start a new request
         if self.state_manager.current_state == AssistantState.IDLE:
-            self.state_manager.transition_to(AssistantState.UNDERSTANDING)
-
-        self.state_manager.transition_to(AssistantState.EXECUTING)
+            self.state_manager.transition_to(
+                AssistantState.UNDERSTANDING
+            )
 
         try:
-            if self.ai_engine:
-                ai_result = self.ai_engine.process(text)
-
-                self.state_manager.transition_to(AssistantState.RESPONDING)
-
-                # Reset for the next command
-                self.state_manager.transition_to(AssistantState.IDLE)
-
-                logger.debug("AI processing completed")
-                return ai_result
-            else:
+            if not self.ai_engine:
                 raise RuntimeError("AI engine not initialized")
 
-        except Exception as e:
-            logger.error(f"AI processing failed: {e}")
-            self.state_manager.transition_to(AssistantState.ERROR)
-            raise RuntimeError(f"AI processing failed: {e}")
+            processed_text = text
+
+            if self.config.translation_enabled:
+                processed_text = self.translate_command(text)
+
+            self.state_manager.transition_to(
+                AssistantState.EXECUTING
+            )
+
+            ai_result = self.ai_engine.process(processed_text)
+
+            self.state_manager.transition_to(
+                AssistantState.RESPONDING
+            )
+
+            self.state_manager.transition_to(AssistantState.IDLE)
+
+            return ai_result
+
+        except Exception as error:
+            logger.error(f"AI processing failed: {error}")
+
+            if self.state_manager.current_state != AssistantState.ERROR:
+                self.state_manager.transition_to(
+                    AssistantState.ERROR
+                )
+
+            raise RuntimeError(
+                f"AI processing failed: {error}"
+            )
     
     def translate_response(self, text: str) -> str:
         """

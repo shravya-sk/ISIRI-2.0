@@ -92,32 +92,13 @@ class AIEngine:
         logger.info("AI engine initialized successfully")
     
     def process(self, text: str) -> Dict[str, Any]:
-        """
-        Process user text through the AI pipeline.
-        
-        This is the main entry point for AI processing. It coordinates
-        all AI components and returns a comprehensive result.
-        
-        Args:
-            text: User input text
-            
-        Returns:
-            Dictionary containing:
-            - success: bool - Whether processing succeeded
-            - intent: str - Detected intent
-            - entities: dict - Extracted entities
-            - response: str - Generated response
-            - context: dict - Updated conversation context
-            - error: str - Error message if failed
-            
-        Raises:
-            RuntimeError: If processing fails catastrophically
-        """
         logger.info(f"Processing text: {text}")
-        
+
         if not self.is_initialized:
-            raise RuntimeError("AI engine not initialized. Call initialize() first.")
-        
+            raise RuntimeError(
+                "AI engine not initialized. Call initialize() first."
+            )
+
         result = {
             "success": False,
             "intent": None,
@@ -125,22 +106,41 @@ class AIEngine:
             "response": None,
             "context": self.context,
             "error": None,
-            "weather": None
+            "weather": None,
+            "link": "",
         }
-        
+
+        fixed_response = self._get_fixed_response(text)
+
+        if fixed_response:
+            result["success"] = True
+            result["intent"] = "conversation"
+            result["entities"] = {}
+            result["response"] = fixed_response
+
+            if self.config.context_enabled:
+                self._update_context(
+                    text,
+                    fixed_response,
+                    "conversation",
+                    {},
+                )
+                result["context"] = self.context
+
+            return result
+
         try:
             intent = self._detect_intent(text)
+            result["intent"] = intent
+
             entities = self._extract_entities(text, intent)
 
-            # Handle a city supplied as the follow-up to a weather question.
             if (
                 intent == "unknown"
                 and self.context.get("pending_intent") == "weather"
             ):
                 location = entities.get("location")
 
-                # Supports a city not present in the hard-coded location list,
-                # for example: Kolkata, Chennai, Hyderabad, Pune.
                 if not location and re.fullmatch(
                     r"[A-Za-z][A-Za-z\s-]{1,60}",
                     text.strip(),
@@ -151,50 +151,80 @@ class AIEngine:
                     intent = "weather"
                     entities["location"] = location
 
-                    previous_entities = self.context.get("last_entities", {})
+                    previous_entities = self.context.get(
+                        "last_entities",
+                        {},
+                    )
 
-                    if "time" in previous_entities and "time" not in entities:
+                    if (
+                        "time" in previous_entities
+                        and "time" not in entities
+                    ):
                         entities["time"] = previous_entities["time"]
 
             result["intent"] = intent
             result["entities"] = entities
-            
-            # Step 3: Plan execution
-            plan = self._plan_execution(intent, entities)
-            
-            # Step 4: Execute plugin
-            plugin_result = self._execute_plugin(plan)
+
+            execution_plan = self._plan_execution(
+                intent,
+                entities,
+            )
+
+            plugin_result = self._execute_plugin(
+                execution_plan
+            )
+
             result["link"] = plugin_result.get("link", "")
             result["weather"] = plugin_result.get("weather")
-            
-            # Step 5: Generate response
-            print("PLUGIN RESULT:", plugin_result)
-            print("TYPE:", type(plugin_result))
-            response = self._generate_response(plugin_result, intent, entities)
+
+            response = self._generate_response(
+                plugin_result,
+                intent,
+                entities,
+            )
 
             if isinstance(response, dict):
                 result["response"] = response.get("reply", "")
                 result["link"] = response.get("link", "")
             else:
                 result["response"] = response
-            
-            # Step 6: Update context
+
             if self.config.context_enabled:
-                self._update_context(text, response, intent, entities)
+                self._update_context(
+                    text,
+                    result["response"],
+                    intent,
+                    entities,
+                )
                 result["context"] = self.context
-            
+
             result["success"] = True
             logger.info("AI processing completed successfully")
-            
-        except Exception as e:
-            logger.error(f"AI processing failed: {e}")
-            result["error"] = str(e)
-            
-            # Attempt fallback if enabled
+
+        except Exception as error:
+            logger.error(f"AI processing failed: {error}")
+            result["error"] = str(error)
+
             if self.config.fallback_enabled:
                 result["response"] = self._fallback_response(text)
-        
+
         return result
+
+    def _get_fixed_response(self, text: str):
+        normalized_text = re.sub(
+            r"[^\w\s]",
+            "",
+            text.lower(),
+        ).strip()
+
+        fixed_responses = {
+            "how are you": "Yaan ushar ulle.",
+            "how are you doing": "Yaan ushar ulle.",
+            "what is your name": "Enna peru ISIRI 2.0.",
+            "isiri kenunda": "Kenundu. Please tell me your command.",
+        }
+
+        return fixed_responses.get(normalized_text)
     
     def _detect_intent(self, text: str) -> str:
         """

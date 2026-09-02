@@ -23,6 +23,12 @@ datasets/models/
 *.zip
 *.tar.gz
 
+# Large Raw Audio Recordings (keep metadata.csv tracked)
+datasets/audio_dataset/wavs/
+*.wav
+*.webm
+*.mp3
+
 # Environment Files
 .env
 *.env

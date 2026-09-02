@@ -9,6 +9,12 @@ def plan(intent, entities):
             "entities": entities
         }
 
+    elif intent_name == "hardware":
+        return {
+            "plugin": "hardware",
+            "entities": entities
+        }
+
     elif intent_name == "movie_search":
         return {
             "plugin": "movies",

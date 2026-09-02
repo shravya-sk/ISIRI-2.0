@@ -11,6 +11,14 @@ def detect_intent(text):
     ):
         return {"intent": "weather", "confidence": 0.95}
 
+    # Hardware / Home Automation (Light, Fan, AC, Geyser, etc.)
+    elif re.search(
+        r"\b(turn\s+on|turn\s+off|switch\s+on|switch\s+off)\b.*\b(light|lights|fan|fans|bulb|lamp|geyser|ac|tv|socket|device)\b|"
+        r"\b(light|lights|fan|fans|bulb|lamp|geyser|ac|tv)\b.*\b(turn\s+on|turn\s+off|switch\s+on|switch\s+off|on|off)\b",
+        text,
+    ):
+        return {"intent": "hardware", "confidence": 0.98}
+
     # Spotify
     elif re.search(r"\b(spotify|song|music)\b", text):
         return {"intent": "spotify", "confidence": 0.95}
@@ -18,7 +26,6 @@ def detect_intent(text):
     # YouTube
     elif re.search(r"\b(play|watch)\b.*\b(on\s+)?youtube\b", text):
         return {"intent": "youtube", "confidence": 0.98}
-
 
     # Open Websites
     elif re.search(

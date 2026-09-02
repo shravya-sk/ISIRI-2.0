@@ -19,12 +19,14 @@ test_queries = [
     "youtube open malpule",
     "ini Kudla da weather encha undu",
     "Open Notepad",
+    "light on malpule",
+    "kone da fan off malpule",
     "Yelle baiyag Kudla du barsa barpunda panle dayepandha yaan ooru g povodu",
     "how are you",
     "calculator open malpule"
 ]
 
-print("\n=== ISIRI 2.0 END-TO-END PIPELINE TEST ===\n")
+print("\n=== ISIRI 2.0 END-TO-END PIPELINE & HARDWARE TEST ===\n")
 for q in test_queries:
     translated = translate_to_english(q)
     res = engine.process(translated)

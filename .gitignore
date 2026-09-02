@@ -7,20 +7,34 @@ __pycache__/
 # Virtual Environment
 backend/venv/
 venv/
+.venv/
+env/
 
 # Node Modules
 frontend/node_modules/
+node_modules/
+
+# Large Model Weights & Archives
+datasets/models/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.zip
+*.tar.gz
 
 # Environment Files
 .env
 *.env
 
-# Uploaded Files
+# Uploaded Files & Temporary Audio
 backend/uploads/
+uploads/
 
 # Build Files
 dist/
 build/
+frontend/dist/
 
 # IDE Files
 .vscode/
@@ -30,8 +44,5 @@ build/
 Thumbs.db
 .DS_Store
 
-# Logs
+# Logs & System
 *.log
-uploads/
-
-__pycache__/

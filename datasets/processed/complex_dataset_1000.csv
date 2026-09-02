@@ -1,0 +1,1001 @@
+English,Tulu,Intent,Complexity
+Weather today,Ini da weather,weather,short
+Today's weather,Ini ta havaamana,weather,short
+Is it raining?,Barsa barond unda?,weather,short
+Current temperature,Itteda temperature encha undu,weather,short
+Weather forecast,Havaamana encha undu,weather,short
+Check weather,Weather check malpule,weather,short
+Tell weather,Weather panle,weather,short
+Weather in Mangalore,Kudla da weather encha undu,weather,short
+Weather in Udupi,Odipu da weather panle,weather,short
+Weather in Bangalore,Bengalooru da weather panle,weather,short
+Weather in Mumbai,Mumbai da weather encha undu,weather,short
+Weather in Delhi,Delhi da weather panle,weather,short
+Is it hot outside?,Pidaayi seke unda?,weather,short
+Is it cold?,Chali unda?,weather,short
+Will it rain?,Barsa barpunda?,weather,short
+Rain forecast,Barsada vivara panle,weather,short
+Tomorrow's weather,Yelle da weather encha undu,weather,short
+Tomorrow rain,Yelle barsa barpunda,weather,short
+How is the climate?,Climate encha undu,weather,short
+Show temperature,Temperature toojale,weather,short
+Humidity today,Ini humidity encha undu,weather,short
+Wind speed,Gaali da vega encha undu,weather,short
+Is it cloudy?,Moda kavardh unda?,weather,short
+Sunny today,Ini besha bisilu unda,weather,short
+Rain in Mysore,Mysuru du barsa unda,weather,short
+Weather condition,Weather da paristithi panle,weather,short
+Atmosphere temperature,Vathavarana da soodu panle,weather,short
+Will weather change?,Weather change aapunda?,weather,short
+Weather report,Weather report toojale,weather,short
+Today rain chance,Ini barsa barpina chance unda,weather,short
+Tell me the weather in Mangalore today,Ini Kudla da weather encha undu panle,weather,medium
+What is the temperature in Udupi right now?,Itthe Odipu du temperature yeth undu?,weather,medium
+Will it rain in Bangalore this evening?,Ini baiyag Bengalooru du barsa barpunda?,weather,medium
+Check tomorrow's weather forecast for Delhi,Yelle da Delhi weather forecast check malpule,weather,medium
+Is there any chance of rain in Mumbai today?,Ini Mumbai du barsa barpina sandarbha unda?,weather,medium
+How hot will it be in Mangalore tomorrow afternoon?,Yelle madhyahna Kudla du yeth seke aavoli?,weather,medium
+Please tell me the humidity level in Udupi,Dayamalth Odipu da humidity level panle,weather,medium
+What is the wind condition in Bangalore today?,Ini Bengalooru du gaali da sthiti encha undu?,weather,medium
+Will it be sunny in Mangalore this weekend?,Ee weekend Kudla du bisilu aavunda?,weather,medium
+Check if it is raining in Puttur right now,Itthe Puttur du barsa barond unda check malpule,weather,medium
+Tell me the maximum temperature in Mysore tomorrow,Yelle Mysuru du garixta temperature yeth aavoli?,weather,medium
+Is heavy rain expected in Coastal Karnataka today?,Ini Karavali du jore barsa barpina anumaana unda?,weather,medium
+Show me the detailed weather forecast for Bangalore,Bengalooru da poora weather vivara toojale,weather,medium
+What is the climate like in Delhi this week?,Ee vaara Delhi da climate encha undu?,weather,medium
+Tell me if I need an umbrella today in Mangalore,Ini Kudla du kode detondu povoda panle,weather,medium
+How cold is it in Bangalore this morning?,Ini kaande Bengalooru du yeth chali undu?,weather,medium
+Give me the rainfall update for Udupi district,Odipu jille da barsada update korle,weather,medium
+Is tomorrow going to be a cloudy day in Mangalore?,Yelle Kudla du moda kavidina dina aavunda?,weather,medium
+What will the temperature be tonight in Delhi?,Ini rathre Delhi du temperature yeth aavoli?,weather,medium
+Check if the weather is clear for travel to Udupi,Odipu g prayana malpare weather sari unda check malpule,weather,medium
+Tell me today's minimum and maximum temperature,Ini ta kanishta bokka garixta temperature panle,weather,medium
+Will there be thunderstorms in Mangalore tonight?,Ini rathre Kudla du minchu giligili barpunda?,weather,medium
+Please check the rain prediction for tomorrow morning,Yelle kaande barsada anumaana check malpule,weather,medium
+How is the weather in Mumbai compared to Mangalore?,Mumbai da weather Kudla g polike malpundaga encha undu?,weather,medium
+Tell me if it is windy outside right now,Itthe pidaayi bhaari gaali beejond unda panle,weather,medium
+What is the UV index and temperature in Udupi today?,Ini Odipu du UV index bokka temperature yeth undu?,weather,medium
+Check the 3-day weather forecast for Mangalore,Kudla da mooji dinatha weather check malpule,weather,medium
+Will it rain continuously in Udupi tomorrow?,Yelle Odipu du nillande barsa barpunda?,weather,medium
+Tell me the sunset time and weather for today,Ini surye kandoonaga weather encha aavoli panle,weather,medium
+Is tomorrow suitable for outdoor sports in Bangalore?,Yelle Bengalooru du pidaayi gobbare weather sari unda?,weather,medium
+Please tell me whether it will rain in Mangalore tomorrow evening because I have to travel,Yelle baiyag Kudla du barsa barpunda panle dayepandha yaan ooru g povodu,weather,complex
+Check if it will rain in Udupi before I leave the house this afternoon,Ini madhyahna yaan illadhu pidayi povadhu dumbe Odipu du barsa barpunda check malpule,weather,complex
+Tell me tomorrow's temperature in Bangalore because I need to plan my meeting outside,Bengalooru du yelle da temperature panle dayepandha yaan pidaayi meeting plan malpodu,weather,complex
+"If it is going to rain heavily in Mangalore tomorrow, please let me know early",Yelle Kudla du jore barsa barpundu anda yenk dumbe thelipale,weather,complex
+Check the weather in Delhi for tomorrow morning because my flight is scheduled at 8 AM,Yelle kaande Delhi da weather check malpule dayepandha yenna flight 8 gante g undu,weather,complex
+Tell me if the rain will stop in Udupi after 4 PM so that I can go to the market,Odipu du 4 gante da bokko barsa nillunda panle yaan market g povodu,weather,complex
+What is the humidity and rain chance in Mangalore when I go for a walk in the evening?,Baiyag yaan walk povonaga Kudla du humidity bokko barsada chance yeth undu?,weather,complex
+Check whether it is raining in Bangalore right now because my friend is driving on the highway,Itthe Bengalooru du barsa barond unda check malpule dayepandha yenna snehite highway du car chalpondu ulle,weather,complex
+Tell me tomorrow's weather in Mysore because we are planning a family picnic,Yelle Mysuru da weather panle dayepandha enkulu family picnic plan maltondu ulla,weather,complex
+"If the temperature in Delhi goes above 40 degrees tomorrow, warn me before noon",Yelle Delhi du temperature 40 degree dhu hechchaanda yenk madhyahnadhu dumbe panle,weather,complex
+Please check the weather forecast for Mangalore before I book the cricket turf for tomorrow evening,Yelle baiyag turf book malpundhu dumbe Kudla da weather forecast check malpule,weather,complex
+Tell me if it will rain tonight in Udupi because we left the clothes outside to dry,Ini rathre Odipu du barsa barpunda panle dayepandha angiladhu bariya pidaayi paadina ullu,weather,complex
+Check the weather in Mumbai tomorrow because heavy rainfall was reported yesterday,Kalye jore barsa ittininda yelle Mumbai da weather encha undu check malpule,weather,complex
+Tell me the weather condition in Bangalore when the football match starts at 5 PM,5 gante g football match start aavanaga Bengalooru da weather encha aavoli panle,weather,complex
+"If there is high humidity in Mangalore today, tell me whether it will rain at night",Ini Kudla du jaasthi humidity iddhaanda rathre barsa barpunda thelipale,weather,complex
+Check if it will be foggy in Delhi tomorrow morning before our train arrives,Yelle kaande train barpunadha dumbe Delhi du manchu kavidh aavunda check malpule,weather,complex
+Tell me the temperature in Udupi after 6 PM because I prefer walking when it is cool,Odipu du 6 gante da bokko temperature yeth aavoli panle dayepandha chali ittinaga walk povodu,weather,complex
+Will it rain in Mangalore while we are driving back from Bangalore tomorrow night?,Yelle rathre Bengalooru dhu Kudla g barponaga margado barsa aavunda?,weather,complex
+Please check the rain prediction in Puttur because farmers need to harvest crops tomorrow,Yelle krishikere g bele madpare Puttur du barsa barpunda check malpule,weather,complex
+Tell me the weather in Mangalore tomorrow afternoon because I want to avoid travelling in extreme heat,Yelle madhyahna Kudla da weather panle dayepandha bhaari seke ittinaga travel malpare ishta ijji,weather,complex
+Check whether it is safe to go fishing in Malpe beach tomorrow considering wind and rain,Yelle gaali bokko barsa toondha Malpe kadalare povodu sari unda check malpule,weather,complex
+Tell me the temperature in Bangalore before I pack woollen clothes for my trip,Yenna trip g chali angi pack malpadhu dumbe Bengalooru da temperature panle,weather,complex
+"If heavy thunderstorm is predicted in Udupi today, alert me before 3 PM",Ini Odipu du minchu tedil barsa barpundu anda 3 gante dhu dumbe thelipale,weather,complex
+Check if the weather in Delhi is pleasant in the evening because we have an outdoor dinner,Baiyag pidaayi oota ittininda Delhi da weather sukha unda check malpule,weather,complex
+Tell me the rain status in Mangalore after midnight because construction work is going on,Madhyaraathri da bokko Kudla du barsa barpunda panle dayepandha construction bele nadapond undu,weather,complex
+Will it be cloudy in Udupi tomorrow when the solar eclipse happens in the morning?,Yelle kaande grahana aavanaga Odipu du moda kavardh aavunda panle,weather,complex
+Check tomorrow's weather in Mumbai because flights might get delayed if there is heavy rain,Jore barsa ittinaga flight delay aavoli aayikora yelle Mumbai weather check malpule,weather,complex
+Tell me if it will rain in Mangalore tomorrow because I need to wash my car in the morning,Yelle kaande car dhowonodu aayikora Kudla du barsa barpunda thelipale,weather,complex
+"If it starts raining in Bangalore this afternoon, tell me the nearest dry time",Ini madhyahna Bengalooru du barsa shuru aanda yepba nilloli thelipale,weather,complex
+Check the coastal weather bulletin for Mangalore before the boat journey starts,Boat prayana shuru aavanadha dumbe Kudla da karavali weather bulletin check malpule,weather,complex
+Tell me if the temperature in Delhi will drop below 10 degrees tonight because my grandma is visiting,Ini rathre Delhi du 10 degree dhu kammi aavunda panle dayepandha ajji barond uller,weather,complex
+Will it rain in Udupi during the college cultural festival tomorrow evening?,Yelle baiyag college program aavanaga Odipu du barsa barpunda?,weather,complex
+Please check the weather in Mangalore for the next 48 hours because a cyclone alert was issued,Cyclone yechharike banna aayikora Kudla du 48 gante da weather check malpule,weather,complex
+Tell me if it will be too hot in Bangalore tomorrow afternoon for outdoor cycling,Yelle madhyahna Bengalooru du cycling malpare jaasthi seke aavunda panle,weather,complex
+Check the rainfall history in Udupi over the past two days before planning the field trip,Trip plan malpadhu dumbe Odipu du kalchina radd dinatha barsa check malpule,weather,complex
+Tell me if it will rain in Mangalore when our cricket match begins at 9 AM tomorrow,Yelle kaande 9 gante g cricket match shuru aavanaga Kudla du barsa barpunda?,weather,complex
+"If severe heatwave is expected in Delhi tomorrow, give me precautions and temperature",Yelle Delhi du bhaari seke iddhaanda precautions bokka temperature panle,weather,complex
+Check if rain in Mumbai will clear up before our evening meeting starts,Baiyag meeting shuru aavanadha dumbe Mumbai barsa nillunda check malpule,weather,complex
+Tell me the weather in Bangalore tomorrow because I need to decide between taking a bike or a car,Yelle bike g povoda car g povoda decide malpare Bengalooru da weather panle,weather,complex
+Check whether it will rain in Mangalore right after the wedding ceremony finishes tomorrow,Yelle madime karyakrama mugiyina koodale Kudla du barsa barpunda check malpule,weather,complex
+Open YouTube,Youtube open malpule,youtube,short
+Play music on YouTube,Youtube du music paadle,youtube,short
+Search YouTube,Youtube du naadle,youtube,short
+Play Tulu songs on YouTube,Youtube du tulu padya paadle,youtube,short
+Watch video on YouTube,Youtube du video thooli,youtube,short
+Play cricket highlights,Cricket highlights paadle,youtube,short
+Search Tulu comedy,Tulu comedy naadle,youtube,short
+Open YouTube app,Youtube app open malpule,youtube,short
+Play cartoon on YouTube,Youtube du cartoon paadle,youtube,short
+Search movie trailers,Movie trailers naadle,youtube,short
+Play relaxing music,Relaxing music paadle,youtube,short
+Watch news on YouTube,Youtube du news thooli,youtube,short
+Play cooking videos,Cooking video paadle,youtube,short
+Search Yakshagana video,Yakshagana video naadle,youtube,short
+Play Bollywood songs,Bollywood padya paadle,youtube,short
+Open YouTube music,Youtube music open malpule,youtube,short
+Play video tutorials,Tutorial video paadle,youtube,short
+Search funny videos,Funny video naadle,youtube,short
+Play Tulu drama,Tulu nataka paadle,youtube,short
+Watch dance video,Dance video thooli,youtube,short
+Search science documentary,Science documentary naadle,youtube,short
+Play workout video,Workout video paadle,youtube,short
+Open YouTube homepage,Youtube mukhyaputa open malpule,youtube,short
+Play devotional songs,Bhakti padya paadle,youtube,short
+Search Python tutorials,Python tutorial naadle,youtube,short
+Play guitar music,Guitar music paadle,youtube,short
+Watch IPL live on YouTube,Youtube du IPL live thooli,youtube,short
+Search tech review videos,Tech review videos naadle,youtube,short
+Play bedtime songs,Kullere padya paadle,youtube,short
+Play instrumental music,Instrumental music paadle,youtube,short
+Play the latest Tulu comedy video on YouTube,Youtube du posa tulu comedy video paadle,youtube,medium
+Search for Python programming tutorials on YouTube,Youtube du Python programming tutorial naadle,youtube,medium
+Play Arijit Singh romantic songs on YouTube,Youtube du Arijit Singh da romantic padya paadle,youtube,medium
+Watch Mangalore Yakshagana episode on YouTube,Youtube du Kudla da Yakshagana episode thooli,youtube,medium
+Search for famous street food recipes on YouTube,Youtube du prasiddha street food recipe naadle,youtube,medium
+Play high energy gym workout songs on YouTube,Youtube du gym workout padya paadle,youtube,medium
+Watch the official trailer of Kantara on YouTube,Youtube du Kantara movie da official trailer thooli,youtube,medium
+Search for Tulu drama Cha Parka on YouTube,Youtube du Cha Parka tulu nataka naadle,youtube,medium
+Play soothing flute instrumental music on YouTube,Youtube du flute instrumental music paadle,youtube,medium
+Search for Mangalore coastal fishing documentaries on YouTube,Youtube du Kudla da kadalara meenuta documentary naadle,youtube,medium
+Play recent tech news and gadgets review on YouTube,Youtube du posa tech news bokko gadgets review paadle,youtube,medium
+Watch highlight video of India vs Pakistan cricket match,Youtube du India vs Pakistan cricket highlight thooli,youtube,medium
+Search for simple home gardening tips on YouTube,Youtube du illada tottada tips naadle,youtube,medium
+Play devotional Bhajan songs in Kannada and Tulu,Kannada bokko Tulu bhakti bhajan padya paadle,youtube,medium
+Search for machine learning project walkthroughs on YouTube,Youtube du machine learning project video naadle,youtube,medium
+Play 90s classic Hindi retro hits on YouTube,Youtube du 90s da retro Hindi padya paadle,youtube,medium
+Watch today's breaking news live stream on YouTube,Youtube du ini ta breaking news live stream thooli,youtube,medium
+Search for best budget laptop review 2026 on YouTube,Youtube du 2026 da budget laptop review naadle,youtube,medium
+Play relaxing rain sound video for deep sleep,Yedde nidre g rain sound video paadle,youtube,medium
+Search for Tulu movie Chaali Polilu full video on YouTube,Youtube du Chaali Polilu tulu movie naadle,youtube,medium
+Play quick 15-minute home workout for beginners,Beginners g 15 minute home workout video paadle,youtube,medium
+Watch TED talk on artificial intelligence on YouTube,Youtube du AI bagge TED talk thooli,youtube,medium
+Search for Mangalore traditional Kori Rotti recipe on YouTube,Youtube du Kori Rotti recipe video naadle,youtube,medium
+Play popular English acoustic covers on YouTube,Youtube du popular English acoustic padya paadle,youtube,medium
+Search for world history animated summaries on YouTube,Youtube du jagatthuda charithre da video naadle,youtube,medium
+Play relaxing cafe jazz background music,Cafe jazz background music paadle,youtube,medium
+Search for basic guitar chord lessons for beginners,Guitar beginners lessons video naadle,youtube,medium
+Watch highlights of today's football match on YouTube,Ini ta football match highlights Youtube du thooli,youtube,medium
+Play traditional coastal folk dance video on YouTube,Karavali da janapada dance video paadle,youtube,medium
+Search for space exploration and NASA videos on YouTube,NASA space exploration video naadle,youtube,medium
+Open YouTube and search for Tulu comedy scenes because I want to relax,Yenk relax aavodu aayikora Youtube open maltdh tulu comedy naadle,youtube,complex
+Please play Kantara chapter one trailer on YouTube so that we can watch it together,Yenkulu kulldh thoolere Youtube du Kantara chapter one trailer paadle,youtube,complex
+Search for Python data science tutorials on YouTube before I start working on my assignment,Assignment shuru madpadhu dumbe Youtube du Python data science tutorial naadle,youtube,complex
+Open YouTube and play soothing instrumental music while I study for tomorrow's exam,Yelle da exam g odhonaga Youtube open maltdh soothing instrumental paadle,youtube,complex
+Play the latest episode of Tulu comedy drama on YouTube after my dinner finishes,Oota aayina bokko Youtube du tulu comedy nataka da posa episode paadle,youtube,complex
+Search for quick breakfast recipes on YouTube because I only have 10 minutes to cook,10 minute matra samaya undu aayikora Youtube du quick breakfast recipe naadle,youtube,complex
+Open YouTube and play workout songs with high bass because I am heading to the gym,Gym g povond ulle aayikora Youtube open maltdh high bass workout padya paadle,youtube,complex
+Find how to fix a leaking tap on YouTube before the plumber arrives tomorrow,Plumber yelle barpadhu dumbe tap sari madpunu encha pandh Youtube du thooli,youtube,complex
+Play peaceful morning ragas on YouTube while we are doing meditation and yoga,Meditation bokko yoga madpunaga Youtube du kaande raga padya paadle,youtube,complex
+Open YouTube and search for Mangalore fish curry recipe because guests are coming for lunch,Madhyahnada ootag binnere barond uller aayikora Youtube du Kudla da meen saaru recipe naadle,youtube,complex
+Play lo-fi hip hop beats on YouTube because I need to concentrate on writing code,Code bareyare dhyana korodu aayikora Youtube du lo-fi hip hop beats paadle,youtube,complex
+Search for electric scooter comparison videos on YouTube before making a purchase,Scooter detondhu dumbe Youtube du electric scooter review video naadle,youtube,complex
+Open YouTube and show me the cricket match final over highlights because I missed the live game,Live match thoolere aathiji aayikora Youtube du cricket last over highlights toojale,youtube,complex
+Play Kannada and Tulu retro evergreen hits on YouTube during our road trip,Road trip du povonaga Youtube du Kannada bokko Tulu retro padya paadle,youtube,complex
+Search for beginner yoga routines on YouTube after stretching for five minutes,5 minute stretch maldh bokko Youtube du beginner yoga video naadle,youtube,complex
+Open YouTube and search for laptop disassembly guide before opening the screws,Screws teypadhu dumbe Youtube du laptop open madpuna guide naadle,youtube,complex
+Play rain and thunderstorm sound video on YouTube so that the baby can fall asleep,Kandani nidre aavolindu Youtube du barsada shabda video paadle,youtube,complex
+Search for Raspberry Pi GPIO setup tutorial on YouTube because I am building a project,Hardware project madpere Raspberry Pi GPIO tutorial Youtube du naadle,youtube,complex
+Open YouTube and play Arijit Singh live acoustic concert video in full HD,Full HD du Arijit Singh live concert video Youtube du paadle,youtube,complex
+Find how to make authentic Neer Dosa on YouTube before preparing the batter,Hitthu ready madpadhu dumbe Neer Dosa madpuna vidhana Youtube du naadle,youtube,complex
+Open YouTube and search for world cup winning moment video with original commentary,Original commentary itthina world cup winning video Youtube du naadle,youtube,complex
+Play motivational speech videos on YouTube when I feel tired from studying,Odhdhu besharaavanaga Youtube du motivational speech video paadle,youtube,complex
+Search for organic vegetable farming tips on YouTube before planting the seeds,Bithu paadpadhu dumbe organic krishi tips Youtube du naadle,youtube,complex
+Open YouTube and play 80s rock ballads because we are having a reunion party,Reunion party ittininda Youtube open maltdh 80s rock padya paadle,youtube,complex
+Play bedtime cartoon stories in Kannada on YouTube for the kids before sleeping,Jokulere kullere dumbe Youtube du Kannada cartoon kathe paadle,youtube,complex
+Search for home workout without weights on YouTube because the gym is closed today,Ini gym munchidhi aayikora weights ijji workout video Youtube du naadle,youtube,complex
+Open YouTube and search for smart home automation project tutorials using Python,Python use maltdh smart home project madpuna video Youtube du naadle,youtube,complex
+Play traditional Yakshagana prasanga on YouTube while my grandfather is relaxing,Ajjer kullonaga Youtube du Yakshagana prasanga paadle,youtube,complex
+Search for quick photo editing tutorial on YouTube before uploading pictures to Instagram,Instagram g photo paadpadhu dumbe photo editing tutorial Youtube du naadle,youtube,complex
+Open YouTube and play piano relaxation melody because I have a headache,Mandhe beene undu aayikora Youtube du piano relaxation music paadle,youtube,complex
+Search for electric car battery maintenance on YouTube before going on a long drive,Long drive povadhu dumbe EV battery maintenance video Youtube du naadle,youtube,complex
+Open YouTube and play coastal Yakshagana padhyana songs with Chende beats,Chende shabda itthina Yakshagana padya Youtube du paadle,youtube,complex
+Play English vocabulary improvement lessons on YouTube before taking the interview,Interview g dumbe English vocabulary lessons Youtube du thooli,youtube,complex
+Search for how to bake a chocolate cake in cooker on YouTube for my sister's birthday,Meggede birthday g cooker du cake madpuna video Youtube du naadle,youtube,complex
+Open YouTube and play soothing flute meditation tracks while we light the lamp,Deepa belagonaga Youtube du flute meditation music paadle,youtube,complex
+Search for car tyre puncture repair kit guide on YouTube before driving to Goa,Goa g povadhu dumbe tyre repair kit video Youtube du naadle,youtube,complex
+Open YouTube and play viral Tulu comedy clips from private bus conductors,Private bus conductor comedy clips Youtube du naadle,youtube,complex
+Search for best budget smartphones under 20000 on YouTube before buying online,Online du kharidhey madpadhu dumbe 20000 ullada best phone video naadle,youtube,complex
+Play slow tempo instrumental guitar chords on YouTube while reading a novel,Pusthaka odhonaga Youtube du slow guitar chords paadle,youtube,complex
+Open YouTube and search for how to set up FastAPI with React frontend step by step,FastAPI bokko React project setup madpuna video Youtube du naadle,youtube,complex
+Open Spotify,Spotify open malpule,spotify,short
+Play songs on Spotify,Spotify du padya paadle,spotify,short
+Search on Spotify,Spotify du naadle,spotify,short
+Play Tulu songs on Spotify,Spotify du tulu padya paadle,spotify,short
+Play playlist on Spotify,Spotify du playlist paadle,spotify,short
+Play romantic songs,Romantic padya paadle,spotify,short
+Search podcast on Spotify,Spotify du podcast naadle,spotify,short
+Play Kannada hits,Kannada hit padya paadle,spotify,short
+Play relaxing songs,Relaxing padya paadle,spotify,short
+Play party music on Spotify,Spotify du party music paadle,spotify,short
+Search artist on Spotify,Spotify du artist naadle,spotify,short
+Play Hindi songs,Hindi padya paadle,spotify,short
+Play English pop songs,English pop padya paadle,spotify,short
+Play devotional songs on Spotify,Spotify du bhakti padya paadle,spotify,short
+Play workout tracks,Workout padya paadle,spotify,short
+Search album on Spotify,Spotify du album naadle,spotify,short
+Play top 50 India,Top 50 India playlist paadle,spotify,short
+Play acoustic songs,Acoustic padya paadle,spotify,short
+Open Spotify player,Spotify player open malpule,spotify,short
+Play AR Rahman songs,AR Rahman padya paadle,spotify,short
+Play Sid Sriram songs,Sid Sriram padya paadle,spotify,short
+Play retro playlist,Retro playlist paadle,spotify,short
+Search Tulu album,Tulu album naadle,spotify,short
+Play focus beats on Spotify,Spotify du focus beats paadle,spotify,short
+Play driving music,Driving music paadle,spotify,short
+Play chill hits,Chill hits paadle,spotify,short
+Play jazz playlist,Jazz playlist paadle,spotify,short
+Play Bollywood dance tracks,Bollywood dance padya paadle,spotify,short
+Play slow songs,Slow padya paadle,spotify,short
+Play trending tracks,Trending tracks paadle,spotify,short
+Play the latest Kannada movie playlist on Spotify,Spotify du posa Kannada movie playlist paadle,spotify,medium
+Search for Arijit Singh romantic hits on Spotify,Spotify du Arijit Singh da romantic hits naadle,spotify,medium
+Play coastal Tulu folk songs playlist on Spotify,Spotify du Karavali Tulu janapada padya paadle,spotify,medium
+Search for Joe Rogan podcast episodes on Spotify,Spotify du Joe Rogan podcast naadle,spotify,medium
+Play upbeat EDM party tracks for the weekend,Weekend party g EDM tracks Spotify du paadle,spotify,medium
+Search for classic SPB Kannada melodies on Spotify,Spotify du SPB da evergreen Kannada padya naadle,spotify,medium
+Play soothing ambient sounds for deep meditation,Meditation g soothing ambient music Spotify du paadle,spotify,medium
+Search for Bollywood 2000s nostalgic songs on Spotify,Spotify du 2000s da Bollywood padya naadle,spotify,medium
+Play Punjabi bhangra dance beats on Spotify,Spotify du Punjabi bhangra dance beats paadle,spotify,medium
+Search for rock bands playlist on Spotify,Spotify du rock bands playlist naadle,spotify,medium
+Play top global 50 songs playlist on Spotify,Spotify du top global 50 playlist paadle,spotify,medium
+Search for relaxing piano sleep music on Spotify,Spotify du piano sleep music naadle,spotify,medium
+Play Taylor Swift popular album songs on Spotify,Spotify du Taylor Swift da padya paadle,spotify,medium
+Search for true crime podcasts in Kannada on Spotify,Spotify du Kannada crime podcast naadle,spotify,medium
+Play motivational workout hype music on Spotify,Spotify du gym hype workout music paadle,spotify,medium
+Search for Ilayaraja Tamil classic hits on Spotify,Spotify du Ilayaraja Tamil hits naadle,spotify,medium
+Play indie pop acoustic songs on Spotify,Spotify du indie pop acoustic padya paadle,spotify,medium
+Search for deep study focus lo-fi playlist on Spotify,Spotify du study lo-fi playlist naadle,spotify,medium
+Play retro 70s disco dance hits on Spotify,Spotify du 70s disco hits paadle,spotify,medium
+Search for Vijay Prakash hit melodies on Spotify,Spotify du Vijay Prakash hit padya naadle,spotify,medium
+Play relaxing acoustic covers for evening tea,Baiyada cha g acoustic covers Spotify du paadle,spotify,medium
+Search for Bollywood heartbreak songs on Spotify,Spotify du Bollywood sad songs naadle,spotify,medium
+Play traditional Carnatic classical music on Spotify,Spotify du Karnataka classical padya paadle,spotify,medium
+Search for technology and coding podcasts on Spotify,Spotify du tech podcast naadle,spotify,medium
+Play fast rhythm running playlist on Spotify,Running g fast rhythm playlist paadle,spotify,medium
+Search for Kannada indie artists songs on Spotify,Spotify du Kannada indie padya naadle,spotify,medium
+Play cafe bossa nova background music on Spotify,Spotify du cafe bossa nova music paadle,spotify,medium
+Search for Malayalam soothing melodies on Spotify,Spotify du Malayalam melodies naadle,spotify,medium
+Play peaceful morning chants on Spotify,Spotify du kaande da bhakti chants paadle,spotify,medium
+Search for gaming synthwave playlist on Spotify,Spotify du synthwave gaming music naadle,spotify,medium
+Open Spotify and search for Arijit Singh melodies because I am feeling tired,Besharaathini aayikora Spotify open maltdh Arijit Singh padya naadle,spotify,complex
+Please play upbeat party music on Spotify so that we can dance during the birthday celebration,Birthday party du naleyare Spotify du upbeat party music paadle,spotify,complex
+Open Spotify and play deep focus lo-fi beats while I work on my computer,Computer du bele madponaga Spotify du lo-fi focus beats paadle,spotify,complex
+Search for Kannada retro songs on Spotify before my parents arrive home,Ammer appe illag barpadhu dumbe Spotify du Kannada retro padya naadle,spotify,complex
+Play relaxing acoustic melodies on Spotify after I finish cleaning my bedroom,Kone shubha madhdha bokko Spotify du relaxing acoustic padya paadle,spotify,complex
+Open Spotify and play high tempo gym songs because I am doing cardio exercises,Cardio exercise madponaga Spotify du fast workout songs paadle,spotify,complex
+Find Tulu comedy audio clips on Spotify while we are travelling by car to Mangalore,Kudla g car du povonaga Spotify du tulu comedy audio naadle,spotify,complex
+Open Spotify and play rain ambience track so that I can concentrate on my reading,Odhere dhyana korere Spotify du rain ambience track paadle,spotify,complex
+Search for motivation and business podcasts on Spotify before starting the workday,Bele shuru madpadhu dumbe Spotify du business podcast naadle,spotify,complex
+Play classical violin instrumental pieces on Spotify when we sit for dinner tonight,Ini rathre ootag kullonaga Spotify du violin instrumental paadle,spotify,complex
+Open Spotify and play 90s Bollywood dance hits because our friends are visiting,Dosthulu barond uller aayikora Spotify du 90s Bollywood dance padya paadle,spotify,complex
+Play peaceful flute songs on Spotify while grandmother is resting in the afternoon,Ajji kullonaga Spotify du santha flute padya paadle,spotify,complex
+Search for English pronunciation and speaking podcasts on Spotify to prepare for the test,Exam prepare aavolindu Spotify du English speaking podcast naadle,spotify,complex
+Open Spotify and play road trip rock anthems while we drive along the highway,Highway du car chalponaga Spotify du road trip rock music paadle,spotify,complex
+Play calming sleep music on Spotify after switching off all the bedroom lights,Kone da light switch off madhdha bokko Spotify du sleep music paadle,spotify,complex
+Open Spotify and search for Armaan Malik romantic songs because it is raining outside,Pidaayi barsa barond undu aayikora Spotify du Armaan Malik romantic padya naadle,spotify,complex
+Play upbeat EDM workout music on Spotify before my energy levels drop,Energy kammi aavadhukku dumbe Spotify du EDM workout track paadle,spotify,complex
+Search for history storytelling podcasts on Spotify while cooking dinner,Rathre oota madponaga Spotify du charithre kathe podcast naadle,spotify,complex
+Open Spotify and play slow acoustic pop songs because I want to relax on the balcony,Balcony du kullere Spotify du slow acoustic pop padya paadle,spotify,complex
+Play devotional Bhajan melodies on Spotify while mom is performing pooja in the morning,Appe pooje madponaga Spotify du bhakti bhajan padya paadle,spotify,complex
+Open Spotify and search for AR Rahman 90s hits playlist for our weekend evening,Weekend baiyag Spotify du AR Rahman 90s hits playlist naadle,spotify,complex
+Play coffee shop jazz background playlist on Spotify while writing articles,Article bareyonaga Spotify du coffee shop jazz music paadle,spotify,complex
+Search for Hindi ghazals on Spotify when the weather becomes cool tonight,Ini rathre chali aavanaga Spotify du Hindi ghazals naadle,spotify,complex
+Open Spotify and play heavy metal workout songs because I am lifting heavy weights,Heavy weights dettonaga Spotify du heavy metal gym music paadle,spotify,complex
+Play soothing ambient ocean wave sounds on Spotify so that my stress goes away,Stress kammi aavolindu Spotify du kadala shabda paadle,spotify,complex
+Search for mental health and mindfulness podcasts on Spotify before going to bed,Kullere dumbe Spotify du mindfulness mental health podcast naadle,spotify,complex
+Open Spotify and play 2000s Kannada movie tracks while riding the scooter,Scooter chalponaga Spotify du 2000s Kannada movie padya paadle,spotify,complex
+Play relaxing piano melodies on Spotify while drinking evening tea,Baiyada cha parponaga Spotify du piano melodies paadle,spotify,complex
+Search for Malayalam romantic acoustic tracks on Spotify before the mood passes,Spotify du Malayalam romantic acoustic padya naadle,spotify,complex
+Open Spotify and play Taylor Swift breakup songs because I am feeling emotional,Spotify du Taylor Swift sad padya paadle,spotify,complex
+Play fast tempo running tracks on Spotify while jogging in the stadium park,Stadium du jog madponaga Spotify du fast tempo running music paadle,spotify,complex
+Search for self improvement podcasts on Spotify before planning my monthly goals,Monthly goal plan madpadhu dumbe Spotify du self improvement podcast naadle,spotify,complex
+Open Spotify and play vintage 80s synthpop tracks during our evening hangout,Baiyag dosthula ottugu Spotify du 80s synthpop padya paadle,spotify,complex
+Play classical sitar instrumental melody on Spotify while reading spiritual literature,Adhyatmika pusthaka odhonaga Spotify du sitar instrumental paadle,spotify,complex
+Search for trending regional folk fusion on Spotify because I want to discover new music,Posa music discover madpere Spotify du folk fusion padya naadle,spotify,complex
+Open Spotify and play soft guitar chords because the house is quiet right now,Ill shanthi undu aayikora Spotify du soft guitar chords paadle,spotify,complex
+Play celebratory wedding songs on Spotify while family is preparing decorations,Decoration madponaga Spotify du madime sambhrama padya paadle,spotify,complex
+Search for bedtime audio stories in English on Spotify for little kids,Jokulere kullere Spotify du bedtime English stories naadle,spotify,complex
+Open Spotify and play energetic workout beats before 6 AM running starts,6 gante running shuru madpadhu dumbe Spotify du energetic workout music paadle,spotify,complex
+Play soothing chillout lounge tracks on Spotify after returning home from office,Office dhu banna bokko Spotify du chillout lounge music paadle,spotify,complex
+Google search,Google search malpule,google_search,short
+Search on Google,Google du naadle,google_search,short
+Search Mangalore tourist places,Kudla da tourist places naadle,google_search,short
+Google best restaurants,Yedde restaurant Google du naadle,google_search,short
+Search cricket score,Cricket score Google du naadle,google_search,short
+Google share market today,Ini ta share market Google du naadle,google_search,short
+Search train timings,Train timings Google du naadle,google_search,short
+Google flight status,Flight status Google du naadle,google_search,short
+Search gold rate today,Ini ta bangarada bele Google du naadle,google_search,short
+Google petrol price in Mangalore,Kudla da petrol bele Google du naadle,google_search,short
+Search hospital near me,Muttada hospital Google du naadle,google_search,short
+Google meaning of Tulu word,Tulu padada artha Google du naadle,google_search,short
+Search colleges in Udupi,Odipu da colleges Google du naadle,google_search,short
+Google today's headline news,Ini ta mukhya news Google du naadle,google_search,short
+Search bank IFSC code,Bank IFSC code Google du naadle,google_search,short
+Google pin code of Mangalore,Kudla da pin code Google du naadle,google_search,short
+Search cinema showtimes,Cinema showtimes Google du naadle,google_search,short
+Google history of Mangalore,Kudla da charithre Google du naadle,google_search,short
+Search recipes on Google,Recipe Google du naadle,google_search,short
+Google bus routes to Bangalore,Bengalooru bus route Google du naadle,google_search,short
+Search electricity bill payment,Current bill payment Google du naadle,google_search,short
+Google dollar to rupee rate,Dollar rupee rate Google du naadle,google_search,short
+Search diesel rate today,Ini ta diesel rate Google du naadle,google_search,short
+Google government holidays 2026,2026 da sarkari holidays Google du naadle,google_search,short
+Search nearby pharmacy,Muttada medical shop Google du naadle,google_search,short
+Google traffic to Udupi,Odipu margada traffic Google du naadle,google_search,short
+Search silver rate,Bella da rate Google du naadle,google_search,short
+Google visa requirements,Visa requirements Google du naadle,google_search,short
+Search job openings,Job openings Google du naadle,google_search,short
+Google latest technology updates,Latest technology updates Google du naadle,google_search,short
+Search on Google for the best seafood restaurants in Mangalore,Kudla du best meen oota restaurant Google du naadle,google_search,medium
+Google the train timings from Mangalore to Bangalore tonight,Ini rathre Kudla dhu Bengalooru train timings Google du naadle,google_search,medium
+Search for 24-hour medical stores near my current location,Itthe muttada 24-hour medical shop Google du naadle,google_search,medium
+Google the current petrol and diesel prices in Udupi district,Odipu jille da petrol diesel rate Google du naadle,google_search,medium
+Search for famous historical temples to visit in Coastal Karnataka,Karavali da prasiddha devalaya Google du naadle,google_search,medium
+Google today's gold and silver rate per gram in Mangalore,Ini Kudla da gram bangara bella rate Google du naadle,google_search,medium
+Search for Karnataka government bus booking portal on Google,KSRTC bus booking portal Google du naadle,google_search,medium
+Google the symptom checker for seasonal cold and fever,Chali jwara da lakshana Google du naadle,google_search,medium
+Search on Google for direct flights between Mangalore and Mumbai,Kudla Mumbai direct flight Google du naadle,google_search,medium
+Google the recipe for authentic Mangalorean Ghee Roast chicken,Kudla da Ghee Roast chicken recipe Google du naadle,google_search,medium
+Search for best engineering colleges affiliated to VTU in Mangalore,Kudla da VTU engineering colleges Google du naadle,google_search,medium
+Google the live score of India versus Australia test match,India Australia test match live score Google du naadle,google_search,medium
+Search for nearby ATM with cash availability in Udupi,Odipu du cash itthina ATM Google du naadle,google_search,medium
+Google the official syllabus for competitive civil service exams,Civil service exam da official syllabus Google du naadle,google_search,medium
+Search for passport seva kendra appointment slots in Mangalore,Kudla da passport appointment slots Google du naadle,google_search,medium
+Google the distance and driving route from Mangalore to Goa,Kudla dhu Goa g distance route Google du naadle,google_search,medium
+Search on Google for popular beach resorts in Malpe Udupi,Malpe beach resorts Google du naadle,google_search,medium
+Google the daily exchange rate of US Dollar against Indian Rupee,Dollar INR exchange rate Google du naadle,google_search,medium
+Search for organic grocery stores near Kadri in Mangalore,Kadri muttada organic shop Google du naadle,google_search,medium
+Google the customer care phone number of Karnataka Bank,Karnataka Bank customer care number Google du naadle,google_search,medium
+Search for upcoming cultural festival events in Coastal Karnataka,Karavali da uthsava karyakrama Google du naadle,google_search,medium
+Google the best budget 5G smartphones launched this month,Ee thingoluda budget 5G phone Google du naadle,google_search,medium
+Search for government subsidy schemes for solar rooftop installation,Solar rooftop sarkari subsidy Google du naadle,google_search,medium
+Google the latest election updates and counting results live,Election updates live results Google du naadle,google_search,medium
+Search for reliable laptop repair technicians in Hampankatta,Hampankatta da laptop repair shop Google du naadle,google_search,medium
+Google the driving license renewal procedure on Sarathi portal,Sarathi portal driving license renewal Google du naadle,google_search,medium
+Search for the nearest diagnostic laboratory for blood tests,Blood test diagnostic lab Google du naadle,google_search,medium
+Google the list of public bank holidays in Karnataka for March,March thingoluda bank holidays Google du naadle,google_search,medium
+Search on Google for best homestays in Chikmagalur coffee estates,Chikmagalur homestays Google du naadle,google_search,medium
+Google the nutritional value and calorie count of tender coconut,Bonda da calorie bokko nutrition Google du naadle,google_search,medium
+Google the best seafood restaurants in Mangalore because we have visitors from Bangalore today,Bengalooru dhu binnere banna aayikora Kudla da best meen oota restaurant Google du naadle,google_search,complex
+Please search on Google for train timings from Mangalore to Bangalore before 6 PM,6 gante dhu dumbe Kudla dhu Bengalooru train timings Google du naadle,google_search,complex
+Search Google for emergency medical stores near me because someone has high fever at home,Illadhu jwara aathini aayikora muttada emergency medical shop Google du naadle,google_search,complex
+Google the current gold price in Mangalore before we visit the jewellery showroom this afternoon,Madhyahna jewellery shop g povadhu dumbe Kudla da bangarada rate Google du naadle,google_search,complex
+Search Google for petrol prices in Kerala border because it is cheaper than Karnataka,Kerala border du petrol rate kammi aayikora Google du petrol rate naadle,google_search,complex
+Google how to apply for an international driving permit before travelling abroad next week,Pida ooru g povadhu dumbe international driving permit apply madpunu Google du naadle,google_search,complex
+Search on Google for traffic conditions on the Western Ghats road because of heavy monsoon rain,Monsoon barsa ittininda ghat road traffic Google du check malpule,google_search,complex
+Google the procedure to link Aadhaar card with PAN card before the deadline ends,Last date mugiyadhu dumbe Aadhaar PAN link madpuna procedure Google du naadle,google_search,complex
+Search for vegetarian hotels open early morning in Udupi because our bus arrives at 5 AM,Kaande 5 gante bus banna aayikora Odipu kaande hotel Google du naadle,google_search,complex
+Google the required documents for passport renewal before going to the appointment center,Passport office g povadhu dumbe document list Google du naadle,google_search,complex
+Search on Google for the fastest driving route from Mangalore to Mysore avoiding potholes,Gundi marga bidadhu Kudla dhu Mysuru fast route Google du naadle,google_search,complex
+Google whether the National Highway to Bangalore is open after landslide warnings,Landslide hecharike bokko highway open unda Google du naadle,google_search,complex
+Search for the customer support number of Open-Meteo API because my weather plugin failed,Weather plugin fail aathini aayikora API customer care Google du naadle,google_search,complex
+Google top tourist attractions in Udupi suitable for elderly parents with wheelchair access,Wheelchair access itthina Odipu tourist places Google du naadle,google_search,complex
+Search Google for bank locker charges and availability in State Bank of India Mangalore,SBI Kudla da locker charges Google du naadle,google_search,complex
+Google the symptoms of dengue fever and remedies before consulting the doctor tomorrow,Doctor g thojapadhu dumbe dengue lakshana Google du naadle,google_search,complex
+Search for best budget hotels near Mangalore railway station with parking facility,Car parking itthina railway station muttada hotel Google du naadle,google_search,complex
+Google the bus timings from Udupi to Dharmasthala for tomorrow morning pilgrimage,Yelle kaande Dharmasthala g bus timings Google du naadle,google_search,complex
+Search on Google for step by step installation of PyTorch on Windows with CUDA support,Windows du CUDA PyTorch install madpuna guide Google du naadle,google_search,complex
+Google how to protect home electronic appliances from high voltage surges during storms,Storm banna appliance rakshane madpunu Google du naadle,google_search,complex
+Search for the nearest electric vehicle fast charging station on Mangalore-Bangalore road,EV fast charging station highway du Google du naadle,google_search,complex
+Google the list of essential medicines to pack before going on a high altitude mountain trek,Trek g povadhu dumbe medicine list Google du naadle,google_search,complex
+Search on Google for wholesale organic fertilizer suppliers in Puttur and Sullia region,Puttur Sullia da organic gobbara wholesale Google du naadle,google_search,complex
+Google the rules and luggage limits for domestic flights in India before packing bags,Luggage pack madpadhu dumbe flight rules Google du naadle,google_search,complex
+Search for trusted real estate property lawyers in Mangalore for land document verification,Land document check madpare lawyer Google du naadle,google_search,complex
+Google the procedure to transfer vehicle registration from Karnataka to Kerala state,Vehicle registration transfer madpuna rules Google du naadle,google_search,complex
+Search on Google for child vaccination chart and schedule recommended in India,Jokulere vaccination schedule Google du naadle,google_search,complex
+Google the difference between ByT5-Small and standard T5 models for low resource languages,ByT5 bokko T5 model da vyathyasa Google du naadle,google_search,complex
+Search for reliable laptop screen replacement service centers with genuine parts in Udupi,Original screen replacement shop Odipu du Google du naadle,google_search,complex
+Google how to clean solar panels safely at home without scratching the glass,Solar panel clean madpuna tips Google du naadle,google_search,complex
+Search on Google for water purifier repair mechanics near Kadri Mangalore today,Kadri muttada water purifier mechanic Google du naadle,google_search,complex
+Google the bus fare and departure timings for Volvo multi-axle bus to Hyderabad,Hyderabad Volvo bus fare timings Google du naadle,google_search,complex
+Search for high protein vegetarian diet meal plan for weight loss on Google,Weight loss vegetarian diet chart Google du naadle,google_search,complex
+Google the helpline number for reporting cyber crime fraud in Karnataka state,Cyber crime helpline number Google du naadle,google_search,complex
+Search on Google for best camera settings for night photography on mobile phones,Night photography camera settings Google du naadle,google_search,complex
+Google how to grow jasmine flowers commercially in coastal sandy soil,Karavali mannadhu mallige krishi madpunu Google du naadle,google_search,complex
+Search for upcoming job fairs and recruitment drives in Mangalore for IT freshers,Freshers IT job fair Kudla du Google du naadle,google_search,complex
+Google how to reset Wi-Fi router password when forgotten without losing connection data,Wi-Fi router password reset madpunu Google du naadle,google_search,complex
+Search on Google for the history of Tulu script and its recognition in the 8th schedule,Tulu lipi charithre Google du naadle,google_search,complex
+Google the best time of year to visit Coastal Karnataka beaches for water sports,Kadalare water sports g best season Google du naadle,google_search,complex
+Open Notepad,Notepad open malpule,system,short
+Open Calculator,Calculator open malpule,system,short
+Open Chrome,Chrome open malpule,system,short
+Open Paint,Paint open malpule,system,short
+Open Task Manager,Task Manager open malpule,system,short
+Open File Explorer,File Explorer open malpule,system,short
+Open Command Prompt,Command Prompt open malpule,system,short
+Open Terminal,Terminal open malpule,system,short
+Open VS Code,VS Code open malpule,system,short
+Open Word,Word open malpule,system,short
+Open Excel,Excel open malpule,system,short
+Open PowerPoint,PowerPoint open malpule,system,short
+Open Telegram,Telegram open malpule,system,short
+Open WhatsApp,WhatsApp open malpule,system,short
+Open Discord,Discord open malpule,system,short
+Open VLC Player,VLC player open malpule,system,short
+Open Settings,Settings open malpule,system,short
+Open Control Panel,Control Panel open malpule,system,short
+Open Camera,Camera open malpule,system,short
+Open Clock,Clock open malpule,system,short
+Open Edge,Edge browser open malpule,system,short
+Open Firefox,Firefox open malpule,system,short
+Open PyCharm,PyCharm open malpule,system,short
+Open Steam,Steam open malpule,system,short
+Open OBS Studio,OBS Studio open malpule,system,short
+Open Recycle Bin,Recycle Bin open malpule,system,short
+Open Downloads folder,Downloads folder open malpule,system,short
+Open Documents folder,Documents folder open malpule,system,short
+Open Pictures folder,Pictures folder open malpule,system,short
+Open Music folder,Music folder open malpule,system,short
+Open Notepad application to write notes,Notes bareyare Notepad open malpule,system,medium
+Open Calculator to calculate my monthly expenses,Kharji lekka madpare Calculator open malpule,system,medium
+Open Google Chrome browser immediately,Google Chrome browser begene open malpule,system,medium
+Open Microsoft Word for typing documents,Document type madpare Microsoft Word open malpule,system,medium
+Open Microsoft Excel sheet for account budget,Budget lekka g Microsoft Excel open malpule,system,medium
+Open Visual Studio Code for Python programming,Python coding madpare VS Code open malpule,system,medium
+Open File Explorer to browse my C drive files,C drive files thoolere File Explorer open malpule,system,medium
+Open Command Prompt as administrator,Administrator mode du CMD open malpule,system,medium
+Open Paint to draw a quick sketch,Sketch madpare Paint open malpule,system,medium
+Open WhatsApp desktop to check incoming messages,Messages thoolere WhatsApp desktop open malpule,system,medium
+Open Telegram desktop application,Telegram desktop application open malpule,system,medium
+Open Discord to join the team voice channel,Voice channel join aavolindu Discord open malpule,system,medium
+Open VLC Media Player to watch downloaded movie,Movie thoolere VLC media player open malpule,system,medium
+Open Windows Settings to check sound output,Sound check madpare Settings open malpule,system,medium
+Open Task Manager to see memory usage,Memory usage thoolere Task Manager open malpule,system,medium
+Open System Control Panel for device settings,Device settings g Control Panel open malpule,system,medium
+Open Camera application to take a photo,Photo dettolindu Camera open malpule,system,medium
+Open Clock app to view world time zones,World clock thoolere Clock app open malpule,system,medium
+Open Microsoft PowerPoint for project presentation,Presentation madpare PowerPoint open malpule,system,medium
+Open PyCharm IDE for machine learning project,ML project g PyCharm open malpule,system,medium
+Open Steam client to check game updates,Game updates thoolere Steam open malpule,system,medium
+Open OBS Studio to start screen recording,Screen record madpare OBS Studio open malpule,system,medium
+Open Firefox browser in private mode,Firefox browser private mode du open malpule,system,medium
+Open Downloads directory on my laptop,Laptop da Downloads folder open malpule,system,medium
+Open Documents folder to find my resume,Resume naadere Documents folder open malpule,system,medium
+Open Microsoft Edge browser for office work,Office bele g Microsoft Edge open malpule,system,medium
+Open Recycle Bin to restore deleted files,Deleted files restore madpare Recycle Bin open malpule,system,medium
+Open Network Connections window,Network settings window open malpule,system,medium
+Open Windows Terminal with PowerShell tab,PowerShell terminal open malpule,system,medium
+Open Pictures folder to view vacation photos,Trip da photos thoolere Pictures folder open malpule,system,medium
+Open Notepad and write down the grocery list because I am going shopping later,Shopping povodhu aayikora saman list bareyare Notepad open malpule,system,complex
+Please open Calculator so that I can quickly sum up the restaurant bill,Restaurant bill lekka madpare Calculator begene open malpule,system,complex
+Open Google Chrome browser and navigate to the project dashboard page,Project dashboard thoolere Google Chrome open malpule,system,complex
+Open Microsoft Word because I need to draft an urgent leave application letter,Leave letter bareyare Microsoft Word open malpule,system,complex
+Open Visual Studio Code and load the ISIRI repository workspace folder,ISIRI project workspace open madpare VS Code open malpule,system,complex
+Open File Explorer and show the downloaded dataset files in the folder,Dataset folder thoolere File Explorer open malpule,system,complex
+Open Task Manager because my computer is running slow and lagging,Computer slow aavond undu aayikora Task Manager open malpule,system,complex
+Open Paint application before I start explaining the architecture diagram,Architecture diagram explain madpadhu dumbe Paint open malpule,system,complex
+Open WhatsApp desktop because my colleague sent an important assignment file,Colleague file kadapudhina aayikora WhatsApp desktop open malpule,system,complex
+Open Command Prompt and change directory to the backend server folder,Backend folder g povolindu Command Prompt open malpule,system,complex
+Open Microsoft Excel sheet so that we can enter the monthly budget numbers,Monthly budget numbers paadere Microsoft Excel open malpule,system,complex
+Open VLC Media Player and play the downloaded conference lecture video,Conference video thoolere VLC media player open malpule,system,complex
+Open Windows Settings to configure microphone input sensitivity for voice assistant,Mic sensitivity adjust madpare Windows Settings open malpule,system,complex
+Open Camera application so that we can test facial recognition functionality,Face recognition test madpare Camera open malpule,system,complex
+Open OBS Studio and prepare the audio input capture for live streaming,Live stream g audio ready madpare OBS Studio open malpule,system,complex
+Open Discord application before the group project discussion meeting begins,Project meeting shuru aavanadha dumbe Discord open malpule,system,complex
+Open Telegram desktop to send the project documentation PDF to the group,Project PDF kadapere Telegram desktop open malpule,system,complex
+Open PyCharm IDE and activate the virtual environment for AI engine development,AI engine dev g PyCharm open maltdh venv activate malpule,system,complex
+Open Windows Terminal and run the FastAPI server command in background,FastAPI server run madpare Windows Terminal open malpule,system,complex
+Open Microsoft PowerPoint because we have to present our seminar slides tomorrow,Yelle seminar slides present madpere PowerPoint open malpule,system,complex
+Open Notepad to paste the API key before closing the browser tab,Browser close madpadhu dumbe API key paste madpare Notepad open malpule,system,complex
+Open File Explorer and open the datasets processed folder directly,Datasets processed folder open madpare File Explorer open malpule,system,complex
+Open Control Panel to check the installed sound drivers and hardware,Sound drivers check madpare Control Panel open malpule,system,complex
+Open Steam application because my friends are inviting me to play multiplayer games,Gobbare dosthulu lemponaga Steam open malpule,system,complex
+Open Clock application and show the stopwatch timer for measuring reaction speed,Reaction speed measure madpare Clock stopwatch open malpule,system,complex
+Open Google Chrome and open GitHub repository pull request page,GitHub pull request thoolere Chrome open malpule,system,complex
+Open Recycle Bin to permanently delete temporary files to free up disk space,Disk space free madpare Recycle Bin open malpule,system,complex
+Open Downloads folder and sort the files by recent date to find the zip archive,Zip file naadere Downloads folder date prakara sort malpule,system,complex
+Open Microsoft Edge and open the college results portal website,College results portal thoolere Edge open malpule,system,complex
+Open Documents folder and create a new backup directory for ISIRI project,ISIRI backup create madpare Documents folder open malpule,system,complex
+Open Paint application and resize the screenshot image before saving,Screenshot image resize madpare Paint open malpule,system,complex
+Open Task Manager and terminate any unresponsive background python processes,Hang aayina python close madpare Task Manager open malpule,system,complex
+Open WhatsApp desktop and reply to the group chat message,Group chat g reply madpare WhatsApp open malpule,system,complex
+Open VS Code editor and open the intent detector python file for editing,Intent detector file open madpare VS Code open malpule,system,complex
+Open Command Prompt and check python and pip installed package versions,Python package versions check madpare CMD open malpule,system,complex
+Open File Explorer and navigate to pictures folder to transfer mobile photos,Mobile photos copy madpare Pictures folder open malpule,system,complex
+Open Calculator application and convert US dollars to Indian rupees,Dollar rupees convert madpare Calculator open malpule,system,complex
+Open Windows Settings to check if Bluetooth headset is connected properly,Bluetooth headset check madpare Settings open malpule,system,complex
+Open VLC Player and open subtitles file for the documentary video,Subtitles file open madpare VLC open malpule,system,complex
+Open Notepad and write down today's meeting action items before forgetting,Action items madhapadhu dumbe bareyare Notepad open malpule,system,complex
+Open browser,Browser open malpule,browser,short
+Open Google,Google open malpule,browser,short
+Open Instagram,Instagram open malpule,browser,short
+Open Gmail,Gmail open malpule,browser,short
+Open GitHub,GitHub open malpule,browser,short
+Open LinkedIn,LinkedIn open malpule,browser,short
+Open ChatGPT,ChatGPT open malpule,browser,short
+Open Netflix,Netflix open malpule,browser,short
+Open Facebook,Facebook open malpule,browser,short
+Open Twitter,Twitter open malpule,browser,short
+Open Reddit,Reddit open malpule,browser,short
+Open Amazon,Amazon open malpule,browser,short
+Open Flipkart,Flipkart open malpule,browser,short
+Open Wikipedia,Wikipedia open malpule,browser,short
+Open Maps,Google Maps open malpule,browser,short
+Open Hotstar,Hotstar open malpule,browser,short
+Open Prime Video,Prime Video open malpule,browser,short
+Open Swiggy,Swiggy open malpule,browser,short
+Open Zomato,Zomato open malpule,browser,short
+Open Cricbuzz,Cricbuzz open malpule,browser,short
+Open Stack Overflow,Stack Overflow open malpule,browser,short
+Open Kaggle,Kaggle open malpule,browser,short
+Open Google Colab,Google Colab open malpule,browser,short
+Open Canva,Canva open malpule,browser,short
+Open Notion,Notion open malpule,browser,short
+Open Google Drive,Google Drive open malpule,browser,short
+Open Google Docs,Google Docs open malpule,browser,short
+Open Google Sheets,Google Sheets open malpule,browser,short
+Open IRCTC,IRCTC website open malpule,browser,short
+Open KSRTC,KSRTC website open malpule,browser,short
+Open Gmail inbox to check unread email messages,Unread emails thoolere Gmail open malpule,browser,medium
+Open GitHub profile to review recent commits,Recent commits thoolere GitHub open malpule,browser,medium
+Open LinkedIn to connect with professional colleagues,Colleagues connect aavolindu LinkedIn open malpule,browser,medium
+Open ChatGPT website to ask coding questions,Coding prashne kelere ChatGPT open malpule,browser,medium
+Open Instagram to view friend stories and posts,Stories thoolere Instagram open malpule,browser,medium
+Open Amazon online shopping website for groceries,Saman kharidhey g Amazon open malpule,browser,medium
+Open Flipkart to check today's discount deals,Discount deals thoolere Flipkart open malpule,browser,medium
+Open Google Maps to find fastest route to Udupi,Odipu marga naadere Google Maps open malpule,browser,medium
+Open Netflix to watch trending movie series,Trending movie thoolere Netflix open malpule,browser,medium
+Open Cricbuzz website for live cricket scores,Live score thoolere Cricbuzz open malpule,browser,medium
+Open Stack Overflow to debug Python exception errors,Python error debug madpare Stack Overflow open malpule,browser,medium
+Open Google Colab to run GPU machine learning notebook,ML notebook run madpare Google Colab open malpule,browser,medium
+Open Kaggle datasets page to download NLP corpus,NLP corpus download madpare Kaggle open malpule,browser,medium
+Open Notion workspace for organizing project tasks,Tasks organize madpare Notion open malpule,browser,medium
+Open Google Drive to upload backup zip archive,Backup upload madpare Google Drive open malpule,browser,medium
+Open Canva website to design conference poster presentation,Poster design madpare Canva open malpule,browser,medium
+Open IRCTC website to check train seat availability,Train seat check madpare IRCTC open malpule,browser,medium
+Open Swiggy food delivery website for lunch,Madhyahnada ootag Swiggy open malpule,browser,medium
+Open Zomato to explore nearby rating restaurants,Restaurants rating thoolere Zomato open malpule,browser,medium
+Open Wikipedia to read about history of Tulu Nadu,Tulunadu charithre odhere Wikipedia open malpule,browser,medium
+Open Twitter feed to check breaking world news,Breaking news thoolere Twitter open malpule,browser,medium
+Open Reddit technology discussion forum community,Tech discussion thoolere Reddit open malpule,browser,medium
+Open Hotstar to watch Indian Premier League live,IPL live match thoolere Hotstar open malpule,browser,medium
+Open Prime Video to continue watching web series,Web series thoolere Prime Video open malpule,browser,medium
+Open Google Sheets to update budget records,Budget update madpare Google Sheets open malpule,browser,medium
+Open Google Docs to collaborate on report drafting,Report bareyare Google Docs open malpule,browser,medium
+Open KSRTC portal to reserve bus tickets to Mysore,Mysuru bus ticket book madpare KSRTC open malpule,browser,medium
+Open Google Translate website for multi-language conversion,Language conversion g Google Translate open malpule,browser,medium
+Open Weather Underground website for satellite radar maps,Radar map thoolere Weather Underground open malpule,browser,medium
+Open Fast.com to test current internet download speed,Internet speed test madpare Fast.com open malpule,browser,medium
+Open Gmail inbox and search for interview confirmation letter because I have to reply today,Reply madpadhu aayikora interview letter thoolere Gmail open malpule,browser,complex
+Open GitHub and create a new pull request for the ByT5 translation branch,ByT5 branch pull request create madpare GitHub open malpule,browser,complex
+Open LinkedIn to send congratulations message to my friend for his new job promotion,Dosthigi promotion shubashaya panolindu LinkedIn open malpule,browser,complex
+Open ChatGPT website and paste the Python stack trace error to get fix recommendations,Python error fix kelere ChatGPT open malpule,browser,complex
+Open Google Maps and show traffic delays on the route to Mangalore airport right now,Airport margada traffic thoolere Google Maps open malpule,browser,complex
+Open Amazon website and check delivery tracking status for the ordered Raspberry Pi board,Raspberry Pi delivery status thoolere Amazon open malpule,browser,complex
+Open IRCTC website and search for Tatkal train tickets to Bangalore for tomorrow night,Yelle rathre Tatkal ticket naadere IRCTC open malpule,browser,complex
+Open Google Colab and connect to the hosted GPU runtime to train the ByT5-Small model,ByT5 model train madpare GPU Colab open malpule,browser,complex
+Open Netflix website and continue playback of the mystery crime thriller movie,Thriller movie continue thoolere Netflix open malpule,browser,complex
+Open Stack Overflow and search for resolving CUDA out of memory errors in PyTorch,CUDA memory error fix naadere Stack Overflow open malpule,browser,complex
+Open Canva to design promotional banner for college technical festival competition,College fest banner design madpare Canva open malpule,browser,complex
+Open Google Drive and share the final project presentation slides with my project guide,Project guide g slides share madpare Google Drive open malpule,browser,complex
+Open Swiggy website and order coastal chicken ghee roast meal for three people,Mooji janere oota order madpare Swiggy open malpule,browser,complex
+Open Cricbuzz website because India needs twenty runs in the last two overs to win,Kone radd over match thoolere Cricbuzz open malpule,browser,complex
+Open Kaggle and download the parallel Tulu-English NLP dataset for offline analysis,Tulu parallel dataset download madpare Kaggle open malpule,browser,complex
+Open Wikipedia and search for the biographical article of Rani Abbakka of Ullal,Ullalda Rani Abbakka bagge odhere Wikipedia open malpule,browser,complex
+Open Flipkart and compare prices and specifications of top five smart LED televisions,Smart TV price compare madpare Flipkart open malpule,browser,complex
+Open KSRTC online portal and book two sleeper bus seats from Udupi to Bangalore,Odipu Bengalooru sleeper seat book madpare KSRTC open malpule,browser,complex
+Open Notion workspace and mark completed tasks under the AI sprint milestone board,Completed tasks mark madpare Notion open malpule,browser,complex
+Open Google Sheets and share the dataset vocabulary counts table with team members,Vocab table share madpare Google Sheets open malpule,browser,complex
+Open Instagram and check direct message inbox before going to sleep tonight,Kullere dumbe Instagram messages thoolere Instagram open malpule,browser,complex
+Open Hotstar and stream today's live cricket tournament match in high definition,HD du cricket match thoolere Hotstar open malpule,browser,complex
+Open Prime Video and download the documentary episodes for offline watching during travel,Trip du thoolere Prime Video download madpule,browser,complex
+Open Reddit and read discussions on the best hyperparameters for fine-tuning transformer models,Transformer tuning discussion odhere Reddit open malpule,browser,complex
+Open Zomato and check customer ratings and reviews for newly opened coastal seafood cafe,Cafe ratings thoolere Zomato open malpule,browser,complex
+Open Google Docs and export our research conference paper draft into PDF format,Paper PDF export madpare Google Docs open malpule,browser,complex
+Open Twitter feed and follow official weather department updates for coastal storm alerts,Storm alerts thoolere Twitter open malpule,browser,complex
+Open Fast.com and verify whether Wi-Fi bandwidth is sufficient for video conference call,Video call g net speed sari unda thoolere Fast.com open malpule,browser,complex
+Open Google Translate and compare Romanised Tulu translations against standard Kannada,Kannada Tulu translate compare madpare Google Translate open malpule,browser,complex
+Open GitHub and star the repository before forking the source code to my account,Source code fork madpadhu dumbe GitHub star malpule,browser,complex
+Open Gmail and compose a project update email to the university department head,HOD g email bareyare Gmail open malpule,browser,complex
+Open Amazon and add noise cancelling headphones to my shopping wishlist cart,Headphones wishlist g paadere Amazon open malpule,browser,complex
+Open Google Maps and find EV charging stations along the coastal highway route to Goa,Goa margada EV charging station Google Maps du naadle,browser,complex
+Open LinkedIn and apply for machine learning engineer internships in Bangalore,ML internship apply madpare LinkedIn open malpule,browser,complex
+Open ChatGPT and request a summary of transformer multi-head self-attention mechanism,Self-attention summary kelere ChatGPT open malpule,browser,complex
+Open Canva and create certificate templates for the voice assistant workshop participants,Workshop certificate design madpare Canva open malpule,browser,complex
+Open IRCTC website and cancel the waitlisted train ticket before chart preparation,Chart prepare aavadhukku dumbe IRCTC ticket cancel malpule,browser,complex
+Open Google Drive and create a shared folder for collecting spoken Tulu audio recordings,Voice recordings folder share madpare Google Drive open malpule,browser,complex
+Open Flipkart and track courier delivery location for the breadboard and jumper wires,Hardware package track madpare Flipkart open malpule,browser,complex
+Open Stack Overflow and upvote the accepted solution for FastAPI CORS header problem,FastAPI CORS problem solution upvote madpare Stack Overflow open malpule,browser,complex
+Set an alarm,Alarm set malpule,alarm,short
+Set alarm for 6 AM,Kaande 6 gante g alarm paadle,alarm,short
+Set alarm for 7 AM,Kaande 7 gante g alarm set malpule,alarm,short
+Set alarm for 5 AM,Kaande 5 gante g alarm paadle,alarm,short
+Set alarm for 8 AM,Kaande 8 gante g alarm set malpule,alarm,short
+Set alarm for 6 PM,Baiyag 6 gante g alarm paadle,alarm,short
+Set alarm for 10 PM,Rathre 10 gante g alarm set malpule,alarm,short
+Cancel alarm,Alarm cancel malpule,alarm,short
+Turn off alarm,Alarm off malpule,alarm,short
+Stop alarm,Alarm nillale,alarm,short
+Snooze alarm,Alarm snooze malpule,alarm,short
+Set a timer,Timer set malpule,alarm,short
+Set timer for 10 minutes,10 minute g timer paadle,alarm,short
+Set timer for 5 minutes,5 minute g timer paadle,alarm,short
+Set timer for 15 minutes,15 minute g timer paadle,alarm,short
+Set timer for 30 minutes,30 minute g timer paadle,alarm,short
+Set timer for 1 hour,1 gante g timer set malpule,alarm,short
+Start stopwatch,Stopwatch shuru malpule,alarm,short
+Stop stopwatch,Stopwatch nillale,alarm,short
+Reset stopwatch,Stopwatch reset malpule,alarm,short
+Show all alarms,Poora alarm toojale,alarm,short
+What time is it?,Gante yeth aand?,alarm,short
+Tell me the time,Samaya panle,alarm,short
+Current time in India,India du itthe gante yeth,alarm,short
+Wake me up at 6,6 gante g yenan leppule,alarm,short
+Wake me up at 7,7 gante g leppule,alarm,short
+Wake me up tomorrow,Yelle kaande leppule,alarm,short
+Set daily morning alarm,Prathi kaande alarm paadle,alarm,short
+Delete all alarms,Poora alarm delete malpule,alarm,short
+Check active timers,Active timer check malpule,alarm,short
+Set an alarm for 6:30 AM tomorrow morning,Yelle kaande 6:30 g alarm set malpule,alarm,medium
+Set an alarm for 5:15 AM for morning yoga,Kaande yoga madpare 5:15 g alarm paadle,alarm,medium
+Set a reminder alarm for 2 PM meeting,2 gante meeting g alarm paadle,alarm,medium
+Set a timer for 20 minutes for baking,Cake bake madpare 20 minute timer paadle,alarm,medium
+Set a countdown timer for 45 minutes study session,45 minute study session timer paadle,alarm,medium
+Wake me up at 6 AM tomorrow with loud ringtone,Yelle kaande 6 gante g jore sound du leppule,alarm,medium
+Set an alarm for 10:30 PM for bedtime,Rathre kullere 10:30 g alarm set malpule,alarm,medium
+Cancel the alarm scheduled for 7 AM tomorrow,Yelle kaande 7 gante da alarm cancel malpule,alarm,medium
+Tell me the exact current time in Mangalore,Kudla du itthe exact samaya yeth panle,alarm,medium
+Set a 15-minute power nap alarm right now,15 minute nidre g itthe alarm paadle,alarm,medium
+Set an alarm for 4:30 AM to catch the early train,Kaande train dettondu povolindu 4:30 g alarm paadle,alarm,medium
+Start a stopwatch timer to record running speed,Running speed check madpare stopwatch shuru malpule,alarm,medium
+Set a recurring alarm for 7 AM every Monday,Prathi Somavara 7 gante g alarm set malpule,alarm,medium
+Set an alarm for 8:15 PM for taking medicine,Rathre marndhu parpere 8:15 g alarm paadle,alarm,medium
+Check how many minutes are left on the active timer,Timer du yeth minute baki undu thooli,alarm,medium
+Set an alarm for 5:45 AM for gym workout,Gym g povolindu 5:45 g alarm paadle,alarm,medium
+Snooze the ringing alarm for another 10 minutes,Alarm 10 minute snooze malpule,alarm,medium
+Turn off all active alarms on my device,Poora active alarm off malpule,alarm,medium
+Set a cooking timer for boiling eggs for 8 minutes,Kori thetthe beypadhere 8 minute timer paadle,alarm,medium
+Set an alarm for 9 PM to join the online seminar,9 gante seminar g alarm set malpule,alarm,medium
+Tell me what time the sun will set this evening,Ini surye yepba kandoondu panle,alarm,medium
+Set a reminder alarm to drink water every 2 hours,Radd gante g water reminder alarm paadle,alarm,medium
+Set an alarm for 3 PM for taking project printout,3 gante printout dettolindu alarm paadle,alarm,medium
+Start a 30-second countdown timer for planks,30 second plank timer shuru malpule,alarm,medium
+Set an alarm for 6 AM on weekdays only,Weekdays matra kaande 6 gante g alarm paadle,alarm,medium
+Cancel all alarms set for this weekend,Ee weekend da poora alarm cancel malpule,alarm,medium
+Set an alarm for 11 PM to switch off laptop,Laptop off madpere 11 gante g alarm paadle,alarm,medium
+Tell me if I have any alarms set for tomorrow,Yelle g alaaram unda check malpule,alarm,medium
+Set a timer for 12 minutes for tea boiling,Cha kayypadhere 12 minute timer paadle,alarm,medium
+Set an alarm for 1:30 PM for lunch break,1:30 g lunch break alarm paadle,alarm,medium
+Set an alarm for 5:30 AM tomorrow morning because I have to catch the Bangalore express train,Bengalooru express train dettondu povodhu aayikora yelle kaande 5:30 g alarm paadle,alarm,complex
+Please set a 25-minute timer so that I remember to turn off the water heater on time,Water heater off madpere 25 minute timer paadle,alarm,complex
+Set an alarm for 6 AM tomorrow because our college sports tournament starts at 8 AM,Sports tournament 8 gante g shuru aavanada aayikora yelle 6 gante g alarm paadle,alarm,complex
+Set a timer for 15 minutes before the rice in the pressure cooker gets overcooked,Kukkar du ari karpadhu dumbe 15 minute timer set malpule,alarm,complex
+Wake me up at 4:45 AM tomorrow if it is not raining heavily outside,Pidaayi jore barsa ijji anda yelle kaande 4:45 g yenan leppule,alarm,complex
+Set an alarm for 8 PM tonight so that I don't forget to take my prescribed fever medicine,Jwarada marndhu parpere madhapadhu dumbe ini rathre 8 gante g alarm paadle,alarm,complex
+Cancel tomorrow morning's 6 AM alarm because our office declared a holiday,Office holiday aathini aayikora yelle kaande 6 gante da alarm cancel malpule,alarm,complex
+Set a recurring alarm for 6:15 AM every weekday because I need to build a consistent habit,Yedde habit madpere weekdays prathi kaande 6:15 g alarm paadle,alarm,complex
+Set a timer for 40 minutes and alert me with a sound when the machine learning model training finishes,Model training mugiyinaga shabda barolindu 40 minute timer paadle,alarm,complex
+Set an alarm for 10 PM tonight to remind me to submit the assignment before midnight,Midnight g dumbe assignment submit madpere rathre 10 gante g alarm paadle,alarm,complex
+Start a stopwatch right now so that we can accurately benchmark the speech recognition response time,Voice latency measure madpare itthe stopwatch shuru malpule,alarm,complex
+Set an alarm for 7:30 AM tomorrow because my car servicing mechanic will arrive early,Mechanic kaande barond uller aayikora yelle 7:30 g alarm paadle,alarm,complex
+Set a 10-minute timer for steeping herbal green tea in hot water,Green tea kayypadhere 10 minute timer paadle,alarm,complex
+Set an alarm for 3:45 PM today because my online interview starts at 4 PM sharp,4 gante interview ittininda ini baiyag 3:45 g alarm paadle,alarm,complex
+Wake me up after 20 minutes of power nap because I have to study for the evening test,Test odhere 20 minute nap dhu bokko yenan leppule,alarm,complex
+Set an alarm for 5 AM tomorrow so that we can reach Malpe beach in time for sunrise,Sunrise thoolere Malpe kadalare povodhu aayikora yelle kaande 5 gante g alarm paadle,alarm,complex
+Set a reminder alarm for 1 PM to take lunch before starting the afternoon laboratory session,Lab session shuru aavanadha dumbe ootag 1 gante alarm paadle,alarm,complex
+Turn off all active alarms for tomorrow because I am taking a rest day,Yelle rest dettonthe aayikora poora alarm off malpule,alarm,complex
+Set a 30-minute timer for baking fish fry in the oven before serving guests,Fish fry oven dhu dettolindu 30 minute timer paadle,alarm,complex
+Set an alarm for 9:45 PM tonight to remember to call my parents back home,Ammer appe g call madpere ini rathre 9:45 g alarm paadle,alarm,complex
+Set an alarm for 6:30 AM tomorrow because the electricity department announced a power cut at 7 AM,7 gante power cut aavanada aayikora 6:30 g alarm paadle,alarm,complex
+Start a 5-minute countdown timer while I stretch my muscles after running,Running bokko stretch madponaga 5 minute countdown paadle,alarm,complex
+Set an alarm for 4 PM to join the online conference meeting before the host locks the room,Meeting lock aavadhukku dumbe 4 gante g alarm paadle,alarm,complex
+Set an alarm for 7:15 AM tomorrow because our school bus arrives at 7:45 AM,School bus 7:45 g banna aayikora 7:15 g alarm paadle,alarm,complex
+Set a timer for 18 minutes so that we know when the washing machine cycle completes,Washing machine mugiyinaga theleyare 18 minute timer paadle,alarm,complex
+Set an alarm for 11:30 PM tonight to remind me to turn off the computer and go to sleep,Computer off madtdh kullere 11:30 g alarm paadle,alarm,complex
+Wake me up at 5:15 AM tomorrow morning because we are going for cycling along the beach road,Beach road du cycling povodhu aayikora yelle 5:15 g leppule,alarm,complex
+Set an alarm for 2:30 PM today because the package courier delivery agent is coming,Courier barond undu aayikora ini madhyahna 2:30 g alarm paadle,alarm,complex
+Set a 12-minute timer for boiling eggs and toast bread in the kitchen,Kitchen du beypadhere 12 minute timer paadle,alarm,complex
+Set an alarm for 8 AM on Sunday morning for attending the community cleanliness drive,Aadithyavara 8 gante g cleanliness drive g alarm paadle,alarm,complex
+Cancel the evening alarm because our train has been rescheduled to tomorrow morning,Train reschedule aathini aayikora baiyada alarm cancel malpule,alarm,complex
+Set an alarm for 6:45 AM tomorrow so that I can prepare breakfast before leaving for work,Office g povadhu dumbe breakfast madpere 6:45 g alarm paadle,alarm,complex
+Start a 60-second timer to practice rapid English to Tulu speech translation,Translation practice madpere 60 second timer paadle,alarm,complex
+Set an alarm for 10:15 PM tonight to remember to lock the main front gate,Gate lock madpere ini rathre 10:15 g alarm paadle,alarm,complex
+Set a timer for 35 minutes for simmering traditional coastal sambar curry,Saaru kayypadhere 35 minute timer paadle,alarm,complex
+Set an alarm for 5:45 AM tomorrow because we want to beat the highway traffic jam,Highway traffic avoid madpere 5:45 g alarm paadle,alarm,complex
+Wake me up after 45 minutes because I have a headache and need a short rest,Mandhe beene undu aayikora 45 minute dhu bokko leppule,alarm,complex
+Set an alarm for 7 PM to collect laundry clothes from the dry cleaner shop,Dry cleaner dhu angi dettolindu 7 gante g alarm paadle,alarm,complex
+Set a timer for 8 minutes for cooling down the laptop processor after stress testing,Laptop cool aavolindu 8 minute timer paadle,alarm,complex
+Set an alarm for 6 AM tomorrow with loud beeping because I am a heavy sleeper,Jore nidre aayikora yelle kaande 6 gante g jore sound du alarm paadle,alarm,complex
+Turn on the light,Light on malpule,hardware,short
+Turn off the light,Light off malpule,hardware,short
+Turn on the fan,Fan on malpule,hardware,short
+Turn off the fan,Fan off malpule,hardware,short
+Switch on lights,Light switch on malpule,hardware,short
+Switch off lights,Light switch off malpule,hardware,short
+Turn on living room light,Hall da light on malpule,hardware,short
+Turn off living room light,Hall da light off malpule,hardware,short
+Turn on bedroom light,Kone da light on malpule,hardware,short
+Turn off bedroom light,Kone da light off malpule,hardware,short
+Turn on kitchen light,Kusini da light on malpule,hardware,short
+Turn off kitchen light,Kusini da light off malpule,hardware,short
+Turn on bedroom fan,Kone da fan on malpule,hardware,short
+Turn off bedroom fan,Kone da fan off malpule,hardware,short
+Increase fan speed,Fan speed heccha malpule,hardware,short
+Decrease fan speed,Fan speed kammi malpule,hardware,short
+Turn on AC,AC on malpule,hardware,short
+Turn off AC,AC off malpule,hardware,short
+Set AC temperature,AC temperature adjust malpule,hardware,short
+Turn on water heater,Geyser on malpule,hardware,short
+Turn off water heater,Geyser off malpule,hardware,short
+Turn on porch light,Balcony light on malpule,hardware,short
+Turn off porch light,Balcony light off malpule,hardware,short
+Turn on garden light,Tottada light on malpule,hardware,short
+Turn off garden light,Tottada light off malpule,hardware,short
+Lock front door,Mukhya baakil lock malpule,hardware,short
+Unlock front door,Baakil unlock malpule,hardware,short
+Turn on TV,TV on malpule,hardware,short
+Turn off TV,TV off malpule,hardware,short
+Turn off all appliances,Poora switch off malpule,hardware,short
+Turn on the bedroom light and set fan to medium speed,Kone da light on maltdh fan medium speed paadle,hardware,medium
+Turn off the kitchen lights before we go to sleep,Kulladhu dumbe kusini da light off malpule,hardware,medium
+Turn on the living room fan because it is warm inside,Ulayi seke undu aayikora hall da fan on malpule,hardware,medium
+Switch off the corridor lights to save electricity power,Current save madpere corridor light off malpule,hardware,medium
+Turn on the bathroom geyser for warm water shower,Chali neeru snana g geyser on malpule,hardware,medium
+Turn off the water heater after ten minutes of heating,10 minute kayynaga geyser off malpule,hardware,medium
+Turn on the outdoor porch lights as it is getting dark outside,Pidaayi katti aathini aayikora balcony light on malpule,hardware,medium
+Turn off the living room television before leaving the house,Illadhu pidayi povadhu dumbe TV off malpule,hardware,medium
+Set the air conditioner temperature to 24 degrees celsius,AC temperature 24 degree g set malpule,hardware,medium
+Turn on the garden water sprinkler system for plants,Daya g neeru paadere garden sprinkler on malpule,hardware,medium
+Switch on the study desk lamp for reading books,Pusthaka odhere study table light on malpule,hardware,medium
+Turn off all the bedroom lights but keep the fan running,Kone da light off maltdh fan on dhiyele,hardware,medium
+Turn on the night lamp in the hallway for elderly people,Hall da night lamp on malpule,hardware,medium
+Turn off the garden lights at sunrise tomorrow morning,Yelle kaande surye bannaga tottada light off malpule,hardware,medium
+Increase the ceiling fan speed to maximum level five,Fan speed level 5 g heccha malpule,hardware,medium
+Decrease the living room fan speed because it is chilly,Chali aathini aayikora fan speed kammi malpule,hardware,medium
+Lock the front main door for home security tonight,Rathre security g main baakil lock malpule,hardware,medium
+Unlock the backyard door so that the gardener can enter,Gardener barolindu pinde da baakil unlock malpule,hardware,medium
+Turn on the exhaust fan in the kitchen while cooking,Kusini du oota madponaga exhaust fan on malpule,hardware,medium
+Turn off the television and dim the living room lights,TV off maltdh hall da light dim malpule,hardware,medium
+Turn on the mosquito repellent device in the bedroom,Kone du mosquito repellent on malpule,hardware,medium
+Switch off the motor pump when the water tank gets full,Tank full aavaga water motor pump off malpule,hardware,medium
+Turn on the outdoor security camera lights at 7 PM,7 gante g outdoor camera light on malpule,hardware,medium
+Turn on the decorative festival LED lights on the roof,Roof da LED decorative light on malpule,hardware,medium
+Turn off the garage lights after parking the car inside,Car park madhdha bokko garage light off malpule,hardware,medium
+Set the ceiling fan to speed level two for smooth breeze,Fan speed level 2 g set malpule,hardware,medium
+Turn on the dining room chandelier light for dinner,Ootada table light on malpule,hardware,medium
+Turn off the air conditioner and open the window blinds,AC off maltdh kitaki teypale,hardware,medium
+Switch on the socket switch for charging mobile phone,Mobile charging socket switch on malpule,hardware,medium
+Turn off all household lights and lock the smart locks,Poora light off maltdh smart locks lock malpule,hardware,medium
+Turn on the bedroom ceiling fan because it is very hot and humid in the room,Kone du bhaari seke undu aayikora bedroom fan on malpule,hardware,complex
+Please turn off all living room lights and switch on the small night lamp before sleeping,Kullere dumbe hall da poora light off maltdh night lamp on malpule,hardware,complex
+Turn on the water heater geyser because I need to take a hot water bath before going to college,College g povadhu dumbe snana madpere geyser on malpule,hardware,complex
+Turn off the water pump motor immediately because the overhead water tank is overflowing,Overhead water tank full aathini aayikora water motor begene off malpule,hardware,complex
+Turn on the porch and garden lights at 6:30 PM because guests are arriving for dinner,Binnere ootag barond uller aayikora 6:30 g balcony tottada light on malpule,hardware,complex
+Turn off the air conditioner when the room temperature cools down to 22 degrees,Kone 22 degree cool aathini koodale AC off malpule,hardware,complex
+Turn on the exhaust fan in the kitchen while frying fish so that the smoke clears out,Meen fry madponaga poghe povolindu kusini exhaust fan on malpule,hardware,complex
+Switch off all lights in the house except the outdoor security lights before we leave for town,Ooru g povadhu dumbe security light bidadhu poora light off malpule,hardware,complex
+Turn on the study table lamp and increase fan speed to level four so that I can study comfortably,Sukha du odhere study light on maltdh fan speed 4 g paadle,hardware,complex
+Turn off the television and mute the home theater speakers because grandfather is resting,Ajjer kullonaga TV off maltdh speakers mute malpule,hardware,complex
+Turn on the garden water sprinkler for twenty minutes before the sun gets too hot,Bisilu hechhaavadhukku dumbe 20 minute garden sprinkler on malpule,hardware,complex
+Lock the front door and activate the security alarm system after everyone comes inside,Poora ulayi banna bokko main baakil lock maltdh alarm on malpule,hardware,complex
+Turn on the living room AC and set it to 23 degrees because we have five guests sitting here,Binnere kullaadhe aayikora hall AC 23 degree g on malpule,hardware,complex
+Turn off the bedroom fan and turn on the warm lamp if it starts raining heavily tonight,Ini rathre jore barsa banna anda fan off maltdh warm lamp on malpule,hardware,complex
+Switch on the water motor pump for fifteen minutes to fill the ground storage sump tank,Sump tank full madpere 15 minute water motor on malpule,hardware,complex
+Turn on the corridor lights automatically when motion is detected near the staircase,Metlu muttada movement thoonaga corridor light on malpule,hardware,complex
+Turn off the water heater after twenty minutes so that it does not consume extra electricity,Extra current consume aavadhukku 20 minute dhu bokko geyser off malpule,hardware,complex
+Turn on the kitchen lights and start the coffee maker machine early in the morning,Kaande kusini light on maltdh coffee maker start malpule,hardware,complex
+Turn off the living room AC and switch on the ceiling fan before opening the balcony sliding doors,Balcony baakil teypadhu dumbe AC off maltdh fan on malpule,hardware,complex
+Turn on the decorative terrace LED lights tonight because we are celebrating my birthday,Birthday sambhrama ittininda ini rathre terrace LED lights on malpule,hardware,complex
+Lock the garage shutter door after the car is parked safely inside,Car park madhdha bokko garage shutter lock malpule,hardware,complex
+Turn on the outdoor light and ring the door chime when someone approaches the gate,Gate muttada yaar barondaranda pidaayi light on maltdh bell madpule,hardware,complex
+Decrease the bedroom fan speed to level one because the weather turned chilly midnight,Madhyaraathri chali aathini aayikora fan speed 1 g kammi malpule,hardware,complex
+Turn on the mosquito repellent machine in the kids bedroom before 7 PM,7 gante dhu dumbe jokulere kone du mosquito machine on malpule,hardware,complex
+Turn off all electronic appliances in the living room before going to bed,Kullere dumbe hall da poora electronic appliances off malpule,hardware,complex
+Turn on the emergency backup light if there is a sudden power cut during the storm,Current power cut aanda emergency backup light on malpule,hardware,complex
+Switch on the dining area fan while family members are having dinner,Oota madponaga dining table fan on malpule,hardware,complex
+Turn off the garden lights at 6 AM tomorrow morning when natural sunlight appears,Yelle kaande bisilu bannaga tottada light off malpule,hardware,complex
+Turn on the bathroom ventilation fan after taking a hot water shower,Hot water snana dhu bokko ventilation fan on malpule,hardware,complex
+Set the living room fan to medium speed and turn off the bright tube light for watching movies,Movie thoolere tube light off maltdh fan medium g dhiyele,hardware,complex
+Turn on the outdoor floodlights if the security sensors detect unusual movement in the backyard,Pinde unusual movement thoonaga outdoor floodlight on malpule,hardware,complex
+Turn off the kitchen geyser and check if the gas cylinder knob is closed safely,Gas knob check maltdh kusini geyser off malpule,hardware,complex
+Turn on the balcony light so that we can sit outside and enjoy the cool evening breeze,Baiyada gaali enjoy madpere balcony light on malpule,hardware,complex
+Turn off the television screen but keep the audio connected to the bluetooth soundbar,Soundbar connected dhiyele TV screen off malpule,hardware,complex
+Turn on the water purifier machine and fill the clean drinking water container,Drinking water container full madpere water purifier on malpule,hardware,complex
+Turn off all unnecessary room lights to minimize electric power consumption,Current bill kammi madpere unnecessary light off malpule,hardware,complex
+Turn on the air conditioner in the bedroom twenty minutes before we go to sleep,Kulladhu 20 minute dumbe bedroom AC on malpule,hardware,complex
+Turn off the garden water pump before leaving the house for office work,Office g povadhu dumbe tottada water pump off malpule,hardware,complex
+Turn on the hallway night light for safety when waking up in the middle of the night,Madhyaraathri lakkanaga safety g hallway night light on malpule,hardware,complex
+Turn off the ceiling fan and close the room windows when cold winds start blowing outside,Chali gaali beejonaga fan off maltdh kitaki munchile,hardware,complex
+Calculate 5 plus 5,5 plus 5 lekka malpule,calculator,short
+Calculate 10 minus 4,10 minus 4 lekka malpule,calculator,short
+Calculate 6 multiplied by 7,6 guna 7 lekka malpule,calculator,short
+Calculate 100 divided by 4,100 bagedh 4 lekka malpule,calculator,short
+What is 15 plus 25?,15 bokko 25 yeth aavundu?,calculator,short
+What is 50 minus 18?,50 dhu 18 kammi madpundaga yeth?,calculator,short
+What is 12 times 8?,12 guna 8 yeth aavundu?,calculator,short
+What is 144 divided by 12?,144 bagedh 12 yeth aavundu?,calculator,short
+Calculate 25 percent of 200,200 da 25 percent yeth?,calculator,short
+Calculate 10 percent of 500,500 da 10 percent yeth?,calculator,short
+Calculate square root of 64,64 da square root yeth?,calculator,short
+Calculate square root of 100,100 da square root yeth?,calculator,short
+Calculate 2 to the power 8,2 da power 8 yeth?,calculator,short
+Calculate 50 plus 75,50 bokko 75 lekka malpule,calculator,short
+Calculate 200 minus 85,200 dhu 85 kammi malpule,calculator,short
+Calculate 15 multiplied by 15,15 guna 15 lekka malpule,calculator,short
+Calculate 1000 divided by 8,1000 bagedh 8 lekka malpule,calculator,short
+What is 30 percent of 1500?,1500 da 30 percent yeth?,calculator,short
+What is 5 percent of 10000?,10000 da 5 percent yeth?,calculator,short
+Calculate square of 25,25 da square yeth?,calculator,short
+Calculate square of 12,12 da square yeth?,calculator,short
+What is 99 plus 101?,99 bokko 101 yeth aavundu?,calculator,short
+What is 500 minus 275?,500 dhu 275 kammi madpundaga yeth?,calculator,short
+What is 24 times 5?,24 guna 5 yeth aavundu?,calculator,short
+What is 360 divided by 6?,360 bagedh 6 yeth aavundu?,calculator,short
+"Calculate average of 10, 20 and 30","10, 20 bokko 30 da average yeth?",calculator,short
+Calculate 18 percent GST on 1000,1000 g 18 percent GST yeth?,calculator,short
+Calculate 12 percent of 450,450 da 12 percent yeth?,calculator,short
+What is 7 cubed?,7 da cube yeth aavundu?,calculator,short
+Calculate total expense sum,Kharji lekka sum malpule,calculator,short
+Calculate the total of 450 plus 320 plus 180,450 bokko 320 bokko 180 da total lekka malpule,calculator,medium
+What is 18 percent GST on a bill of 2500 rupees?,2500 roopayi bill g 18 percent GST yeth aavundu?,calculator,medium
+Calculate the monthly savings if salary is 50000 and expense is 32000,50000 salary dhu 32000 kharji aanda savings yeth?,calculator,medium
+What is the discounted price of a 1200 rupee shirt at 25 percent off?,1200 roopayi shirt g 25 percent discount aanda price yeth?,calculator,medium
+Divide a restaurant bill of 3600 rupees equally among 4 friends,3600 roopayi bill 4 dosthulere nadeve share madpundaga yeth?,calculator,medium
+Calculate 15 multiplied by 45 for room area calculation,Kone area g 15 guna 45 lekka malpule,calculator,medium
+What is the remaining balance when 15000 is spent from 40000?,40000 dhu 15000 kharji aanda baki yeth?,calculator,medium
+Calculate the simple interest on 10000 rupees at 7 percent for 2 years,10000 roopayi g 7 percent baddi radd varsha g yeth?,calculator,medium
+What is the square root of 625 plus 50?,625 square root bokko 50 da total yeth?,calculator,medium
+Calculate 5 percent cash discount on purchase of 8400 rupees,8400 roopayi purchase g 5 percent discount yeth?,calculator,medium
+What is 850 minus 340 divided by 2?,850 dhu 340 kammi madtdh radd bagedhaanda yeth?,calculator,medium
+"Calculate the average marks of 85, 90, 78 and 92","85, 90, 78 bokko 92 da average marks yeth?",calculator,medium
+What is 20 percent tip on a hotel bill of 1850 rupees?,1850 hotel bill g 20 percent tip yeth aavundu?,calculator,medium
+Multiply 35 by 12 to find total hours in a month,35 guna 12 lekka malpule,calculator,medium
+What is the total cost of 8 kilograms of mangoes at 120 rupees per kg?,Kilo g 120 roopayi da 8 kilo kukku total rate yeth?,calculator,medium
+Calculate fuel cost for 250 kilometers at 15 km per liter with petrol at 100,250 km trip g petrol kharji lekka malpule,calculator,medium
+What is 1000 minus 18 percent discount?,1000 roopayi g 18 percent discount kammi aanda yeth?,calculator,medium
+Calculate 2 to the power 10 in mathematics,2 da power 10 yeth aavundu?,calculator,medium
+What is the perimeter of a rectangle with length 20 and width 15?,20 udda 15 agala rectangle da perimeter yeth?,calculator,medium
+Calculate the total electricity bill for 220 units at 7 rupees per unit,Unit g 7 roopayi prakara 220 unit current bill yeth?,calculator,medium
+What is 75 percent of 480 marks in examination?,Exam da 480 marks g 75 percent yeth?,calculator,medium
+Divide 50000 into 5 equal installments,50000 roopayi 5 installment madpundaga yeth?,calculator,medium
+Calculate 30 percent profit on selling a 500 rupee product,500 roopayi product g 30 percent profit yeth?,calculator,medium
+What is the difference between 1500 and 875?,1500 bokko 875 da vyathyasa yeth?,calculator,medium
+Multiply 125 by 8 to find total count,125 guna 8 total yeth aavundu?,calculator,medium
+Calculate 12 percent annual return on mutual fund investment of 25000,25000 mutual fund g 12 percent return yeth?,calculator,medium
+What is the price per piece if a box of 24 pens costs 360 rupees?,24 pen da box 360 roopayi aanda onji pen rate yeth?,calculator,medium
+Calculate 3.5 percent bank processing fee on 200000 loan,200000 loan g 3.5 percent processing fee yeth?,calculator,medium
+What is 45 plus 65 minus 20?,45 bokko 65 total dhu 20 kammi madpundaga yeth?,calculator,medium
+Calculate speed in km per hour for 180 km traveled in 3 hours,3 gante du 180 km travel aanda speed yeth?,calculator,medium
+Calculate 18 percent GST on a 4500 rupee purchase and add it to the final bill,4500 roopayi bill g 18 percent GST add madtdh total yeth aavundu lekka malpule,calculator,complex
+Please divide our total dinner bill of 4800 rupees equally among 6 friends,4800 roopayi dinner bill 6 dosthulere nadeve share madpundaga yeth aavundu,calculator,complex
+Calculate my remaining monthly budget if I earned 65000 and spent 42500 on house rent and food,65000 sampadhane dhu 42500 kharji aanda baki yeth budget undu lekka malpule,calculator,complex
+Calculate the final discounted price of a laptop priced at 55000 with a 15 percent student discount,55000 laptop g 15 percent student discount aanda final price yeth lekka malpule,calculator,complex
+What will be the total fuel expense for driving 400 kilometers if the car gives 16 km per liter and petrol costs 102 rupees?,400 km travel g 16 mileage 102 petrol rate ittinaga total fuel kharji yeth?,calculator,complex
+Calculate the monthly EMI for a personal loan of 100000 at 10 percent interest for 12 months,100000 loan g 10 percent baddi 1 varsha g monthly EMI yeth aavundu?,calculator,complex
+"If our group ordered 5 pizzas at 350 rupees each and 5 drinks at 60 rupees each, calculate total bill with 5 percent tax",5 pizza 350 rate 5 drinks 60 rate g 5 percent tax add madtdh total bill yeth?,calculator,complex
+Calculate how much money I save if I buy an annual subscription of 1800 instead of paying 200 monthly,Monthly 200 bidadhu annual 1800 plan dettondaga yeth savings aavundu?,calculator,complex
+Calculate the area of a rectangular hall with length 28 feet and width 18 feet for flooring tiles,28 udda 18 agala hall da tiles area lekka malpule,calculator,complex
+What is the final payable amount for an online order of 3200 rupees with 10 percent bank discount and 50 rupees delivery charge?,3200 order g 10 percent discount bokko 50 delivery charge ittinaga total yeth?,calculator,complex
+Calculate the percentage increase in petrol price if it rose from 85 rupees to 102 rupees per liter,85 dhu 102 roopayi petrol rate hecchaanda percentage increase yeth?,calculator,complex
+Divide a shared inheritance of 250000 rupees into 4 equal shares among family siblings,250000 roopayi 4 janere nadeve share madpundaga yeth aavundu?,calculator,complex
+Calculate the simple interest and total maturity amount for 50000 invested at 8 percent for 3 years,50000 deposit g 8 percent baddi 3 varsha g maturity total yeth?,calculator,complex
+"If an employee works 45 hours per week at 300 rupees per hour, calculate the monthly gross salary for 4 weeks",Gante g 300 rate 45 gante 4 vaara da total salary yeth?,calculator,complex
+Calculate the total cost of painting 4 walls of size 12 by 10 feet at 15 rupees per square foot,12 by 10 feet da 4 godeg paint madpare square foot g 15 prakara total rate yeth?,calculator,complex
+What is the net profit margin if total revenue was 150000 and total manufacturing cost was 95000?,150000 revenue dhu 95000 cost kammi madpundaga profit margin yeth?,calculator,complex
+Calculate how many days it takes to finish a 480-page novel by reading 32 pages every day,Dina g 32 page prakara 480 page pusthaka mugiyere yeth dina aavundu?,calculator,complex
+"If our team scored 285 runs in 50 overs, calculate the required run rate for the opponent to win",50 over du 285 score madhaga opponent g required run rate yeth?,calculator,complex
+Calculate the compound interest on a fixed deposit of 100000 compounded annually at 7 percent for 2 years,100000 FD g 7 percent compound baddi radd varsha g yeth?,calculator,complex
+What will be the price per gram of gold if a sovereign of 8 grams costs 52000 rupees?,8 gram bangara 52000 aanda 1 gram bangarada rate yeth aavundu?,calculator,complex
+Calculate the total cost of purchasing 15 bags of cement at 380 rupees per bag with 200 rupees transportation,380 rate da 15 cement bag bokko 200 transport charge total yeth?,calculator,complex
+Divide a total project workload of 160 hours equally among 4 software developers over 2 weeks,160 gante project work 4 developers 2 vaara du madpundaga aal g yeth gante?,calculator,complex
+Calculate how much money I need to invest monthly to accumulate 100000 in 10 months without interest,10 thingoludhu 100000 aavolindu monthly yeth save madpodu?,calculator,complex
+What is the discounted price of a mobile phone listed at 24000 with 12 percent instant cashback?,24000 phone g 12 percent cashback aanda final rate yeth?,calculator,complex
+Calculate the total electricity consumption if a 1500 watt water heater runs for 2 hours daily for 30 days,1500W geyser dina g 2 gante 30 dina run aanda total units yeth?,calculator,complex
+"If the total bill is 1450 rupees and I pay with a 2000 rupee currency note, how much change should I receive?",1450 bill g 2000 note kordaga baki yeth change barodu?,calculator,complex
+"Calculate the average monthly sales if revenue was 40000 in January, 55000 in February and 62000 in March","Jan, Feb bokko March da average sales yeth aavundu?",calculator,complex
+What is the percentage attendance of a student who attended 180 classes out of 220 total classes?,220 classes dhu 180 attend aathina student da attendance percentage yeth?,calculator,complex
+Calculate the total cost of laying electric wire of 150 meters at 45 rupees per meter,150 meter current wire g meter g 45 rate prakara total yeth?,calculator,complex
+"If a car travels at a constant speed of 75 km per hour, calculate the total distance covered in 4.5 hours",75 speed du 4.5 gante car chalpadaga total distance yeth?,calculator,complex
+Calculate the total price of 3 shirts at 899 rupees each with a buy-two-get-one-free promotional offer,Buy 2 get 1 free offer du 899 rate da 3 shirt total price yeth?,calculator,complex
+"Divide a prize money of 75000 rupees among 1st, 2nd and 3rd rank winners in 50:30:20 ratio",75000 prize money 50:30:20 ratio du share madpundaga yeth?,calculator,complex
+Calculate the total calorie intake from eating 3 rotis of 120 calories each and a bowl of dal of 180 calories,3 roti bokko dal da total calories yeth aavundu?,calculator,complex
+What is the annual property tax on a residential building assessed at 1200000 with 0.8 percent tax rate?,1200000 property g 0.8 percent tax rate prakara annual tax yeth?,calculator,complex
+Calculate the final price of a 450 rupee book with 15 percent store discount and 5 percent packaging charge,450 pusthaka g 15 percent discount 5 percent packaging add madtdh yeth?,calculator,complex
+"If water pump fills 50 liters per minute, calculate how many minutes it takes to fill a 1000 liter water tank",Minute g 50 liter prakara 1000 liter tank fill aavolindu yeth time aavundu?,calculator,complex
+Calculate the speed of downloading a 2.5 gigabyte file on a 50 megabits per second internet connection,50 Mbps net du 2.5 GB file download aavolindu yeth second aavundu?,calculator,complex
+What is the total salary payout for 12 contract workers working 8 hours daily for 25 days at 80 rupees per hour?,12 workers 8 gante 25 dina 80 rate prakara total salary yeth?,calculator,complex
+Calculate the loss percentage if a shopkeeper bought goods for 8000 and sold them for 6800 rupees,8000 purchase 6800 sale aanda loss percentage yeth?,calculator,complex
+Calculate the total cost of installing solar panels generating 3 kilowatts at 45000 rupees per kilowatt,kW g 45000 rate prakara 3kW solar panel total cost yeth?,calculator,complex
+Who is Mahatma Gandhi?,Mahatma Gandhi yeru?,knowledge,short
+Who was APJ Abdul Kalam?,APJ Abdul Kalam yeru?,knowledge,short
+What is Artificial Intelligence?,Artificial Intelligence pandha daada?,knowledge,short
+What is machine learning?,Machine learning pandha daada?,knowledge,short
+Tell me about Mangalore,Kudla bagge panle,knowledge,short
+Tell me about Udupi,Odipu bagge panle,knowledge,short
+What is the capital of India?,India da rajadhani daada?,knowledge,short
+Who is the Prime Minister of India?,India da Pradhana Mantri yeru?,knowledge,short
+Who was Rani Abbakka?,Rani Abbakka yeru?,knowledge,short
+What is Tulu language?,Tulu bhashe pandha daada?,knowledge,short
+Tell me about Yakshagana,Yakshagana bagge panle,knowledge,short
+What is photosynthesis?,Photosynthesis pandha daada?,knowledge,short
+What is gravity?,Guru twaakarshane pandha daada?,knowledge,short
+What is the speed of light?,Belakuda vega yeth?,knowledge,short
+Who invented the telephone?,Telephone naadpattina yeru?,knowledge,short
+Who invented the computer?,Computer kanduhididhina yeru?,knowledge,short
+What is the largest ocean?,Bhaari malla samudra daada?,knowledge,short
+What is the tallest mountain?,Bhaari yetthara parvatha daada?,knowledge,short
+Tell me about Pilikula Nisargadhama,Pilikula Nisargadhama bagge panle,knowledge,short
+What is Bhoota Kola?,Bhoota Kola pandha daada?,knowledge,short
+What is Kambala?,Kambala pandha daada?,knowledge,short
+Who wrote the Indian national anthem?,Rastra geethe bareyina yeru?,knowledge,short
+What is global warming?,Global warming pandha daada?,knowledge,short
+What is renewable energy?,Punarbalake shakthi pandha daada?,knowledge,short
+Who is ISRO chairman?,ISRO da adhyaksher yeru?,knowledge,short
+What is Python programming?,Python programming pandha daada?,knowledge,short
+Tell me about St Mary's Island,St Mary's Island bagge panle,knowledge,short
+What is the population of India?,India da janasankhye yeth?,knowledge,short
+What is quantum computing?,Quantum computing pandha daada?,knowledge,short
+Who discovered electricity?,Current kanduhididhina yeru?,knowledge,short
+Tell me about the history and significance of Kadri Manjunatha Temple,Kadri Manjunatha devalaya da charithre bagge panle,knowledge,medium
+Who was Koti and Chennaya in Tulu Nadu folklore history?,Tulunadu charithre du Koti Chennaya yeru?,knowledge,medium
+What is the traditional sport of Kambala buffalo race in Coastal Karnataka?,Karavali da Kambala erula ota pandha daada?,knowledge,medium
+Explain the cultural ritual of Bhoota Kola spirit worship in Tulu Nadu,Tulunadu da Daivaradhane Bhoota Kola bagge explain malpule,knowledge,medium
+What are the major ports and trading harbors in Mangalore?,Kudla da mukhya bandaru bagge panle,knowledge,medium
+Who was the brave warrior queen Rani Abbakka Chowta of Ullal?,Ullalda veera rani Abbakka Chowta bagge panle,knowledge,medium
+Explain how transformer neural network models process human language,Transformer neural network bhashe process madpunu encha panle,knowledge,medium
+What is the significance of the 8th schedule of Indian Constitution for Tulu?,Samvidhana da 8th schedule du Tulu bhashe g yeth mahathwa undu?,knowledge,medium
+Tell me about the famous beaches to visit in Udupi and Malpe,Odipu bokko Malpe kadalare bagge panle,knowledge,medium
+What is the architectural beauty of Thousand Pillar Jain Temple in Moodbidri?,Moodabidre da Saavira Kambada Basadi bagge panle,knowledge,medium
+Who invented the World Wide Web and internet protocols?,Internet bokko World Wide Web kanduhididhina yeru?,knowledge,medium
+Explain the difference between supervised and unsupervised machine learning,Supervised bokko unsupervised ML da vyathyasa panle,knowledge,medium
+What causes solar and lunar eclipses in astronomy?,Soorya grahana bokko chandra grahana encha aavundu?,knowledge,medium
+Tell me about the biodiversity and wildlife sanctuary in Kudremukh,Kudremukh da vanya jeevi samrakshane bagge panle,knowledge,medium
+What is the traditional attire and costume worn during Yakshagana performance?,Yakshagana da veshabhooshana bagge explain malpule,knowledge,medium
+Who was the first President of Independent India?,Swathanthra India da modhalane Rashtrapathi yeru?,knowledge,medium
+Explain how solar photovoltaic panels generate electric energy from sunlight,Solar panel bisiludhu current produce madpunu encha?,knowledge,medium
+What are the main agricultural cash crops grown in Coastal Karnataka?,Karavali du belappuna mukhya belela bagge panle,knowledge,medium
+Tell me about the Panambur beach international kite festival in Mangalore,Panambur kadalarda gaalipata uthsava bagge panle,knowledge,medium
+What is the scientific reason behind tides in the ocean?,Kadalara ubbarithavitha g scientific reason daada?,knowledge,medium
+Explain the functioning of speech recognition systems in modern AI assistants,Voice assistant speech recognition encha bele madpundu?,knowledge,medium
+Who wrote the famous Kannada epic poem Kavirajamarga?,Kavirajamarga bareyina kavi yeru?,knowledge,medium
+What are the historical origins of the Tulu calendar and months?,Tulu panchange bokko thingolu bagge panle,knowledge,medium
+Explain how GPS satellite navigation determines accurate geographic location,GPS satellite navigation location fix madpunu encha?,knowledge,medium
+Tell me about the heritage and significance of Kateel Durgaparameshwari Temple,Kateel Durgaparameshwari devalaya da charithre panle,knowledge,medium
+What is the function of the human heart and circulatory system?,Khadayada circulatory system da bele daada?,knowledge,medium
+Who was the mathematical genius Srinivasa Ramanujan?,Ganitha jnaani Srinivasa Ramanujan bagge panle,knowledge,medium
+Explain why the sky appears blue during daytime in earth atmosphere,Pagal du aakasha neeli toojere kaarana daada?,knowledge,medium
+Tell me about the traditional Mangalorean tile industry and factories,Kudla da henchada karkhane charithre bagge panle,knowledge,medium
+What are the key differences between renewable and non-renewable energy sources?,Punarbalake shakthi bokko ithara shakthi da vyathyasa panle,knowledge,medium
+Tell me about the brave queen Rani Abbakka of Ullal because she fought Portuguese invaders courageously,Portuguese sainikere yedurisina Ullalda veera rani Abbakka bagge thelipale,knowledge,complex
+Please explain how speech-to-text neural networks work because I am preparing my seminar presentation,Seminar presentation g speech to text neural network encha bele madpundu explain malpule,knowledge,complex
+Who was APJ Abdul Kalam and what were his major scientific contributions to India's space program?,APJ Abdul Kalam yeru bokko India space program g aare koduge daada?,knowledge,complex
+Explain the cultural ritual of Bhoota Kola spirit worship and why it is sacred to the people of Tulu Nadu,Tulunadu da Daivaradhane Bhoota Kola da mahathwa bokko aacharanegalu daada thelipale,knowledge,complex
+Tell me about the history of Mangalore port and how it became one of India's major commercial harbors,Kudla bandaru da charithre bokko mukhya trade center aayina vidhana panle,knowledge,complex
+What is the traditional sport of Kambala and how are the buffalo pairs trained by coastal farmers?,Kambala erula ota pandha daada bokko krishikere erulanu encha train madpuver panle,knowledge,complex
+Explain how ByT5 transformer models process raw byte sequences without needing a fixed subword vocabulary,ByT5 model fixed vocabulary ijji raw byte process madpunu encha explain malpule,knowledge,complex
+Who was Koti and Chennaya and why are they worshipped as legendary heroes in Coastal Karnataka folklore?,Koti Chennaya yeru bokko Tulunadu janapada charithre du aare mahathwa daada?,knowledge,complex
+Tell me about the architecture of Thousand Pillar Jain Temple in Moodbidri and why it is famous worldwide,Moodabidre da Saavira Kambada Basadi da shilpakale bagge poora vivara panle,knowledge,complex
+Explain how solar eclipses happen and why looking directly at the sun during an eclipse is harmful to eyes,Surya grahana encha aavundu bokko grahana samaya kannug harms daada thelipale,knowledge,complex
+Tell me about the traditional cuisine and famous seafood dishes of Mangalore before we plan our food tour,Food tour povadhu dumbe Kudla da prasiddha meen oota bagge thelipale,knowledge,complex
+What is the significance of the 8th Schedule of the Indian Constitution and the ongoing movement for Tulu language?,Samvidhana da 8th schedule g Tulu serpadhere nadaponditina horata da mahathwa daada?,knowledge,complex
+Explain the difference between machine learning and deep learning using simple everyday analogies,Machine learning bokko deep learning da vyathyasa simple udaharane du explain malpule,knowledge,complex
+Tell me about the life and discoveries of Sir CV Raman who won the Nobel Prize in Physics from India,Nobel prize vijetha Sir CV Raman aare shodhane bagge vivara panle,knowledge,complex
+What is the function of the human brain's neural pathways when learning a new second language?,Posa bhashe kalponaga brain da neural pathways encha bele madpundu?,knowledge,complex
+Explain how greenhouse gases trap heat in earth's atmosphere and contribute to global climate change,Greenhouse gas bisilu pididhdh global warming madpunu encha explain malpule,knowledge,complex
+Tell me about the natural rock formations of Yana and St Mary's Island off the coast of Malpe,St Mary's Island bokko Yana da rock formations bagge poora vivara panle,knowledge,complex
+Who was the great king Krishnadevaraya and how did the Vijayanagara Empire flourish under his rule?,Vijayanagara da Raja Krishnadevaraya aare aalwike charithre bagge panle,knowledge,complex
+Explain how GPS satellites calculate exact coordinates on earth using triangulation signals,GPS satellite triangulation use maltdh coordinates calculate madpunu encha?,knowledge,complex
+Tell me about the origin and theatrical traditions of Yakshagana coastal folk art performance,Karavali da Yakshagana da moolasthana bokko prasanga paramparaya bagge panle,knowledge,complex
+What are the environmental advantages of shifting to electric vehicles compared to petrol and diesel engines?,Petrol diesel g polike madpundaga electric vehicle da environmental benefits daada?,knowledge,complex
+Explain how vaccines prepare the human immune system to fight against viral and bacterial infections,Vaccine human immune system g infection yedurisere prepare madpunu encha?,knowledge,complex
+Tell me about the Western Ghats mountain range biodiversity and why it is classified as a UNESCO heritage site,UNESCO heritage Western Ghats parwatha saalu da biodiversity bagge panle,knowledge,complex
+Who was Dr BR Ambedkar and what was his pivotal role in drafting the Indian Constitution?,Samvidhana shilpi Dr BR Ambedkar aare mukhyavada koduge daada?,knowledge,complex
+Explain how modern generative artificial intelligence and large language models generate coherent text,LLM bokko Generative AI text generate madpunu encha explain malpule,knowledge,complex
+Tell me about the heritage of Pilikula Nisargadhama and its botanical gardens and heritage village,Pilikula Nisargadhama da botanical garden bokko parampare mane bagge panle,knowledge,complex
+What causes volcanic eruptions and earthquakes along the earth's tectonic plate boundaries?,Tectonic plates movement dhu bhoomikampa bokko jwalamukhi encha aavundu?,knowledge,complex
+Explain how water desalination plants convert salty sea water into potable clean drinking water,Kadalara neeru drinking water madpuna desalination plant encha bele madpundu?,knowledge,complex
+Tell me about the literary contributions of Kayyar Kinhanna Rai to Kannada and Tulu literature,Sahithi Kayyar Kinhanna Rai aare Tulu Kannada sahithya koduge bagge panle,knowledge,complex
+"What are the core operating system differences between Windows, Linux and macOS architectures?","Windows, Linux bokko macOS OS architecture da vyathyasa daada?",knowledge,complex
+Explain why airplanes can fly in the sky using Bernoulli's principle of aerodynamic lift,Bernoulli principle prakara vimaana aakashadhu rekkedhu paarunu encha?,knowledge,complex
+Tell me about the history of traditional tile manufacturing factories along the Netravati river in Mangalore,Netravati suttha da henchada karkhane charithre bagge vivara panle,knowledge,complex
+What is the scientific explanation for why the ocean appears blue and has high salinity?,Kadalara neeru neeli toojere bokko uppu aavolere scientific reason daada?,knowledge,complex
+Explain how fiber optic cables transmit internet data at the speed of light using total internal reflection,Fiber optic cable total internal reflection use maltdh net data transmit madpunu encha?,knowledge,complex
+Tell me about the history and rituals performed at the ancient temple of Subrahmanya near Mangalore,Kukke Subrahmanya devalaya da charithre bokko aacharanegalu bagge panle,knowledge,complex
+Who was Srinivasa Ramanujan and how did his mathematical formulas inspire modern modular forms?,Ganitha jnaani Ramanujan aare formulas ganitha shaastra g encha koduge aathund?,knowledge,complex
+Explain the biological process of how trees absorb carbon dioxide and release fresh oxygen into air,Maragalu carbon dioxide dettondu oxygen korpuna process explain malpule,knowledge,complex
+Tell me about the coastal folk dance Kangilu performed during festival seasons in Tulu Nadu,Tulunadu da Kangilu janapada nrithya da mahathwa bagge panle,knowledge,complex
+What are the key ethical guidelines and safety risks associated with autonomous artificial intelligence agents?,AI agents develop madponaga safety bokko ethical rules daada?,knowledge,complex
+Explain how blockchain distributed ledgers ensure secure tamper-proof transaction records without banks,Blockchain ledger bank ijji transactions secure madpunu encha explain malpule,knowledge,complex

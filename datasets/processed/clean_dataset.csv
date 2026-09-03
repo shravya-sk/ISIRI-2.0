@@ -17,7 +17,7 @@ Find the latest movie trailer,Latest movies da trailer naadle
 Search YouTube for movie trailers,Youtube du movie trailers naadle
 Find IPL highlights on YouTube,Youtube du IPL da highlights naadle
 Search for cricket highlights on YouTube,Youtube du cricket highlights naadle
-Find today's news on YouTube,Youtube du ini ta news naadle
+Find todays news on YouTube,Youtube du ini ta news naadle
 Search YouTube for news,Youtube du news naadle
 Find Tulu comedy videos,Tulu comedy videos naadle
 Search for Tulu songs on YouTube,Youtube du tulu padya naadle
@@ -43,7 +43,7 @@ Look up Python tutorials.,Python tutorial naadle
 Search for Java tutorials.,java tutorial nadle
 Find information about machine learning.,machine learning da bagge information naadle
 Search for the latest AI news.,machine learning da baggeinformation naadle
-Look up today's news.,initha news n naadle
+Look up todays news.,initha news n naadle
 Search for news about technology.,technology da bagge news n naadle
 Find the latest technology news.,latest technology da bagge news n naadle
 Search for information about ISIRI.,ISIRI da da bagge information naadle
@@ -59,8 +59,8 @@ Find online Python courses.,online d python courses naadle
 Search for internships for computer science students.,computer science vidhyarthi g internship naadle
 Find software engineering internships.,software engineering internship naadle
 Search for frontend development internships.,frontend development internship n naadle
-Look up job opportunities for freshers.,freshers g bele da opportunities  naadle
-Search for the latest programming jobs.,latest  programming belen naadle
+Look up job opportunities for freshers.,freshers g bele da opportunities naadle
+Search for the latest programming jobs.,latest programming belen naadle
 Find information about FastAPI.,fastAPI da bagge naadle
 Search for React tutorials.,react tutorial naadle
 Look up HTML and CSS tutorials.,HTML boka CSS da tutorials naadle
@@ -75,17 +75,17 @@ Look up how neural networks work.,neural network yencha work apund nd naadle
 Search for Shah Rukh Khan.,shah Rukh Khan n naadle
 Find information about Shah Rukh Khan movies.,shah Rukh Khan na bagge naadle
 Search for the latest Bollywood movies.,posath bollywood movies nadle
-Look up today's movie releases.,ini release aina movie n naadle
+Look up todays movie releases.,ini release aina movie n naadle
 Find movie timings near me.,movie da samaya naadle
 Search for restaurants near me.,yenna kaithal d upuna resturants naadle
 Find cafes near me.,yenna kaithal da cafe naadle
 Search for hotels in Bangalore.,bangalore d ithina hotels n naadle
 Look up places to visit in Mangalore.,mangalore d visit manpuna places naadle
 Find tourist attractions in Karnataka.,karnatakod thupinanchina polika jaagalen naadle
-Search for flights to Delhi.,Delhi'g popuna flight'en naadle
-Find trains from Mangalore to Bangalore.,kudlad dhu Bengaluru'g popuna train n naadle
+Search for flights to Delhi.,Delhig popuna flighten naadle
+Find trains from Mangalore to Bangalore.,kudlad dhu Bengalurug popuna train n naadle
 Search for bus timings.,Bus Timings n naadle
-Look up today's train schedule.,initha schedule n thule
+Look up todays train schedule.,initha schedule n thule
 Find the nearest railway station.,Kaithal d ithina railway station naadle
 Search for the nearest airport.,Kaithal d ithina airport naadle.
 Look up the distance between Mangalore and Bangalore.,Kudla boka Bangalore da nadutha doora nadle.
@@ -93,7 +93,7 @@ Search for the best places to eat nearby.,Kaithal d unyere yedde jaaga nadle.
 Find shopping malls near me.,Yenna kaithal uppuna shopping mall-len naadle.
 Search for bookstores nearby.,Kaithal-d uppuna pusthakada angadilen nadle
 Look up the price of a laptop.,laptop-da rate naadle.
-Search for the best budget smartphones.,Kammi dudd'da yedde smartphonelen naadle.
+Search for the best budget smartphones.,Kammi duddda yedde smartphonelen naadle.
 Find reviews for this phone.,Ee phone-da review naadle.
 Search for laptop reviews.,Laptop-da review naadle
 Look up the latest iPhone.,Posa iPhone naadle
@@ -101,18 +101,18 @@ Search for the best laptops for students.,Kalpuna jokleg yedde laptop naadle.
 Find information about Windows 11.,Windows 11-da bagge naadle.
 Search for the latest Android version.,Posa Android version naadle.
 Look up the latest Python version.,Posa Python version naadle.
-Search for today's gold price.,Initha bangarda rate naadle.
+Search for todays gold price.,Initha bangarda rate naadle.
 Find the current petrol price.,Itteda petrol rate naadle.
-Search for today's stock market news.,Initha stock market varthe naadle.
+Search for todays stock market news.,Initha stock market varthe naadle.
 Look up the current dollar exchange rate.,Itteda dollar exchange rate naadle.
 Search for the latest cricket news.,Posa cricket varthe naadle.
-Find today's cricket match.,Initha cricket match naadle.
+Find todays cricket match.,Initha cricket match naadle.
 Search for the latest football news.,Posa football varthe naadle.
 Look up the current IPL news.,Itteda IPL varthe naadle.
 Find information about the Olympics.,Olympics-da vishaya naadle.
-Search for today's important news.,Initha mukhyavaana varthe naadle.
+Search for todays important news.,Initha mukhyavaana varthe naadle.
 What are the latest headlines?,Posa mukhya samacharalu daada?
-Find today's top stories.,Initha mukhya varthelen naadle.
+Find todays top stories.,Initha mukhya varthelen naadle.
 Search the web for the answer.,Uttarakadra online-d naadle.
 Can you find this online?,Unden online-d naadaolaa?
 Look for this information on the internet.,Ee vishayan internet-d naadle.
@@ -296,7 +296,7 @@ Change my alarm to 7 AM.,Yenna alarm-n kaande 7 ganteg badal malple.
 Move my alarm to 8 AM.,Yenna alarm-n 8 ganteg move manpule
 Change the 6 AM alarm to 6:30.,Kaande 6 ganteda alarm-n 6:30-g badal malple.
 Edit my morning alarm.,Yenna kaandeda alarm-n edit malple.
-Change tomorrow's alarm to 7:30.,yelleda alarm-n 7:30-g badal malple.
+Change tomorrows alarm to 7:30.,yelleda alarm-n 7:30-g badal malple.
 Reschedule my alarm to 9 AM.,Yenna alarm-n kaande 9 ganteg reschedule malple.
 Make my alarm earlier.,Yenna alarm-n kooda bega deele.
 Make my alarm later.,Yenna alarm-n kooda pira deele.
@@ -313,7 +313,7 @@ Wake me up before my meeting.,Yenna meeting-d dumbe yennanu lakyelle.
 Set an alarm before my flight.,Yenna flight-d dumbe alarm deele.
 Remind me to wake up early tomorrow.,yelle kaande bega lakkayere yenk nenpu malple.
 Make sure I wake up at 6.,Yaan 6 ganteg lakki lekka thole.
-Don't let me oversleep tomorrow.,yelle yaan jaasthi jelpuna lekka thovadchi.
+Dont let me oversleep tomorrow.,yelle yaan jaasthi jelpuna lekka thovadchi.
 I need to wake up early.,Yenk bega lakkaodu.
 Please wake me up tomorrow morning.,Dayamalthd yelle kaande yennanu lakyelle.
 Set an alarm for tomorrow.,yelleg onji alarm deele.
@@ -322,12 +322,12 @@ Set an alarm for later.,Bokkagaad onji alarm deele.
 Schedule a wake-up alarm.,Lakkayere onji alarm schedule malple.
 Can you schedule an alarm for me?,Yenk onji alarm schedule malpuvara?
 Please create a new alarm.,Dayamalthd onji posa alarm deele.
-Let's go to the beach tomorrow evening.,yelle bayyag beach-g poyi.
-How are you? I'm so happy to see you.,Yencha ullar? Niklen thood yenk masth kushi aandu.
+Lets go to the beach tomorrow evening.,yelle bayyag beach-g poyi.
+How are you? Im so happy to see you.,Yencha ullar? Niklen thood yenk masth kushi aandu.
 "I have to go, hurry up!","Yaan povodu, bega malple!"
 Where will we go tomorrow? At what time will you be coming?,yelle nama olpa poyi? Eer yee gantege barpar?
 Every morning I eat almonds.,yepala kaande yaan badam thinpe.
-"The weather is beautiful today, so let's go outside?","Initha havamana masth laikundu, andekaad pidayi poya."
+"The weather is beautiful today, so lets go outside?","Initha havamana masth laikundu, andekaad pidayi poya."
 One of my friends is studying in your college.,Yenna onji dhosthi irena college-d kalthondulle.
 He is currently in his final year.,ayeitte final year-d ulle.
 "He is a very nice guy, nobody must disturb him.","aye masth yeddae huduge, yerla aayeg thondare malpere balli."
@@ -338,14 +338,14 @@ I will go to my home.,Yaan yenna illag pope.
 I had severe stomach pain,Yenk masth banji beene ithend.
 Can you please wait for me while I get ready to go outside?,Yaan pidayi poyer ready aape aade mutta yenkaad unthuvaraa?
 All set for tomorrow?,yelleg matha tayaaratha?
-"You wait here, I'll go quickly and come back.","Eer moolpa unthle, yaan bega podh barpe."
-I have to cook. I'll talk to you later.,"Yenk aduge malpare undu ,Yaan bokka paaterve."
+"You wait here, Ill go quickly and come back.","Eer moolpa unthle, yaan bega podh barpe."
+I have to cook. Ill talk to you later.,"Yenk aduge malpare undu ,Yaan bokka paaterve."
 How are you all?,yencha ullar maatherla?
-"Why are you doing this, what is the use?","unden Dayeg  malthondullar, daada prayojana undetha?"
-My grandmother's home.,Yenna abbana ill.
+"Why are you doing this, what is the use?","unden Dayeg malthondullar, daada prayojana undetha?"
+My grandmothers home.,Yenna abbana ill.
 "Your actions, not your words, define you.","Irena bele matra irena gurtha, irena paathera ath."
-Good character is a person's true wealth.,yedde guna onji naramanyana nija aayina sampath.
-"What man, it's raining beautifully, let's eat hot goli bajes and chat with our friends.","Daada maare, barsa masth laaik aadh barondundu, becha becha goli baje thinded dhosthi nakuleda paaterga."
+Good character is a persons true wealth.,yedde guna onji naramanyana nija aayina sampath.
+"What man, its raining beautifully, lets eat hot goli bajes and chat with our friends.","Daada maare, barsa masth laaik aadh barondundu, becha becha goli baje thinded dhosthi nakuleda paaterga."
 The cat is on the scooter.,Puche scooter-da mith undu.
 "Due to heavy rainfall, a holiday has been declared for school children.",Jaasthi barsa barpunerdaadh school da jokleg raja korther.
 "When you come near the sea, the waves give you so much joy.","Samudrada kaithal bannaga, aleyalu masthh kushi korpund."
@@ -361,7 +361,7 @@ Go drink water and come.,neer pardh bale pole.
 Add some sugar and salt.,Onchooru sakkare boka uppu paadle.
 Ask your friends to fill out the form.,Irena dhosthi nakleg form fill malpere panle.
 How much does it cost?,Undek yeth kaas?
-What's the time now?,Itte gante yeth aandu?
+Whats the time now?,Itte gante yeth aandu?
 Give me the latest technology news.,Posa technology varthe yenk korle.
 Fill the bottle with hot water.,Bottle-g becha neer dinjale.
 "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.","Somavara, Angaraka, Budhavara, Guruvara, Shukravara, Shanivara, Aithaara."
@@ -374,8 +374,8 @@ Create one new Gmail account.,Onji posa Gmail account create malple.
 "Eyes, mouth, nose, cheeks, ears, neck, hands, leg, face, stomach, head, shoulder, fingers.","Kannu, baayi, mooku, kenne, kebi, barlu, kai, kaar, mone, banji, tare, bhuja, birel."
 I cleaned my room before leaving.,Popunerd dumbe yaan yenna room nit malte.
 I saved the document on my laptop.,Yaan laptop-d document save malte.
-I met an old friend yesterday.,Kodane yaan yenna  dhosthin thikkide.
-"I was getting late, so I didn't have time to have breakfast.","Yenk porthu aavondundu, aikaad kaandeda thindi thinyere porthu thikkiji."
+I met an old friend yesterday.,Kodane yaan yenna dhosthin thikkide.
+"I was getting late, so I didnt have time to have breakfast.","Yenk porthu aavondundu, aikaad kaandeda thindi thinyere porthu thikkiji."
 "How are you, my friend?","Yencha ulla, yenna dhosthi?"
 The breeze of our hometown is the peace of our hearts.,Namma oorda gali namma gundeda shanthi.
 Close the tab and go back.,Tab mucchid pira pole.
@@ -498,7 +498,7 @@ look there,Alpa thoole
 you were in front of me,Eer yenna yedur ithar
 move forward,yedur pole
 come back,Pira bale
-don't go anywhere,odegla povorchi
+dont go anywhere,odegla povorchi
 college,College
 will you come today,Ini barpara
 Where do you live,Eer olpa uppuni
@@ -506,7 +506,7 @@ I,Yaan
 You,Ee
 how did you come,Eer yencha bathini
 god bless you,Devare yedde malpad
-Don't do like that,Ancha malporchi
+Dont do like that,Ancha malporchi
 I will come soon,Yaan choor porthud barpe
 Speak a bit louder,Onchooru gattid paatherle
 Speak a bit softer,Onchooru mellane paaterle
@@ -517,7 +517,7 @@ she sings very nicely,Aal masthh shok padhya panpal
 I didnt do anything,Yaan daala mandiji
 let us go together,Nama ottige poyi
 she came to visit you,Aalu iren thooyere baidini
-I was busy therefore i could not come,Yenk kelsa ithend aik  barre aayiji
+I was busy therefore i could not come,Yenk kelsa ithend aik barre aayiji
 why did you come,Eer dayeg bathini
 Then whats special,Bokka daada vishesha
 I live in Mangalore,Yaan Kudlad uppun
@@ -540,7 +540,7 @@ name,Pudar
 milk,Per
 no,Ath
 come,Bale
-don't come,Barorchi
+dont come,Barorchi
 call,Leppule
 nature,Prakrithi
 environment,Parisara
@@ -586,7 +586,7 @@ What is your name,Irena pudar daada
 What is this,Undu daada
 Had tea,Cha aanda
 It should be like that only,av Anchene uppod
-I will never let you win easily,Yaan ninan ath sulabhod gendhere  budpuji
+I will never let you win easily,Yaan ninan ath sulabhod gendhere budpuji
 He was in trouble,Aaye thondared ithe
 want,Bodu
 wanted,Bodaathithnd
@@ -754,7 +754,7 @@ who,Yer
 go far,Doora pole
 also,Kooda
 get,Padedole
-don't touch,mutthorchi
+dont touch,mutthorchi
 view,Thoole
 first,Suru
 am,yan
@@ -1015,32 +1015,32 @@ pickle,Uppad
 prepare,Thayar
 exam,Parikshe
 simply,pokkade
-It's not working,Undu bele manthond ijji
+Its not working,Undu bele manthond ijji
 It’s too expensive,Undu masthh expensive
 Take care,jagrathe manpule
 Let’s go by bike,Nama bike-d poyi
-I'm proud of you,Yenk nina mith hemmeyundu
-I'm going to the market,Yaan market-g pondulle
+Im proud of you,Yenk nina mith hemmeyundu
+Im going to the market,Yaan market-g pondulle
 Let’s study together,Nama ottuge kalpuga
 I forgot my notebook,Yaan yenna notebook marthde
 The food is ready,Vanaas tayar aand
 It’s time to eat,Thinyere porthu aand
 Turn off the lights,light off malple
 Lock the door,Baagil lock paadle
-I'm doing my homework,Yaan yenna homework malthond ulle
+Im doing my homework,Yaan yenna homework malthond ulle
 Let’s clean the room,room clean malpuga
-It's raining outside,Pidayi barsa barondundu
+Its raining outside,Pidayi barsa barondundu
 Nothing much,Daadala ijji
 What’s going on,Daada aavondundu
 I don’t know,Yenk gottuji
-I'm not sure,Yenk sarit gothuji
+Im not sure,Yenk sarit gothuji
 I agree with you,Yaan ninana oppuve
 I want to buy this,Yenk unden dethonodu
-I'm hungry,Yenk badavu avondundu
+Im hungry,Yenk badavu avondundu
 What’s for lunch,Madhyanag daada vanaas
 The food is tasty,Vanaas masth laikundu
-I don't like it,Yenk undu ishta ijji
-I'm full,Yenna banji dinjind
+I dont like it,Yenk undu ishta ijji
+Im full,Yenna banji dinjind
 Can I have some water,Yenk onchooru neer thikkoliya
 I am happy today,Ini yenk kushi aathnd
 I am tired,Yenk bejar aathnd
@@ -1081,7 +1081,7 @@ I cant hear you,Irena pathera yenk kenond ijji
 What time is it,Itte gante yeth
 Give me that,Unden yenk korle
 Come fast,Bega bale
-Don't shout,Bobbe padorchi
+Dont shout,Bobbe padorchi
 Be careful,Ushaard uppule
 That’s mine,Avu yenna
 This is yours,Undu irena
@@ -1091,18 +1091,18 @@ Try again,Koodonji sarti prayathna malple
 One more time,Koodonji sarti
 Do you remember,Nikk nenepundaa
 I forgot,Yaan marathede
-You're right,Eer pandina sari
+Youre right,Eer pandina sari
 That’s wrong,Avu thappu
 Turn off the TV,TV off malple
-Don't touch that,Unden mutorchi
+Dont touch that,Unden mutorchi
 Clean the table,Table clean malple
 It’s very hot,masth becha undu
 It’s very cold,masth chali undu
-I'm feeling sleepy,Yenk nidre barondundu
+Im feeling sleepy,Yenk nidre barondundu
 Let’s take a break,Onchooru break dethonga
-I'll call you later,Yaan bokka call malpe
+Ill call you later,Yaan bokka call malpe
 Don’t lie,sullu panorchi
-Let's go to mangalore,Nama Kudlag poyi
+Lets go to mangalore,Nama Kudlag poyi
 I know mangalore well,Yenk Kudla yedde gurtha undu
 What’s your name,Irena pudar daada
 I’m from India,Yaan Bharathadaye
@@ -1112,7 +1112,7 @@ Can you come with me,Yenna ottuge barpara
 Stand up,Lakked unthule
 What’s the homework,Homework daada
 The teacher is coming,Mestru barondunduller
-I'm late for class,Class-g porthu aand
+Im late for class,Class-g porthu aand
 I need help with this topic,Undu vishayad yenk sahaya bodu
 I got full marks,Yenk full anka thikkend
 The class was interesting,Class masth yedde ithend
@@ -1138,7 +1138,7 @@ We will go to Mangalore,Nama Kudlag poyi
 In a restaurant,Onji hotel-d
 Will that take some time,Avu onchooru porthu dettonuvaa
 Give me one masala dosa,Yenk onji masala dosa korle
-I don't want that,Yenk avu bodchi
+I dont want that,Yenk avu bodchi
 Give some water,Onchooru neer korle
 You have given a good service,Eer edde seve korthar
 The price is too high,Kraya masth jaasthi undu
@@ -1181,7 +1181,7 @@ You run in the marathon,Ee marathon-d bala
 You sit in this chair,Eer ee kurchid kulyer
 Is it so,Anchana
 Can you come there,Alpa baroliya
-Didn't you know,Nikka gothijja
+Didnt you know,Nikka gothijja
 Glad to meet you,Iren thikkid kushi aandu
 What to do now,Itte daada malpuni
 See you next time,Bakkada sarti thikkoyi
@@ -1195,8 +1195,8 @@ I have to wake up early in the morning tomorrow,Yenk kale kaande bega lakkaodu
 I have some other work today,Yenk ini bere kelsa undu
 Where are you man,Olpa ulla maare
 I am waiting for you near Town hall,Yaan ninna kaad Town Hall kittal kaapondulle
-Ice-cream at Ideal's is too good,Ideal-da Ice-cream masth laakundu
-Today's treat is mine,Initha treat yenna
+Ice-cream at Ideals is too good,Ideal-da Ice-cream masth laakundu
+Todays treat is mine,Initha treat yenna
 I will meet you in the evening,Yaan irenn bayyag thikkpe
 Thank you all,Maatheregla solmelu
 How much does this cost,Undek yeth kraji
@@ -1335,7 +1335,7 @@ I am going out,Yaan pidayi ponduLle
 I am going to the store,Yaan angadig ponduLle
 I just got here,Yaan itte baide
 I am here,Yaan moolpa ulle
-I  will be there at 5 minutes,Yaan ayn minute-d aade barpe
+I will be there at 5 minutes,Yaan ayn minute-d aade barpe
 Message me when you are free,Free aavaga message malple
 Are you free now,Itte free ullara
 I am busy right now,Itte yaan busy ulle
@@ -1738,7 +1738,7 @@ Dont spill the milk,Per chelorchi
 Boil the water,Neer urkalle
 Turn off the stove,Stove off malple
 Put the dishes in the sink,bajana sink-d paadle
-Serve the food hot,Becha Becha  vanaas balasle
+Serve the food hot,Becha Becha vanaas balasle
 Wash the vegetables,Tharukaari dekkle
 Peel and crush the garlic,Bollulli da choli dethed nekke malple
 Add some lemon juice,Onchooru nimbe neer paadle
@@ -1799,13 +1799,13 @@ I am here for tourism,Yaan thirgyere baide
 How much is the entrance fee,Ulai poyer yeth kaas
 Can I take pictures here,Moolpa photo deppoliya
 How long will it take to walk there,Aade nadapere yeth porthu bodu
-Sorry  I am late,"Sorry, yenk porthu aandu"
+Sorry I am late,"Sorry, yenk porthu aandu"
 Please repeat once more,Dayamalthd koodonji sarti panle
 When is the assignment due,Assignment yepag korodu
 Can I borrow your notes,Irena notes dettonoliya
 Are we having a test today,Namak ini parikshe undaa
 Can I leave early today,Yaan ini bega povoliya
-Do we have a class tomorrow,Yelle  namak class undaa
+Do we have a class tomorrow,Yelle namak class undaa
 Is attendance compulsory,Attendance bodenaa
 Can I ask a question,Yaan onji prashne kenoliya
 Where is the seminar hall,Seminar hall olpa undu
@@ -1833,7 +1833,7 @@ Place the curry on the table,ಕಜಿಪುನ್ ಮೇಜಿದ ಮಿತ್�
 The curry is too spicy,ಕಜಿಪು ಮಸ್ತ್ ಖಾರ ಉಂಡು
 Make the curry,ಕಜಿಪು ಮಲ್ಪುಲೆ
 Weather today,Ini da weather
-Today's weather,Ini ta havaamana
+Todays weather,Ini ta havaamana
 Is it raining?,Barsa barond unda?
 Current temperature,Itteda temperature encha undu
 Weather forecast,Havaamana encha undu
@@ -1848,7 +1848,7 @@ Is it hot outside?,Pidaayi seke unda?
 Is it cold?,Chali unda?
 Will it rain?,Barsa barpunda?
 Rain forecast,Barsada vivara panle
-Tomorrow's weather,Yelle da weather encha undu
+Tomorrows weather,Yelle da weather encha undu
 Tomorrow rain,Yelle barsa barpunda
 How is the climate?,Climate encha undu
 Show temperature,Temperature toojale
@@ -1865,7 +1865,7 @@ Today rain chance,Ini barsa barpina chance unda
 Tell me the weather in Mangalore today,Ini Kudla da weather encha undu panle
 What is the temperature in Udupi right now?,Itthe Odipu du temperature yeth undu?
 Will it rain in Bangalore this evening?,Ini baiyag Bengalooru du barsa barpunda?
-Check tomorrow's weather forecast for Delhi,Yelle da Delhi weather forecast check malpule
+Check tomorrows weather forecast for Delhi,Yelle da Delhi weather forecast check malpule
 Is there any chance of rain in Mumbai today?,Ini Mumbai du barsa barpina sandarbha unda?
 How hot will it be in Mangalore tomorrow afternoon?,Yelle madhyahna Kudla du yeth seke aavoli?
 Please tell me the humidity level in Udupi,Dayamalth Odipu da humidity level panle
@@ -1882,7 +1882,7 @@ Give me the rainfall update for Udupi district,Odipu jille da barsada update kor
 Is tomorrow going to be a cloudy day in Mangalore?,Yelle Kudla du moda kavidina dina aavunda?
 What will the temperature be tonight in Delhi?,Ini rathre Delhi du temperature yeth aavoli?
 Check if the weather is clear for travel to Udupi,Odipu g prayana malpare weather sari unda check malpule
-Tell me today's minimum and maximum temperature,Ini ta kanishta bokka garixta temperature panle
+Tell me todays minimum and maximum temperature,Ini ta kanishta bokka garixta temperature panle
 Will there be thunderstorms in Mangalore tonight?,Ini rathre Kudla du minchu giligili barpunda?
 Please check the rain prediction for tomorrow morning,Yelle kaande barsada anumaana check malpule
 How is the weather in Mumbai compared to Mangalore?,Mumbai da weather Kudla g polike malpundaga encha undu?
@@ -1894,13 +1894,13 @@ Tell me the sunset time and weather for today,Ini surye kandoonaga weather encha
 Is tomorrow suitable for outdoor sports in Bangalore?,Yelle Bengalooru du pidaayi gobbare weather sari unda?
 Please tell me whether it will rain in Mangalore tomorrow evening because I have to travel,Yelle baiyag Kudla du barsa barpunda panle dayepandha yaan ooru g povodu
 Check if it will rain in Udupi before I leave the house this afternoon,Ini madhyahna yaan illadhu pidayi povadhu dumbe Odipu du barsa barpunda check malpule
-Tell me tomorrow's temperature in Bangalore because I need to plan my meeting outside,Bengalooru du yelle da temperature panle dayepandha yaan pidaayi meeting plan malpodu
+Tell me tomorrows temperature in Bangalore because I need to plan my meeting outside,Bengalooru du yelle da temperature panle dayepandha yaan pidaayi meeting plan malpodu
 "If it is going to rain heavily in Mangalore tomorrow, please let me know early",Yelle Kudla du jore barsa barpundu anda yenk dumbe thelipale
 Check the weather in Delhi for tomorrow morning because my flight is scheduled at 8 AM,Yelle kaande Delhi da weather check malpule dayepandha yenna flight 8 gante g undu
 Tell me if the rain will stop in Udupi after 4 PM so that I can go to the market,Odipu du 4 gante da bokko barsa nillunda panle yaan market g povodu
 What is the humidity and rain chance in Mangalore when I go for a walk in the evening?,Baiyag yaan walk povonaga Kudla du humidity bokko barsada chance yeth undu?
 Check whether it is raining in Bangalore right now because my friend is driving on the highway,Itthe Bengalooru du barsa barond unda check malpule dayepandha yenna snehite highway du car chalpondu ulle
-Tell me tomorrow's weather in Mysore because we are planning a family picnic,Yelle Mysuru da weather panle dayepandha enkulu family picnic plan maltondu ulla
+Tell me tomorrows weather in Mysore because we are planning a family picnic,Yelle Mysuru da weather panle dayepandha enkulu family picnic plan maltondu ulla
 "If the temperature in Delhi goes above 40 degrees tomorrow, warn me before noon",Yelle Delhi du temperature 40 degree dhu hechchaanda yenk madhyahnadhu dumbe panle
 Please check the weather forecast for Mangalore before I book the cricket turf for tomorrow evening,Yelle baiyag turf book malpundhu dumbe Kudla da weather forecast check malpule
 Tell me if it will rain tonight in Udupi because we left the clothes outside to dry,Ini rathre Odipu du barsa barpunda panle dayepandha angiladhu bariya pidaayi paadina ullu
@@ -1918,7 +1918,7 @@ Tell me the temperature in Bangalore before I pack woollen clothes for my trip,Y
 Check if the weather in Delhi is pleasant in the evening because we have an outdoor dinner,Baiyag pidaayi oota ittininda Delhi da weather sukha unda check malpule
 Tell me the rain status in Mangalore after midnight because construction work is going on,Madhyaraathri da bokko Kudla du barsa barpunda panle dayepandha construction bele nadapond undu
 Will it be cloudy in Udupi tomorrow when the solar eclipse happens in the morning?,Yelle kaande grahana aavanaga Odipu du moda kavardh aavunda panle
-Check tomorrow's weather in Mumbai because flights might get delayed if there is heavy rain,Jore barsa ittinaga flight delay aavoli aayikora yelle Mumbai weather check malpule
+Check tomorrows weather in Mumbai because flights might get delayed if there is heavy rain,Jore barsa ittinaga flight delay aavoli aayikora yelle Mumbai weather check malpule
 Tell me if it will rain in Mangalore tomorrow because I need to wash my car in the morning,Yelle kaande car dhowonodu aayikora Kudla du barsa barpunda thelipale
 "If it starts raining in Bangalore this afternoon, tell me the nearest dry time",Ini madhyahna Bengalooru du barsa shuru aanda yepba nilloli thelipale
 Check the coastal weather bulletin for Mangalore before the boat journey starts,Boat prayana shuru aavanadha dumbe Kudla da karavali weather bulletin check malpule
@@ -1977,7 +1977,7 @@ Search for simple home gardening tips on YouTube,Youtube du illada tottada tips 
 Play devotional Bhajan songs in Kannada and Tulu,Kannada bokko Tulu bhakti bhajan padya paadle
 Search for machine learning project walkthroughs on YouTube,Youtube du machine learning project video naadle
 Play 90s classic Hindi retro hits on YouTube,Youtube du 90s da retro Hindi padya paadle
-Watch today's breaking news live stream on YouTube,Youtube du ini ta breaking news live stream thooli
+Watch todays breaking news live stream on YouTube,Youtube du ini ta breaking news live stream thooli
 Search for best budget laptop review 2026 on YouTube,Youtube du 2026 da budget laptop review naadle
 Play relaxing rain sound video for deep sleep,Yedde nidre g rain sound video paadle
 Search for Tulu movie Chaali Polilu full video on YouTube,Youtube du Chaali Polilu tulu movie naadle
@@ -1988,13 +1988,13 @@ Play popular English acoustic covers on YouTube,Youtube du popular English acous
 Search for world history animated summaries on YouTube,Youtube du jagatthuda charithre da video naadle
 Play relaxing cafe jazz background music,Cafe jazz background music paadle
 Search for basic guitar chord lessons for beginners,Guitar beginners lessons video naadle
-Watch highlights of today's football match on YouTube,Ini ta football match highlights Youtube du thooli
+Watch highlights of todays football match on YouTube,Ini ta football match highlights Youtube du thooli
 Play traditional coastal folk dance video on YouTube,Karavali da janapada dance video paadle
 Search for space exploration and NASA videos on YouTube,NASA space exploration video naadle
 Open YouTube and search for Tulu comedy scenes because I want to relax,Yenk relax aavodu aayikora Youtube open maltdh tulu comedy naadle
 Please play Kantara chapter one trailer on YouTube so that we can watch it together,Yenkulu kulldh thoolere Youtube du Kantara chapter one trailer paadle
 Search for Python data science tutorials on YouTube before I start working on my assignment,Assignment shuru madpadhu dumbe Youtube du Python data science tutorial naadle
-Open YouTube and play soothing instrumental music while I study for tomorrow's exam,Yelle da exam g odhonaga Youtube open maltdh soothing instrumental paadle
+Open YouTube and play soothing instrumental music while I study for tomorrows exam,Yelle da exam g odhonaga Youtube open maltdh soothing instrumental paadle
 Play the latest episode of Tulu comedy drama on YouTube after my dinner finishes,Oota aayina bokko Youtube du tulu comedy nataka da posa episode paadle
 Search for quick breakfast recipes on YouTube because I only have 10 minutes to cook,10 minute matra samaya undu aayikora Youtube du quick breakfast recipe naadle
 Open YouTube and play workout songs with high bass because I am heading to the gym,Gym g povond ulle aayikora Youtube open maltdh high bass workout padya paadle
@@ -2024,7 +2024,7 @@ Open YouTube and play piano relaxation melody because I have a headache,Mandhe b
 Search for electric car battery maintenance on YouTube before going on a long drive,Long drive povadhu dumbe EV battery maintenance video Youtube du naadle
 Open YouTube and play coastal Yakshagana padhyana songs with Chende beats,Chende shabda itthina Yakshagana padya Youtube du paadle
 Play English vocabulary improvement lessons on YouTube before taking the interview,Interview g dumbe English vocabulary lessons Youtube du thooli
-Search for how to bake a chocolate cake in cooker on YouTube for my sister's birthday,Meggede birthday g cooker du cake madpuna video Youtube du naadle
+Search for how to bake a chocolate cake in cooker on YouTube for my sisters birthday,Meggede birthday g cooker du cake madpuna video Youtube du naadle
 Open YouTube and play soothing flute meditation tracks while we light the lamp,Deepa belagonaga Youtube du flute meditation music paadle
 Search for car tyre puncture repair kit guide on YouTube before driving to Goa,Goa g povadhu dumbe tyre repair kit video Youtube du naadle
 Open YouTube and play viral Tulu comedy clips from private bus conductors,Private bus conductor comedy clips Youtube du naadle
@@ -2144,7 +2144,7 @@ Google petrol price in Mangalore,Kudla da petrol bele Google du naadle
 Search hospital near me,Muttada hospital Google du naadle
 Google meaning of Tulu word,Tulu padada artha Google du naadle
 Search colleges in Udupi,Odipu da colleges Google du naadle
-Google today's headline news,Ini ta mukhya news Google du naadle
+Google todays headline news,Ini ta mukhya news Google du naadle
 Search bank IFSC code,Bank IFSC code Google du naadle
 Google pin code of Mangalore,Kudla da pin code Google du naadle
 Search cinema showtimes,Cinema showtimes Google du naadle
@@ -2166,7 +2166,7 @@ Google the train timings from Mangalore to Bangalore tonight,Ini rathre Kudla dh
 Search for 24-hour medical stores near my current location,Itthe muttada 24-hour medical shop Google du naadle
 Google the current petrol and diesel prices in Udupi district,Odipu jille da petrol diesel rate Google du naadle
 Search for famous historical temples to visit in Coastal Karnataka,Karavali da prasiddha devalaya Google du naadle
-Google today's gold and silver rate per gram in Mangalore,Ini Kudla da gram bangara bella rate Google du naadle
+Google todays gold and silver rate per gram in Mangalore,Ini Kudla da gram bangara bella rate Google du naadle
 Search for Karnataka government bus booking portal on Google,KSRTC bus booking portal Google du naadle
 Google the symptom checker for seasonal cold and fever,Chali jwara da lakshana Google du naadle
 Search on Google for direct flights between Mangalore and Mumbai,Kudla Mumbai direct flight Google du naadle
@@ -2330,7 +2330,7 @@ Open File Explorer and navigate to pictures folder to transfer mobile photos,Mob
 Open Calculator application and convert US dollars to Indian rupees,Dollar rupees convert madpare Calculator open malpule
 Open Windows Settings to check if Bluetooth headset is connected properly,Bluetooth headset check madpare Settings open malpule
 Open VLC Player and open subtitles file for the documentary video,Subtitles file open madpare VLC open malpule
-Open Notepad and write down today's meeting action items before forgetting,Action items madhapadhu dumbe bareyare Notepad open malpule
+Open Notepad and write down todays meeting action items before forgetting,Action items madhapadhu dumbe bareyare Notepad open malpule
 Open browser,Browser open malpule
 Open Instagram,Instagram open malpule
 Open Gmail,Gmail open malpule
@@ -2366,7 +2366,7 @@ Open LinkedIn to connect with professional colleagues,Colleagues connect aavolin
 Open ChatGPT website to ask coding questions,Coding prashne kelere ChatGPT open malpule
 Open Instagram to view friend stories and posts,Stories thoolere Instagram open malpule
 Open Amazon online shopping website for groceries,Saman kharidhey g Amazon open malpule
-Open Flipkart to check today's discount deals,Discount deals thoolere Flipkart open malpule
+Open Flipkart to check todays discount deals,Discount deals thoolere Flipkart open malpule
 Open Google Maps to find fastest route to Udupi,Odipu marga naadere Google Maps open malpule
 Open Netflix to watch trending movie series,Trending movie thoolere Netflix open malpule
 Open Cricbuzz website for live cricket scores,Live score thoolere Cricbuzz open malpule
@@ -2411,7 +2411,7 @@ Open KSRTC online portal and book two sleeper bus seats from Udupi to Bangalore,
 Open Notion workspace and mark completed tasks under the AI sprint milestone board,Completed tasks mark madpare Notion open malpule
 Open Google Sheets and share the dataset vocabulary counts table with team members,Vocab table share madpare Google Sheets open malpule
 Open Instagram and check direct message inbox before going to sleep tonight,Kullere dumbe Instagram messages thoolere Instagram open malpule
-Open Hotstar and stream today's live cricket tournament match in high definition,HD du cricket match thoolere Hotstar open malpule
+Open Hotstar and stream todays live cricket tournament match in high definition,HD du cricket match thoolere Hotstar open malpule
 Open Prime Video and download the documentary episodes for offline watching during travel,Trip du thoolere Prime Video download madpule
 Open Reddit and read discussions on the best hyperparameters for fine-tuning transformer models,Transformer tuning discussion odhere Reddit open malpule
 Open Zomato and check customer ratings and reviews for newly opened coastal seafood cafe,Cafe ratings thoolere Zomato open malpule
@@ -2493,8 +2493,8 @@ Please set a 25-minute timer so that I remember to turn off the water heater on 
 Set an alarm for 6 AM tomorrow because our college sports tournament starts at 8 AM,Sports tournament 8 gante g shuru aavanada aayikora yelle 6 gante g alarm paadle
 Set a timer for 15 minutes before the rice in the pressure cooker gets overcooked,Kukkar du ari karpadhu dumbe 15 minute timer set malpule
 Wake me up at 4:45 AM tomorrow if it is not raining heavily outside,Pidaayi jore barsa ijji anda yelle kaande 4:45 g yenan leppule
-Set an alarm for 8 PM tonight so that I don't forget to take my prescribed fever medicine,Jwarada marndhu parpere madhapadhu dumbe ini rathre 8 gante g alarm paadle
-Cancel tomorrow morning's 6 AM alarm because our office declared a holiday,Office holiday aathini aayikora yelle kaande 6 gante da alarm cancel malpule
+Set an alarm for 8 PM tonight so that I dont forget to take my prescribed fever medicine,Jwarada marndhu parpere madhapadhu dumbe ini rathre 8 gante g alarm paadle
+Cancel tomorrow mornings 6 AM alarm because our office declared a holiday,Office holiday aathini aayikora yelle kaande 6 gante da alarm cancel malpule
 Set a recurring alarm for 6:15 AM every weekday because I need to build a consistent habit,Yedde habit madpere weekdays prathi kaande 6:15 g alarm paadle
 Set a timer for 40 minutes and alert me with a sound when the machine learning model training finishes,Model training mugiyinaga shabda barolindu 40 minute timer paadle
 Set an alarm for 10 PM tonight to remind me to submit the assignment before midnight,Midnight g dumbe assignment submit madpere rathre 10 gante g alarm paadle
@@ -2750,7 +2750,7 @@ What is global warming?,Global warming pandha daada?
 What is renewable energy?,Punarbalake shakthi pandha daada?
 Who is ISRO chairman?,ISRO da adhyaksher yeru?
 What is Python programming?,Python programming pandha daada?
-Tell me about St Mary's Island,St Mary's Island bagge panle
+Tell me about St Marys Island,St Marys Island bagge panle
 What is the population of India?,India da janasankhye yeth?
 What is quantum computing?,Quantum computing pandha daada?
 Who discovered electricity?,Current kanduhididhina yeru?
@@ -2786,9 +2786,9 @@ Tell me about the traditional Mangalorean tile industry and factories,Kudla da h
 What are the key differences between renewable and non-renewable energy sources?,Punarbalake shakthi bokko ithara shakthi da vyathyasa panle
 Tell me about the brave queen Rani Abbakka of Ullal because she fought Portuguese invaders courageously,Portuguese sainikere yedurisina Ullalda veera rani Abbakka bagge thelipale
 Please explain how speech-to-text neural networks work because I am preparing my seminar presentation,Seminar presentation g speech to text neural network encha bele madpundu explain malpule
-Who was APJ Abdul Kalam and what were his major scientific contributions to India's space program?,APJ Abdul Kalam yeru bokko India space program g aare koduge daada?
+Who was APJ Abdul Kalam and what were his major scientific contributions to Indias space program?,APJ Abdul Kalam yeru bokko India space program g aare koduge daada?
 Explain the cultural ritual of Bhoota Kola spirit worship and why it is sacred to the people of Tulu Nadu,Tulunadu da Daivaradhane Bhoota Kola da mahathwa bokko aacharanegalu daada thelipale
-Tell me about the history of Mangalore port and how it became one of India's major commercial harbors,Kudla bandaru da charithre bokko mukhya trade center aayina vidhana panle
+Tell me about the history of Mangalore port and how it became one of Indias major commercial harbors,Kudla bandaru da charithre bokko mukhya trade center aayina vidhana panle
 What is the traditional sport of Kambala and how are the buffalo pairs trained by coastal farmers?,Kambala erula ota pandha daada bokko krishikere erulanu encha train madpuver panle
 Explain how ByT5 transformer models process raw byte sequences without needing a fixed subword vocabulary,ByT5 model fixed vocabulary ijji raw byte process madpunu encha explain malpule
 Who was Koti and Chennaya and why are they worshipped as legendary heroes in Coastal Karnataka folklore?,Koti Chennaya yeru bokko Tulunadu janapada charithre du aare mahathwa daada?
@@ -2798,9 +2798,9 @@ Tell me about the traditional cuisine and famous seafood dishes of Mangalore bef
 What is the significance of the 8th Schedule of the Indian Constitution and the ongoing movement for Tulu language?,Samvidhana da 8th schedule g Tulu serpadhere nadaponditina horata da mahathwa daada?
 Explain the difference between machine learning and deep learning using simple everyday analogies,Machine learning bokko deep learning da vyathyasa simple udaharane du explain malpule
 Tell me about the life and discoveries of Sir CV Raman who won the Nobel Prize in Physics from India,Nobel prize vijetha Sir CV Raman aare shodhane bagge vivara panle
-What is the function of the human brain's neural pathways when learning a new second language?,Posa bhashe kalponaga brain da neural pathways encha bele madpundu?
-Explain how greenhouse gases trap heat in earth's atmosphere and contribute to global climate change,Greenhouse gas bisilu pididhdh global warming madpunu encha explain malpule
-Tell me about the natural rock formations of Yana and St Mary's Island off the coast of Malpe,St Mary's Island bokko Yana da rock formations bagge poora vivara panle
+What is the function of the human brains neural pathways when learning a new second language?,Posa bhashe kalponaga brain da neural pathways encha bele madpundu?
+Explain how greenhouse gases trap heat in earths atmosphere and contribute to global climate change,Greenhouse gas bisilu pididhdh global warming madpunu encha explain malpule
+Tell me about the natural rock formations of Yana and St Marys Island off the coast of Malpe,St Marys Island bokko Yana da rock formations bagge poora vivara panle
 Who was the great king Krishnadevaraya and how did the Vijayanagara Empire flourish under his rule?,Vijayanagara da Raja Krishnadevaraya aare aalwike charithre bagge panle
 Explain how GPS satellites calculate exact coordinates on earth using triangulation signals,GPS satellite triangulation use maltdh coordinates calculate madpunu encha?
 Tell me about the origin and theatrical traditions of Yakshagana coastal folk art performance,Karavali da Yakshagana da moolasthana bokko prasanga paramparaya bagge panle
@@ -2810,11 +2810,11 @@ Tell me about the Western Ghats mountain range biodiversity and why it is classi
 Who was Dr BR Ambedkar and what was his pivotal role in drafting the Indian Constitution?,Samvidhana shilpi Dr BR Ambedkar aare mukhyavada koduge daada?
 Explain how modern generative artificial intelligence and large language models generate coherent text,LLM bokko Generative AI text generate madpunu encha explain malpule
 Tell me about the heritage of Pilikula Nisargadhama and its botanical gardens and heritage village,Pilikula Nisargadhama da botanical garden bokko parampare mane bagge panle
-What causes volcanic eruptions and earthquakes along the earth's tectonic plate boundaries?,Tectonic plates movement dhu bhoomikampa bokko jwalamukhi encha aavundu?
+What causes volcanic eruptions and earthquakes along the earths tectonic plate boundaries?,Tectonic plates movement dhu bhoomikampa bokko jwalamukhi encha aavundu?
 Explain how water desalination plants convert salty sea water into potable clean drinking water,Kadalara neeru drinking water madpuna desalination plant encha bele madpundu?
 Tell me about the literary contributions of Kayyar Kinhanna Rai to Kannada and Tulu literature,Sahithi Kayyar Kinhanna Rai aare Tulu Kannada sahithya koduge bagge panle
 "What are the core operating system differences between Windows, Linux and macOS architectures?","Windows, Linux bokko macOS OS architecture da vyathyasa daada?"
-Explain why airplanes can fly in the sky using Bernoulli's principle of aerodynamic lift,Bernoulli principle prakara vimaana aakashadhu rekkedhu paarunu encha?
+Explain why airplanes can fly in the sky using Bernoullis principle of aerodynamic lift,Bernoulli principle prakara vimaana aakashadhu rekkedhu paarunu encha?
 Tell me about the history of traditional tile manufacturing factories along the Netravati river in Mangalore,Netravati suttha da henchada karkhane charithre bagge vivara panle
 What is the scientific explanation for why the ocean appears blue and has high salinity?,Kadalara neeru neeli toojere bokko uppu aavolere scientific reason daada?
 Explain how fiber optic cables transmit internet data at the speed of light using total internal reflection,Fiber optic cable total internal reflection use maltdh net data transmit madpunu encha?
@@ -2824,3 +2824,146 @@ Explain the biological process of how trees absorb carbon dioxide and release fr
 Tell me about the coastal folk dance Kangilu performed during festival seasons in Tulu Nadu,Tulunadu da Kangilu janapada nrithya da mahathwa bagge panle
 What are the key ethical guidelines and safety risks associated with autonomous artificial intelligence agents?,AI agents develop madponaga safety bokko ethical rules daada?
 Explain how blockchain distributed ledgers ensure secure tamper-proof transaction records without banks,Blockchain ledger bank ijji transactions secure madpunu encha explain malpule
+Whats the weather in Mangalore?,Kudla-d havamana yencha undu?
+Tell me todays weather.,Initha havamana yencha undu panle.
+Is it raining in Udupi right now?,Udupi-d itte barsa barond unda?
+What is the temperature in Bangalore now?,Bangalore-d itte thapamaana yeth undu?
+Will it be sunny tomorrow?,yelle bolkiri uppuva
+How humid is it in Delhi today?,Delhi-d ini thodi yeth undu?
+Give me the weather update for Mumbai.,Mumbai-da havamana update korle.
+Is it going to be windy this evening?,Ini baiyag gaali beejuva
+Check the weather for the weekend.,Weekend-da havamana check malpule.
+Whats the forecast for Kasaragod tomorrow?,Yelle Kasaragod-da havamana yencha undu?
+Please tell me whether it will rain in Mangalore tomorrow evening because I have to travel.,Yelle baiyag Mangalore-d barsa barpunda panle yenk travel malpare undu.
+Check if it will rain in Udupi before I leave for college.,Yaan college-g popinerd dumbu Udupi-d barsa barpunda check malpule.
+Tell me the weather in Puttur because I am planning a bike trip.,Puttur-da havamana panle yaan bike trip plan malthonde.
+I need to know if it will be cold in Manipal tomorrow morning because I have an early class.,Yelle kaande Manipal-d chali ippuva nd yenk theripale daye panda yenk yelle kaandeda class undu.
+Let me know if there will be a storm tonight since I have to walk home.,Ini raathre birugaali barpunda dayeg panda yaan nadathond illag povod.
+What will the weather be like in Bangalore when I land this evening?,Baiyag yaan Bangalore-g muttunaga havamana yencha uppu?
+Check the weather in Mangalore before I decide whether to carry an umbrella.,Kode kondu popine nishchaya malpunerd dumbe Mangalore-da havamana yencha undu nd check malpule.
+Will it be hot in Delhi in the afternoon because I have an outdoor event?,Delhi-d Madhyanna dombu uppuva daye panda yenk avl karyakrama undu.
+Tell me tomorrows weather in Mumbai since I have a flight in the morning.,Yelle Mumbai-da havamana panle kaande yenk flight undu.
+I want to know if it will rain this weekend because we planned a picnic.,Ee weekend barsa barpunda nd panle daye panda nama picnic plan manda
+What is the wind speed in Udupi right now?,Itte Udupi-d gaalida vega yeth undu?
+Will there be fog in Manipal early morning tomorrow?,Yelle kaande Manipal-d maindh uppuva
+Should I carry a raincoat to Mangalore today?,Ini Kudla-g popunaga raincoat kondu podara?
+How is the weather looking for tonight?,Ini raathre havamana yencha kanpundu?
+Tell me if its safe to travel to Kasaragod today because of the rain warning.,Barsada warning ittinard Kasaragod-g travel malpuni safe-aa panle.
+Whats the weather like in Mangalore right now?,Mangalore-d itte havamana yencha undu?
+Whats the weather like in Udupi right now?,Udupi-d itte havamana yencha undu?
+Whats the weather like in Bangalore right now?,Bangalore-d itte havamana yencha undu?
+Whats the weather like in Delhi right now?,Delhi-d itte havamana yencha undu?
+Whats the weather like in Mumbai right now?,Mumbai-d itte havamana yencha undu?
+Whats the weather like in Kasaragod right now?,Kasaragod-d itte havamana yencha undu?
+Play music on Spotify.,Spotify-d paata paadule.
+Play some Tulu songs.,Kaikonji Tulu paatelen paadule.
+Play a relaxing playlist.,Onji samadhana apina playlist paadule.
+Pause the music.,Paata pause malpule.
+Skip this song.,Ee paaten skip malpule.
+Play the next track.,Bukkada track paadule.
+Search for a song on Spotify.,Spotify-d onji paaten naadle.
+Play devotional songs on Spotify.,Spotify-d bhakthi geethelen paadule.
+Open Spotify and play some Kannada songs.,Spotify open malth Kannada paatelen paadule.
+Play Tulu songs on Spotify because I am driving home.,Spotify-d Tulu paatelen paadule dayegand yaan illag drive malthonde.
+Play a relaxing playlist on Spotify before I sleep.,Yaan yedepard dumbe Spotify-d onji relax playlist paadule.
+Play some workout songs on Spotify because I am going to the gym.,Yaan gym-g popinard Spotify-d workout paatelen paadule.
+Open Spotify and play devotional songs when I start my morning prayers.,Kaande pooje suru malpunaga Spotify open malth bhakthi geethelen paadule.
+Play something calm on Spotify since I have a headache.,Yenk thare beene undu Spotify-d shanthavaad uppuna paata paadule.
+Play my favourite playlist on Spotify before the guests arrive.,Bannager bathard dumbe Spotify-d yenna ishtada playlist paadule.
+Play old Tulu folk songs on Spotify because my grandmother wants to listen.,Daddig paata kenere undu Spotify-d parath Tulu paatelen paadule.
+Pause the music on Spotify because someone is calling me.,Spotify-d paata pause malpule yerno phone barpundu.
+Play romantic songs on Spotify after dinner.,Vanass kaled bokka Spotify-d romantic paatelen paadule.
+Play the same song again on Spotify.,Spotify-d anchine paaten kooda onji sarthi paadule.
+Increase the volume on Spotify.,Spotify-d volume hechha malpule.
+Play a podcast on Spotify instead of music.,Spotify-d paatada badal podcast paadule.
+Play travel songs on Spotify because we are going on a road trip tomorrow.,Yelle yaan travel popinarada Spotify-d travel paatelen paadule.
+Shuffle my playlist on Spotify.,Spotify-d yenna playlist-n shuffle malpule.
+Play Yakshagana music on Spotify.,Spotify-d Yakshagana paatelen paadule.
+Open the calculator.,Calculator open malpule.
+What is 25 plus 47?,25 koodi 47 yeth apundu?
+Calculate 15 times 8.,15 guna 8 calculation malpule.
+What is 120 divided by 4?,120-n 4-d paalu malthnda yeth apundu?
+Subtract 45 from 100.,100-d 45-n kaledanda yeth?
+What is the square root of 81?,81-da square root da lekkalike yeth?
+Calculate 12 percent of 500.,500-da 12 percent calculation malpule.
+Open the calculator because I need to check my monthly expenses.,Tingalda karchu check malpare undu calculator open malpule.
+Calculate 250 plus 375 before I finalize the budget.,Budget nishchaya malpunard dumbe 250 koodi 375 lekka malpule.
+What is 18 times 24 because I need it for my homework?,Homework malpare undu 18 guna 24 yeth apundu panle.
+Divide 900 by 12 since Im splitting the bill with friends.,Dosthulla bill paalu malpare undu 900-n 12-d bhagisale.
+"Calculate my total marks by adding 85, 90 and 78.","85, 90 bokka 78-n koodad yenna total marks lekka malpule."
+What is 7 squared?,7-da square yeth apundu?
+Open the calculator before the shopkeeper gives me the final price.,Angadi aai kadaisi bele panpard dumbe calculator open malpule.
+Add 15000 and 22000 for the monthly budget.,Tingalda budget-g 15000 bokka 22000-n koodale.
+Calculate the discount if the price is 2000 and discount is 20 percent.,Bele 2000 bokka 20 percent discount ithnda discount lekka malpule.
+What is 999 minus 456?,999-d 456-n kaledanda yeth apundu?
+Multiply 45 by 6 because I need to convert units.,Unit convert malpare undu 45-n 6-d guna malpule.
+Close notepad.,Notepad close malpule.
+Open chrome and search for todays news.,Chrome open malth initha sudhi naadle.
+Open the camera.,Camera open malpule.
+Close the camera.,Camera close malpule.
+Open notepad because I need to write down some notes.,Sannada vishaya barepare undu Notepad open malpule.
+Open chrome before my online class starts.,Online class suru aapinard dumbe Chrome open malpule.
+Open the camera because I want to take a photo of the sunset.,Surya buroline photo deppere undu Camera open malpule.
+Close chrome after I finish checking my email.,Email check malth bokka Chrome close malpule.
+Open notepad and write down my shopping list.,Notepad open malth samanuda list barele.
+Open chrome and search for the nearest hospital because its urgent.,Bejaratha vishaya undu bega Chrome open malth hathirada aaspitre naadle.
+Take a photo before the guests arrive.,Bannager barpard dumbe photo deppule.
+Open notepad since I need to save this phone number.,Ee phone number save malpare Notepad open malpule.
+Minimize all windows.,Maatha windowlen minimize malpule.
+Open file manager.,File manager open malpule.
+Take a screenshot.,Onji screenshot deppule.
+Open chrome and go to Gmail.,Chrome open malth Gmail-g pole.
+Close all open applications because my laptop is running slow.,Laptop slow aathundu maatha applen close malpule.
+Open the camera to record a short video for my project.,Project-g onji yelyada video thegeyere Camera open malpule.
+Open YouTube and search for Tulu songs because I want to relax.,Samadhana gollere YouTube open malth Tulu paatelen naadle.
+"Before I sleep, open YouTube and play devotional songs.",Yedepard dumbe YouTube open malth bhakthi geethelen paadule.
+Open YouTube and search for cooking tutorials because I want to try a new recipe.,Posatha adige kalpare YouTube open malth adigeda video naadle.
+Search YouTube for yesterdays cricket match highlights.,Kodanda cricket match da highlights-n YouTube-d naadle.
+Open YouTube when I finish my homework so I can watch cartoons.,Homework poora aayin bokka cartoon thuyere YouTube open malpule.
+Play the latest Tulu movie trailer on YouTube.,YouTube-d posa Tulu cinemada trailer paadule.
+Open YouTube and search for machine learning tutorials because I have an exam next week.,Yelle vaara parikshe undu machine learning padhapulen YouTube-d naadle.
+Search YouTube for workout videos before I go to the gym.,Gym-g popinard dumbe workout video-n YouTube-d naadle.
+Open YouTube and play Yakshagana performances since my father wants to watch.,Ammag thuyere YouTube open malth Yakshagana paadule.
+Search YouTube for how to fix a flat tyre because my bike broke down.,Bike puncture aathundu flat tyre sarpa malpunen YouTube-d naadle.
+Search Google for the nearest hospital because its an emergency.,Emergency undu hathirada aaspitre-n Google-d naadle.
+Search Google for tomorrows train timings because I need to catch a train.,Rail pathered undu yelle rail time-n Google-d naadle.
+Google the meaning of this word because I dont understand it.,Artha aathiji ee shabdada arthan Google-d naadle.
+Search Google for good restaurants near me before we decide where to eat.,Oota khachith malpunard dumbe Google-d yelle yedde hotel naadle.
+Search Google for the college admission dates since the deadline is close.,Kadaisi din hathira barpundu college admission dinathen Google-d naadle.
+Search Google for the exchange rate because Im planning to travel abroad.,Videsha-g popina aalochane undu exchange rate-n Google-d naadle.
+Google search for the pin code of this area.,Ee jageda pin code Google search malpule.
+Search Google for todays petrol price before I fill my tank.,Petrol paadnard dumbe initha petrol bele Google-d naadle.
+Search Google for the symptoms of fever because Im feeling unwell.,Meyyi usharidji jorada lakshanalen Google-d naadle.
+Tell me about artificial intelligence because I have an exam tomorrow.,Yelle parikshe undu artificial intelligence bagge yenk panle.
+Explain photosynthesis to me before my biology test.,Biology pariksherd dumbe photosynthesis bagge artha malpale.
+What is climate change and why does it matter?,Havamana badalavane danna bokka auda mukhyathe yenchina?
+Tell me about the history of Tulu Nadu since Im writing a project.,Project barevonde Tulu naad-da ithihasada bagge panle.
+Explain how a computer processor works because Im curious.,Aasakthi undu computer processor yencha kelasa malpundu panle.
+What is the capital of Karnataka?,Karnataka-da rajadhani oodu?
+Tell me about the solar system because my son asked me a question.,Mage kende sowra mandala bagge panle.
+Explain what machine learning is before my interview tomorrow.,Yelle interview undu machine learning danna yenk theripale.
+What causes earthquakes?,Bhoo kampana dayeg apundu?
+Set an alarm for 7 am tomorrow because I have a train to catch.,Train pathered undu yelle kaande 7 ghante-g alarm deele.
+Wake me up at 6 in the morning before college starts.,College suru apinard dumbe kaande 6 ghante-g yennan lakkele.
+Set an alarm for every weekday morning because I have classes.,Class ithinard varada kelsa dina kaande alarm deele.
+Set an alarm for 5:30 am tomorrow since I have to leave early for a trip.,Trip-g bega popinard yelle kaande 5:30-g alarm deele.
+Remind me at 9 pm to take my medicine.,Marthulenge thinnere raathre 9 ghante-g yenk nenpu malpule.
+Set an alarm for 6:45 because I dont want to miss the bus.,Bus miss aavaradji 6:45-g alarm deele.
+Wake me up at 4 am tomorrow because I have an early flight.,Bega flight undu yelle kaande 4 ghante-g lakkele.
+Set a daily alarm at 6 am for my morning walk.,Kaande nadapere kelsa dina kaande 6 ghante-g alarm deele.
+Cancel the alarm I set for tomorrow morning.,Yelle kaandeda alarm-n cancel malpule.
+Lock the door.,Baakil lock malpule.
+Unlock the door.,Baakil unlock malpule.
+Lock the door before I leave the house.,Illard pidai popina dumbu baakil lock malpule.
+Unlock the door because I forgot my keys inside.,Chabi ullai bukkude baakil unlock malpule.
+Lock the door when I go to sleep.,Yedepere popinaga baakil lock malpule.
+Unlock the door since a guest has arrived.,Bannager bather baakil unlock malpule.
+Lock the front door after everyone leaves for work.,Kelsag boyina bokka yeduru baakil lock malpule.
+Check if the door is locked before I go to bed.,Yedepard dumbe baakil lock aathunda thule.
+Unlock the door because I just came back home.,Itte illag bathede baakil unlock malpule.
+Lock the door immediately because I heard a strange noise outside.,Pidayi shabdha kenna thakshanane baakil lock malpule.
+Is the door locked right now?,Baakil itte lock aathunda?
+Unlock the door for the delivery person.,Delivery korre baathinaayeg baakil open malpule.
+Lock the door and confirm once its done.,Baakil lock malth bokka confirm malpule.
+Keep the door locked until I return in the evening.,Baiyag yaan barpuna mutta baakil lock deele.
+Unlock the door before my friends come over.,Dosthilu barpuna dumbu baakil unlock malpule.

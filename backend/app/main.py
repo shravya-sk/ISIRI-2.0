@@ -66,6 +66,13 @@ async def upload_audio(audio: UploadFile = File(...)):
             str(file_path),
             language="en",
             fp16=False,
+            temperature=0.0,
+            condition_on_previous_text=False,
+            initial_prompt=(
+                "Baakil lock malpule. Baakil unlock malpule. Youtube open malpule. "
+                "Yencha ullar? Spotify open malpule. Weather in Mangalore. "
+                "Set an alarm for seven am."
+            ),
         )
         print("Whisper finished!")
         print(result)

@@ -103,7 +103,33 @@ COMMAND_ALIASES = {
     "light off malpule": "Turn off the light",
     "fan on malpule": "Turn on the fan",
     "fan off malpule": "Turn off the fan",
+    "baakil lock malpule": "Lock the door",
+    "baakil unlock malpule": "Unlock the door",
+    "baakil unlockmalpule": "Unlock the door",   # common Whisper transcription variant
+    "door lock malpule": "Lock the door",
+    "door unlock malpule": "Unlock the door",
+    "door open malpule": "Unlock the door",
+    "lock the door": "Lock the door",
+    "unlock the door": "Unlock the door",
 }
+
+ENGLISH_STOPWORDS = {
+    "the", "is", "on", "in", "for", "to", "and", "of", "with", "a", "an",
+    "are", "was", "were", "this", "that", "it", "be", "have", "has",
+    "do", "does", "my", "your", "please", "some", "me",
+}
+ 
+ 
+def looks_like_english(text: str) -> bool:
+    """
+    Heuristic: if a sentence contains 2+ common English function words,
+    it's almost certainly already English, not Romanised Tulu (Tulu commands
+    don't naturally contain words like 'the', 'is', 'for', 'and', etc.).
+    Used to skip the Tulu translation pipeline entirely for such sentences,
+    preventing already-correct English from being "translated" into garbage.
+    """
+    words = set(re.findall(r"[a-z']+", text.lower()))
+    return len(words & ENGLISH_STOPWORDS) >= 2
 
 DICTIONARY = load_dictionary()
 
@@ -187,24 +213,16 @@ def neural_translate(text: str, direction: str = "tulu_to_en") -> Optional[str]:
 
 
 def translate_to_english(sentence: str) -> str:
-    """
-    Converts a spoken Tulu/Tulu-English command into canonical English
-    before ISIRI detects the intent.
-    
-    Order of operations:
-    1. Instant Alias Match (common voice commands)
-    2. Direct English voice command check (no translation needed)
-    3. Exact Corpus Lookup (2,825 pairs)
-    4. Fuzzy Similarity Retrieval (>= 0.90 threshold)
-    5. ByT5 Neural Translation
-    6. Dictionary Word-Level Fallback
-    """
     sentence = str(sentence).strip()
     sentence_key = normalize(sentence)
-
+ 
     if not sentence_key:
         return sentence
-
+ 
+    # NEW: if it already looks like English, don't touch it at all
+    if looks_like_english(sentence):
+        return sentence
+ 
     # 1. Alias lookup
     if sentence_key in COMMAND_ALIASES:
         return COMMAND_ALIASES[sentence_key]

@@ -21,6 +21,13 @@ def plan(intent, entities):
             "entities": entities
         }
 
+
+    elif intent_name == "alarm":
+        return {
+            "plugin": "alarm",
+            "entities": entities
+        }
+
     elif intent_name == "system":
         return {
             "plugin": "system",
@@ -48,6 +55,18 @@ def plan(intent, entities):
     elif intent_name == "calculator":
         return {
             "plugin": "calculator",
+            "entities": entities
+        }
+
+    elif intent_name == "spotify":
+        return {
+            "plugin": "spotify",
+            "entities": entities
+        }
+
+    elif intent_name == "device_control":
+        return {
+            "plugin": "hardware",
             "entities": entities
         }
 

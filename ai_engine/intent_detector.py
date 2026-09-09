@@ -60,5 +60,11 @@ def detect_intent(text):
     # Calculator
     elif re.search(r"\b(calculate|plus|minus|multiply|divide)\b", text):
         return {"intent": "calculator", "confidence": 0.95}
-
+    # Device Control (lock)
+    elif re.search(
+        r"\b(lock|unlock|open|close)\b.*\b(door|lock|latch)\b|"
+        r"\b(door|lock|latch)\b.*\b(lock|unlock|open|close)\b",
+        text,
+    ):
+        return {"intent": "device_control", "confidence": 0.98}
     return {"intent": "unknown", "confidence": 0.0}

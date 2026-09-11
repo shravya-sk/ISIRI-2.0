@@ -1,22 +1,5 @@
 """
 AI Engine Orchestrator
-
-This module provides the main AI engine that coordinates all AI processing components.
-The AIEngine class serves as a facade for the AI subsystem, hiding the complexity
-of intent detection, entity extraction, planning, plugin execution, and response generation.
-
-Responsibilities:
-- Coordinate AI processing pipeline
-- Manage AI component lifecycle
-- Provide unified interface for voice pipeline
-- Handle AI-specific errors and fallbacks
-- Support conversation context
-
-Usage:
-    engine = AIEngine(config)
-    engine.initialize()
-    result = engine.process("What's the weather today?")
-    engine.shutdown()
 """
 from ai_engine.intent_detector import detect_intent
 from ai_engine.entity_extractor import extract_entities
@@ -33,16 +16,12 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class AIEngineConfig:
-    """Configuration for the AI engine."""
     context_enabled: bool = True
     max_context_turns: int = 5
     fallback_enabled: bool = True
 
 
 class AIEngine:
-    """
-    Main AI engine orchestrator.
-    """
 
     def __init__(self, config: Optional[AIEngineConfig] = None):
         self.config = config or AIEngineConfig()
@@ -89,6 +68,7 @@ class AIEngine:
                     fixed_response,
                     "conversation",
                     {},
+                    True,
                 )
                 result["context"] = self.context
 
@@ -100,7 +80,6 @@ class AIEngine:
 
             entities = self._extract_entities(text, intent)
 
-            # --- Weather follow-up: "which city?" -> user replies with just a city name
             if (
                 intent == "unknown"
                 and self.context.get("pending_intent") == "weather"
@@ -128,7 +107,6 @@ class AIEngine:
                     ):
                         entities["time"] = previous_entities["time"]
 
-            # --- Spotify follow-up: "which song?" -> user replies with a song/artist name
             if (
                 intent == "unknown"
                 and self.context.get("pending_intent") == "spotify"
@@ -138,6 +116,16 @@ class AIEngine:
                 if query:
                     intent = "spotify"
                     entities["query"] = query
+
+            if (
+                intent == "unknown"
+                and self.context.get("pending_intent") == "alarm"
+            ):
+                time_reply = text.strip()
+
+                if time_reply:
+                    intent = "alarm"
+                    entities["alarm_time_text"] = time_reply
 
             result["intent"] = intent
             result["entities"] = entities
@@ -172,6 +160,7 @@ class AIEngine:
                     result["response"],
                     intent,
                     entities,
+                    plugin_result.get("success", True),
                 )
                 result["context"] = self.context
 
@@ -234,24 +223,23 @@ class AIEngine:
         user_input: str,
         assistant_response: str,
         intent: str,
-        entities: Dict[str, Any]
+        entities: Dict[str, Any],
+        success: bool = True,
     ) -> None:
         logger.debug("Updating context")
         self.context["last_intent"] = intent
         self.context["last_entities"] = entities.copy()
 
-        # Keep weather active only when ISIRI asked the user for a city.
         if intent == "weather" and not entities.get("location"):
             self.context["pending_intent"] = "weather"
-        # Keep spotify active only when ISIRI asked the user for a song
-        # (i.e. the user wanted to play something but didn't name it -
-        # NOT when they just said "open spotify", which needs no answer).
         elif (
             intent == "spotify"
             and not entities.get("query")
             and entities.get("spotify_action") != "open"
         ):
             self.context["pending_intent"] = "spotify"
+        elif intent == "alarm" and not success:
+            self.context["pending_intent"] = "alarm"
         else:
             self.context.pop("pending_intent", None)
 

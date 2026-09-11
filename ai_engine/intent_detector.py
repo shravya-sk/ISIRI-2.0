@@ -11,20 +11,23 @@ def detect_intent(text):
     ):
         return {"intent": "weather", "confidence": 0.95}
 
-    # Hardware / Home Automation (Light, Fan, AC, Geyser, etc.)
+    # Alarm
     elif re.search(
-        r"\b(turn\s+on|turn\s+off|switch\s+on|switch\s+off)\b.*\b(light|lights|fan|fans|bulb|lamp|geyser|ac|tv|socket|device)\b|"
-        r"\b(light|lights|fan|fans|bulb|lamp|geyser|ac|tv)\b.*\b(turn\s+on|turn\s+off|switch\s+on|switch\s+off|on|off)\b",
+        r"\b(alarm|remind me|wake me up|set a timer)\b",
         text,
     ):
-        return {"intent": "hardware", "confidence": 0.98}
+        return {"intent": "alarm", "confidence": 0.95}
 
     # Spotify
     elif re.search(r"\b(spotify|song|music)\b", text):
         return {"intent": "spotify", "confidence": 0.95}
-    
-    # YouTube
-    elif re.search(r"\b(play|watch)\b.*\b(on\s+)?youtube\b", text):
+
+    # YouTube - play/watch phrasing, OR youtube+search/find together
+    # (must come before google_search, otherwise "search X on youtube"
+    # incorrectly falls through to a generic Google search)
+    elif re.search(r"\b(play|watch)\b.*\b(on\s+)?youtube\b", text) or (
+        re.search(r"\byoutube\b", text) and re.search(r"\b(search|find)\b", text)
+    ):
         return {"intent": "youtube", "confidence": 0.98}
 
     # Open Websites
@@ -67,6 +70,7 @@ def detect_intent(text):
     # Calculator
     elif re.search(r"\b(calculate|plus|minus|multiply|divide)\b", text):
         return {"intent": "calculator", "confidence": 0.95}
+
     # Device Control (lock)
     elif re.search(
         r"\b(lock|unlock|open|close)\b.*\b(door|lock|latch)\b|"
@@ -74,4 +78,5 @@ def detect_intent(text):
         text,
     ):
         return {"intent": "device_control", "confidence": 0.98}
+
     return {"intent": "unknown", "confidence": 0.0}

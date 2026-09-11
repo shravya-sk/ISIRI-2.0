@@ -1,4 +1,4 @@
-from datetime import datetime
+﻿from datetime import datetime
 import dateparser
 import winsound
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -8,7 +8,7 @@ scheduler.start()
 
 
 def ring_alarm(alarm_time):
-    print("\n🔔🔔 ALARM RINGING 🔔🔔")
+    print("\nALARM RINGING")
     print(f"Alarm time: {alarm_time}")
 
     for _ in range(10):
@@ -61,3 +61,30 @@ def set_alarm(time_text):
             "success": False,
             "reply": "Sorry, I couldn't set the alarm."
         }
+
+
+def execute(entities):
+    time_text = entities.get("alarm_time_text")
+
+    if not time_text:
+        time_text = entities.get("time", "")
+
+    if not time_text:
+        return {
+            "success": False,
+            "reply": "What time should I set the alarm for?"
+        }
+
+    return set_alarm(time_text)
+
+
+def get_scheduled_alarms():
+    jobs = scheduler.get_jobs()
+    return [
+        {
+            "id": job.id,
+            "scheduled_for": job.next_run_time.strftime("%I:%M %p on %d %B %Y")
+            if job.next_run_time else None,
+        }
+        for job in jobs
+    ]

@@ -71,6 +71,18 @@ def extract_entities(text):
     if youtube_match:
         entities["video"] = youtube_match.group(1).strip()
 
+    # YouTube search phrasing ("search/find X on youtube", "youtube search X")
+    youtube_search_match = re.search(
+        r"(?:search|find)\s+(.+?)\s+(?:on|in)\s+youtube|"
+        r"youtube\s+(?:search|find)\s+(.+)",
+        original_text,
+        re.IGNORECASE
+    )
+    if youtube_search_match:
+        captured = youtube_search_match.group(1) or youtube_search_match.group(2)
+        if captured:
+            entities["video"] = captured.strip().rstrip("?.!")
+
     # --------------------------
     # Spotify Search Detection
     # --------------------------
@@ -87,14 +99,56 @@ def extract_entities(text):
     # --------------------------
     # Spotify Open vs Play Detection
     # --------------------------
-    # Distinguishes "open spotify" (just launch it) from "play a song on
-    # spotify" (needs a title/artist - ask if not given).
 
     if "spotify" in text:
         if re.search(r"\bopen\b", text) and not re.search(r"\b(play|song|music|track)\b", text):
             entities["spotify_action"] = "open"
         elif re.search(r"\b(play|song|music|track)\b", text):
             entities["spotify_action"] = "play"
+
+    # --------------------------
+    # Alarm Time Phrase Detection
+    # --------------------------
+    # Tries TWO word orders, since the trigger word ("alarm"/"remind me")
+    # can come either before or after the actual time phrase depending on
+    # phrasing/translation:
+    #   "set an alarm for 6am tomorrow"   (trigger ... time)
+    #   "10 second alarm delay"           (time ... trigger)
+    # Picks whichever captured phrase actually contains a digit or a
+    # recognizable time word, since that's the one likely to be real.
+
+    TIME_HINT = re.compile(r"\d|noon|midnight|morning|evening|tonight|tomorrow|now", re.IGNORECASE)
+
+    candidates = []
+
+    after_match = re.search(
+        r"(?:alarm|remind me|wake me up)\s*(?:for|at)?\s*(.+?)"
+        r"(?:\s+because|\s+since|\s+so\b|\s+to\s+(?=[a-zA-Z])|,|$)",
+        original_text,
+        re.IGNORECASE
+    )
+    if after_match:
+        candidates.append(after_match.group(1).strip().rstrip(".!?"))
+
+    before_match = re.search(
+        r"^(.*?)\s*(?:alarm|remind me|wake me up)",
+        original_text,
+        re.IGNORECASE
+    )
+    if before_match:
+        candidates.append(before_match.group(1).strip().rstrip(".!?"))
+
+    # Prefer a candidate that actually looks like a time expression
+    chosen = None
+    for c in candidates:
+        if c and TIME_HINT.search(c):
+            chosen = c
+            break
+    if not chosen and candidates and candidates[0]:
+        chosen = candidates[0]
+
+    if chosen:
+        entities["alarm_time_text"] = chosen
 
     # --------------------------
     # Website Detection
@@ -127,20 +181,6 @@ def extract_entities(text):
     if system_match:
         entities["app"] = system_match.group(1).strip()
 
-
-    # --------------------------
-    # Alarm Time Phrase Detection
-    # --------------------------
-    alarm_time_match = re.search(
-        r"(?:alarm|remind me|wake me up)\s*(?:for|at)?\s*(.+?)"
-        r"(?:\s+because|\s+since|\s+so\b|,|$)",
-        original_text,
-        re.IGNORECASE
-    )
-    if alarm_time_match:
-        entities["alarm_time_text"] = alarm_time_match.group(1).strip()
-
-        
     # --------------------------
     # Weather Location Detection
     # --------------------------

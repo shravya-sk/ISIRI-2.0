@@ -2,6 +2,7 @@ from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 from backend.app.voice.tts import speak
+from backend.app.plugins.alarm import get_scheduled_alarms
 import uuid
 import whisper
 from backend.app.voice.pipeline import VoicePipeline, PipelineConfig
@@ -37,6 +38,10 @@ pipeline_config = PipelineConfig(
 )
 pipeline = VoicePipeline(pipeline_config)
 pipeline.initialize()
+
+@app.get("/alarms")
+async def list_alarms():
+    return {"scheduled_alarms": get_scheduled_alarms()}
 
 
 @app.get("/")

@@ -65,10 +65,116 @@ python3 rpi_gpio_service.py --port 5000
 *Output: `ISIRI 2.0 Lock Service listening on port 5000...`*
 
 ### Step 3: Connect ISIRI 2.0 Backend
-In your ISIRI 2.0 environment or `.env` file, configure the Raspberry Pi's local network IP:
+
+Put the settings in **`backend/.env`** (copy `backend/.env.example`). The backend loads that file
+at startup, so this works the same on Windows and Linux — no `export`/`set` in the right shell.
+
+```ini
+RPI_HOST=[fe80::ba27:ebff:fe12:3456%wlan0]:5000
+HARDWARE_SIMULATION=false
+```
+
+`backend/.env` is git-ignored on purpose — see the zone-ID warning below.
+
+---
+
+## 4a. Connecting over IPv6 (read this if IPv4 doesn't work)
+
+On many networks — college Wi-Fi especially, where client isolation blocks IPv4 peer-to-peer —
+the Pi is reachable **only over IPv6**. If `ssh pi@<ipv4>` fails but `ssh pi@fe80::…%wlan0` works,
+this is you.
+
+The daemon binds `::` as a **dual-stack** socket, so one process answers IPv6 *and* IPv4 on port
+5000. (The stdlib `HTTPServer` defaults to IPv4-only, which is why the backend previously could
+never reach the Pi on an IPv6-only network — even though `ssh`, which listens on `::`, worked fine.)
+
+### Find the address
+
+On the Pi the daemon prints every usable address at startup, already formatted for `.env`:
+
+```text
+Set one of these as RPI_HOST in the ISIRI backend's .env file:
+  RPI_HOST=[2409:40f2:300b:2651::42]:5000        (global IPv6 via wlan0)
+  RPI_HOST=[fe80::ba27:ebff:fe12:3456%ZONE]:5000  (link-local IPv6 via wlan0)
+  RPI_HOST=192.168.1.50:5000                      (IPv4 via wlan0)
+```
+
+Prefer a **global** IPv6 address (`2xxx:`/`fd`) if one is listed — it needs no zone ID and is the
+same string on every machine.
+
+### ⚠️ The zone ID is YOUR machine's interface, not the Pi's
+
+A link-local address (`fe80::…`) is only meaningful together with the interface it is reached
+*through*, written after a `%`. That interface belongs to **the computer running the backend**, so
+the correct value is **different on every PC** — this is the single most common mistake.
+
+| Where | How to find it | Looks like |
+| :--- | :--- | :--- |
+| Windows | `netsh interface ipv6 show interfaces` → the **Idx** column of your Wi-Fi adapter | `%12` |
+| Linux / macOS | `ip -6 addr` / `ifconfig` → the device name | `%wlan0`, `%en0` |
+
+Two spellings, and they are not interchangeable:
+
+- **In `backend/.env`** — write it **raw**: `[fe80::ba27:ebff:fe12:3456%12]:5000`
+- **In a URL** (curl, browser) — percent-encode it as `%25`: `http://[fe80::…%2512]:5000/status`
+
+The `.env` value is handed to the OS resolver, which wants the raw `%`; a URL parser would read a
+bare `%` as the start of an escape.
+
+### Test it, in this order
+
+Each step isolates one layer — stop at the first failure.
+
 ```bash
-export RPI_HOST="http://<raspberry_pi_ip>:5000"
-export HARDWARE_SIMULATION="false"
+# 1. Is the Pi reachable at L2 at all? (no Python involved)
+ping -6 fe80::ba27:ebff:fe12:3456%12          # Windows
+ping6 fe80::ba27:ebff:fe12:3456%wlan0         # Linux
+
+# 2. Is the daemon answering? (note -g and %25)
+curl -g -6 "http://[fe80::ba27:ebff:fe12:3456%2512]:5000/status"
+
+# 3. Can the backend parse and reach it? (the fastest way to see what's wrong)
+curl http://127.0.0.1:8000/device/lock/diag
+
+# 4. Drive the lock without speaking
+curl -X POST http://127.0.0.1:8000/device/lock/unlocked
+curl -X POST http://127.0.0.1:8000/device/lock/locked
+```
+
+`/device/lock/diag` reports the raw `RPI_HOST`, how it was parsed, what it resolved to (including
+the IPv6 scope_id) and whether the Pi answered — so a typo in `.env` is immediately
+distinguishable from a firewall problem.
+
+### Troubleshooting
+
+| Symptom | Cause |
+| :--- | :--- |
+| `gaierror` / "not known" | Bad zone ID syntax. On Windows it's the numeric `Idx`, not `wlan0`. |
+| `...link-local address with no zone ID` | You wrote `fe80::…` with no `%zone`. Add it. |
+| `TimeoutError` after ~2s | Wrong interface index, or a firewall on the Pi (`sudo ufw allow 5000`). |
+| `ConnectionRefusedError` | You reached the Pi, but `rpi_gpio_service.py` isn't running. |
+| Ping works, curl doesn't | Firewall on the Pi, or the daemon bound IPv4-only — check its startup log. |
+
+### Keep it running across reboots
+
+```ini
+# /etc/systemd/system/isiri-lock.service
+[Unit]
+Description=ISIRI 2.0 Servo Lock Service
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/rpi_gpio_service.py --port 5000
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```bash
+sudo systemctl enable --now isiri-lock
+journalctl -u isiri-lock -f      # watch lock commands arrive
 ```
 
 ---

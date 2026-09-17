@@ -1,7 +1,14 @@
 ﻿from datetime import datetime
 import re
+import time
 import dateparser
-import winsound
+
+# winsound is Windows-only. backend/app/main.py imports this module at startup,
+# so an unguarded import takes the whole backend down on Linux/macOS.
+try:
+    import winsound
+except ImportError:
+    winsound = None
 from apscheduler.schedulers.background import BackgroundScheduler
 
 scheduler = BackgroundScheduler()
@@ -31,7 +38,12 @@ def ring_alarm(alarm_time):
     print(f"Alarm time: {alarm_time}")
 
     for _ in range(10):
-        winsound.Beep(1000, 500)
+        if winsound is not None:
+            winsound.Beep(1000, 500)
+        else:
+            # Terminal bell: the closest cross-platform equivalent.
+            print("\a", end="", flush=True)
+            time.sleep(0.5)
 
 
 def is_ambiguous_bare_number(time_text: str) -> bool:

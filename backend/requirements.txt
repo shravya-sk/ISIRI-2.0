@@ -17,3 +17,27 @@ typing_extensions==4.16.0
 uvicorn==0.32.0
 watchfiles==1.2.0
 websockets==16.1.1
+
+
+# --- Imported by the code but previously missing from this file, so a clean
+# --- `pip install -r requirements.txt` produced a backend that could not start.
+# --- Left unpinned deliberately: no known-good versions were recorded.
+
+# backend/app/plugins/{weather,knowledge}.py
+requests
+# backend/app/main.py (pulls in torch - large download)
+openai-whisper
+# backend/app/voice/tts.py
+edge-tts
+pygame
+# backend/app/plugins/alarm.py
+APScheduler
+dateparser
+# ai_engine/translator.py
+rapidfuzz
+pandas
+numpy
+
+# Note: the door-lock plugin (backend/app/plugins/hardware.py) deliberately uses
+# only the standard library, so the lock keeps working even if the heavier
+# dependencies above are not installed.

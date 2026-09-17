@@ -14,21 +14,29 @@ need). CALIBRATE the two endpoint angles below once mounted, since the
 direction (which end is "locked") depends on how the pinion meshes with
 the rack on your print.
 
+Networking note: this daemon binds "::" as a DUAL-STACK socket, so it
+answers on IPv6 (including link-local fe80:: addresses) *and* IPv4 on the
+same port. The stdlib HTTPServer defaults to IPv4-only, which is why the
+backend could never reach the Pi on networks where only IPv6 works.
+
 Pin Mapping (BCM numbering):
 - GPIO 18 (Pin 12): Door Lock Servo (PWM signal pin)
 
 Endpoints:
 - GET  /status                 -> Returns current lock state
 - POST /device/lock/{state}    -> state = 'locked' or 'unlocked'
+- GET  /device/lock/{state}    -> same, so it can be tested from a browser
 
 Usage on Raspberry Pi:
-    python hardware/rpi_gpio_service.py --port 5000
+    python3 hardware/rpi_gpio_service.py --port 5000
 """
 
 import argparse
 import json
 import logging
-from http.server import BaseHTTPRequestHandler, HTTPServer
+import socket
+import subprocess
+from http.server import BaseHTTPRequestHandler, HTTPServer, ThreadingHTTPServer
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("RPi-Lock-Service")
@@ -83,42 +91,160 @@ def set_lock_state(state_str: str) -> bool:
 
 
 class RequestHandler(BaseHTTPRequestHandler):
+    server_version = "ISIRI-Lock/2.0"
+
     def _send_json(self, status_code: int, data: dict):
+        body = json.dumps(data).encode("utf-8")
         self.send_response(status_code)
         self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(body)))
         self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "*")
         self.end_headers()
-        self.wfile.write(json.dumps(data).encode("utf-8"))
+        self.wfile.write(body)
+
+    def _status_payload(self) -> dict:
+        return {
+            "service": "ISIRI 2.0 Raspberry Pi Servo Lock Daemon",
+            "servo_mode": "physical" if HAVE_SERVO else "simulation",
+            "pin": LOCK_SERVO_PIN,
+            "state": LOCK_STATE,
+        }
+
+    def _handle_lock_path(self) -> bool:
+        """Handles /device/lock/{state}. Returns True if the path was ours."""
+        parts = [p for p in self.path.split("?")[0].strip("/").split("/") if p]
+        if len(parts) == 3 and parts[0] == "device" and parts[1] == "lock":
+            action = parts[2].lower().strip()
+            if set_lock_state(action):
+                self._send_json(200, {"success": True, "device": "lock", "state": action})
+            else:
+                self._send_json(400, {"success": False, "error": f"Invalid state: {action}"})
+            return True
+        return False
+
+    def do_OPTIONS(self):
+        self._send_json(204, {})
 
     def do_GET(self):
-        if self.path in ["/", "/status"]:
-            self._send_json(200, {
-                "service": "ISIRI 2.0 Raspberry Pi Servo Lock Daemon",
-                "servo_mode": "physical" if HAVE_SERVO else "simulation",
-                "pin": LOCK_SERVO_PIN,
-                "state": LOCK_STATE,
-            })
+        path = self.path.split("?")[0]
+        if path in ["/", "/status"]:
+            self._send_json(200, self._status_payload())
+        elif self._handle_lock_path():
+            # Convenience: lets you drive the lock straight from a browser bar.
+            return
         else:
             self._send_json(404, {"error": "Not Found"})
 
     def do_POST(self):
-        parts = [p for p in self.path.strip("/").split("/") if p]
-        # Expected format: /device/lock/{state}
-        if len(parts) == 3 and parts[0] == "device" and parts[1] == "lock":
-            action = parts[2].lower().strip()
-            success = set_lock_state(action)
-            if success:
-                self._send_json(200, {"success": True, "device": "lock", "state": action})
-            else:
-                self._send_json(400, {"success": False, "error": f"Invalid state: {action}"})
-        else:
+        if not self._handle_lock_path():
             self._send_json(400, {"error": "Invalid endpoint. Use /device/lock/{locked|unlocked}"})
 
+    def log_message(self, fmt, *args):
+        logger.info("%s - %s", self.address_string(), fmt % args)
 
-def run_server(port: int = 5000):
-    server_address = ("", port)
-    httpd = HTTPServer(server_address, RequestHandler)
+
+class DualStackHTTPServer(ThreadingHTTPServer):
+    """IPv6 server with IPV6_V6ONLY cleared, so one socket serves IPv6 + IPv4.
+
+    The stdlib HTTPServer hardcodes address_family = AF_INET (IPv4 only). That is
+    why an IPv6-only path to the Pi could never reach this daemon, even though
+    ssh (which listens on ::) worked fine.
+    """
+
+    address_family = socket.AF_INET6
+    allow_reuse_address = True
+    daemon_threads = True
+
+    def server_bind(self):
+        try:
+            self.socket.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 0)
+        except (AttributeError, OSError) as e:
+            # Some systems refuse to clear V6ONLY; we still serve IPv6.
+            logger.warning("Could not enable dual-stack (IPv4 clients may not reach us): %s", e)
+        super().server_bind()
+
+
+class IPv4HTTPServer(ThreadingHTTPServer):
+    """Fallback for hosts with IPv6 disabled entirely."""
+
+    allow_reuse_address = True
+    daemon_threads = True
+
+
+def _ip_addrs(family: str, *filters) -> list:
+    """Parses `ip -o <family> addr show <filters>`. Returns [(iface, address), ...]."""
+    try:
+        out = subprocess.run(
+            ["ip", "-o", family, "addr", "show"] + list(filters),
+            capture_output=True, text=True, timeout=3,
+        ).stdout
+    except Exception:
+        return []
+
+    found = []
+    for line in out.splitlines():
+        fields = line.split()
+        # e.g. "2: wlan0    inet6 fe80::1/64 scope link ..."
+        if len(fields) < 4:
+            continue
+        iface = fields[1]
+        for i, token in enumerate(fields):
+            if token in ("inet", "inet6") and i + 1 < len(fields):
+                found.append((iface, fields[i + 1].split("/")[0]))
+                break
+    return found
+
+
+def log_connection_hints(port: int) -> None:
+    """Prints copy-pasteable RPI_HOST values so the backend can be pointed here."""
+    logger.info("-" * 64)
+    logger.info("Set one of these as RPI_HOST in the ISIRI backend's .env file:")
+
+    printed = False
+
+    for iface, addr in _ip_addrs("-6", "scope", "global"):
+        logger.info("  RPI_HOST=[%s]:%s        (global IPv6 via %s)", addr, port, iface)
+        printed = True
+
+    for iface, addr in _ip_addrs("-6", "scope", "link"):
+        logger.info("  RPI_HOST=[%s%%ZONE]:%s  (link-local IPv6 via %s)", addr, port, iface)
+        logger.info("      ^ replace ZONE with YOUR PC's interface, not the Pi's:")
+        logger.info("        Linux/macOS -> the name, e.g. %s", "%wlan0")
+        logger.info("        Windows     -> the numeric Idx from: netsh interface ipv6 show interfaces")
+        printed = True
+
+    for iface, addr in _ip_addrs("-4"):
+        if addr.startswith("127."):
+            continue
+        logger.info("  RPI_HOST=%s:%s             (IPv4 via %s)", addr, port, iface)
+        printed = True
+
+    if not printed:
+        logger.info("  (could not enumerate addresses - run `ip addr` manually)")
+    logger.info("-" * 64)
+
+
+def run_server(port: int = 5000, host: str = "::"):
+    httpd = None
+    try:
+        httpd = DualStackHTTPServer((host, port), RequestHandler)
+        logger.info("Bound [%s]:%s (dual-stack: IPv6 + IPv4).", host, port)
+    except OSError as e:
+        logger.warning("IPv6 bind on [%s]:%s failed (%s); falling back to IPv4-only.", host, port, e)
+        # Honour an explicitly requested IPv4 address; otherwise listen on all.
+        ipv4_host = host if host not in ("::", "") else "0.0.0.0"
+        try:
+            httpd = IPv4HTTPServer((ipv4_host, port), RequestHandler)
+        except OSError:
+            ipv4_host = "0.0.0.0"
+            httpd = IPv4HTTPServer((ipv4_host, port), RequestHandler)
+        logger.info("Bound %s:%s (IPv4 only).", ipv4_host, port)
+
+    log_connection_hints(port)
     logger.info("ISIRI 2.0 Lock Service listening on port %s...", port)
+
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
@@ -132,5 +258,6 @@ def run_server(port: int = 5000):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="ISIRI 2.0 Raspberry Pi Servo Lock Daemon")
     parser.add_argument("--port", type=int, default=5000, help="HTTP server port")
+    parser.add_argument("--host", default="::", help="Bind address (default :: = all, dual-stack)")
     args = parser.parse_args()
-    run_server(args.port)
+    run_server(args.port, args.host)

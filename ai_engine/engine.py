@@ -151,6 +151,13 @@ class AIEngine:
             result["link"] = plugin_result.get("link", "")
             result["weather"] = plugin_result.get("weather")
 
+            # Carry the hardware/lock outcome up to the API layer. Without this
+            # the caller cannot tell a real servo movement from a simulated one,
+            # because only "reply" survives _generate_response().
+            for key in ("device", "state", "rpi_connected"):
+                if key in plugin_result:
+                    result[key] = plugin_result[key]
+
             response = self._generate_response(
                 plugin_result,
                 intent,

@@ -37,6 +37,21 @@ APP_PATHS = {
     "spotify": [
         os.path.expandvars(r"%AppData%\Spotify\Spotify.exe"),
     ],
+
+    # Some WhatsApp Desktop installs (non-Store version) use this path.
+    # If not found, we fall back to the URI launch below.
+    "whatsapp": [
+        os.path.expandvars(r"%LocalAppData%\WhatsApp\WhatsApp.exe"),
+    ],
+}
+
+# Apps that are best launched via their Windows URI protocol rather than
+# guessing an .exe path - this covers built-in/Store apps (Camera,
+# WhatsApp from Microsoft Store) where install paths vary a lot between
+# machines and the protocol handler is far more reliable.
+URI_APPS = {
+    "camera": "microsoft.windows.camera:",
+    "whatsapp": "whatsapp:",
 }
 
 ALL_APPS = {
@@ -56,6 +71,10 @@ ALL_APPS = {
     "discord": "discord",
 
     "spotify": "spotify",
+
+    "whatsapp": "whatsapp",
+
+    "camera": "camera",
 }
 
 
@@ -79,7 +98,7 @@ def execute(data):
 
     executable = ALL_APPS[match[0]]
 
-    # Built-in Windows apps
+    # Built-in Windows apps (notepad, calculator, etc.)
     if executable.endswith(".exe"):
         subprocess.Popen(executable)
         return {
@@ -87,7 +106,7 @@ def execute(data):
             "reply": f"Opening {match[0]}."
         }
 
-    # Installed apps
+    # Apps with a known .exe install path
     if executable in APP_PATHS:
         for path in APP_PATHS[executable]:
             if os.path.exists(path):
@@ -96,6 +115,20 @@ def execute(data):
                     "success": True,
                     "reply": f"Opening {match[0]}."
                 }
+
+    # Fall back to URI protocol launch (Camera, Store-installed WhatsApp)
+    if executable in URI_APPS:
+        try:
+            os.startfile(URI_APPS[executable])
+            return {
+                "success": True,
+                "reply": f"Opening {match[0]}."
+            }
+        except OSError as e:
+            return {
+                "success": False,
+                "reply": f"Couldn't open {match[0]}: {e}"
+            }
 
     return {
         "success": False,

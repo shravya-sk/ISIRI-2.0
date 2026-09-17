@@ -1,4 +1,5 @@
 ﻿from datetime import datetime
+import re
 import dateparser
 import winsound
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -6,23 +7,79 @@ from apscheduler.schedulers.background import BackgroundScheduler
 scheduler = BackgroundScheduler()
 scheduler.start()
 
+UNAMBIGUOUS_MARKERS = re.compile(
+    r"am|pm|a\.m|p\.m|o'?clock|:|noon|midnight|morning|evening|night|"
+    r"second|minute|hour",
+    re.IGNORECASE,
+)
+
+CORE_TIME_PATTERN = re.compile(
+    r"\d{1,2}(:\d{2})?\s*"
+    r"(am|pm|a\.m|p\.m|o'?clock|second[s]?|minute[s]?|hour[s]?)?"
+    r"(\s*(today|tomorrow|tonight|morning|evening|noon|midnight))?",
+    re.IGNORECASE,
+)
+
+BARE_DURATION_PATTERN = re.compile(
+    r"^\s*\d{1,2}\s*(second[s]?|minute[s]?|hour[s]?)\s*\.?\s*$",
+    re.IGNORECASE,
+)
+
 
 def ring_alarm(alarm_time):
-    print("\nALARM RINGING")
+    print("\n🔔🔔 ALARM RINGING 🔔🔔")
     print(f"Alarm time: {alarm_time}")
 
     for _ in range(10):
         winsound.Beep(1000, 500)
 
 
+def is_ambiguous_bare_number(time_text: str) -> bool:
+    stripped = time_text.strip().lower()
+    has_digit = bool(re.search(r"\d", stripped))
+    has_marker = bool(UNAMBIGUOUS_MARKERS.search(stripped))
+    remainder = re.sub(r"\b(today|tomorrow|yelle|ini)\b", "", stripped).strip()
+    is_just_a_number = bool(re.fullmatch(r"\d{1,2}", remainder))
+    return has_digit and not has_marker and is_just_a_number
+
+
+def extract_core_time_expression(time_text: str) -> str:
+    match = CORE_TIME_PATTERN.search(time_text)
+    if match and match.group(0).strip():
+        return match.group(0).strip()
+    return time_text
+
+
+def normalize_bare_duration(time_text: str) -> str:
+    stripped = time_text.strip()
+    if BARE_DURATION_PATTERN.match(stripped):
+        return f"in {stripped.rstrip('.')}"
+    return time_text
+
+
 def set_alarm(time_text):
     try:
+        if is_ambiguous_bare_number(time_text):
+            return {
+                "success": False,
+                "reply": f"Did you mean {time_text.strip()} AM or {time_text.strip()} PM?"
+            }
+
+        core_time_text = extract_core_time_expression(time_text)
+        core_time_text = normalize_bare_duration(core_time_text)
+
         alarm_time = dateparser.parse(
-            time_text,
+            core_time_text,
             settings={
                 "PREFER_DATES_FROM": "future"
             }
         )
+
+        if not alarm_time and core_time_text != time_text:
+            alarm_time = dateparser.parse(
+                normalize_bare_duration(time_text),
+                settings={"PREFER_DATES_FROM": "future"}
+            )
 
         if not alarm_time:
             return {

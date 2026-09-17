@@ -18,17 +18,22 @@ def detect_intent(text):
     ):
         return {"intent": "alarm", "confidence": 0.95}
 
-    # Spotify
-    elif re.search(r"\b(spotify|song|music)\b", text):
-        return {"intent": "spotify", "confidence": 0.95}
-
-    # YouTube - play/watch phrasing, OR youtube+search/find together
-    # (must come before google_search, otherwise "search X on youtube"
-    # incorrectly falls through to a generic Google search)
-    elif re.search(r"\b(play|watch)\b.*\b(on\s+)?youtube\b", text) or (
-        re.search(r"\byoutube\b", text) and re.search(r"\b(search|find)\b", text)
+    # YouTube - checked BEFORE spotify, and matches "play/watch + youtube"
+    # in EITHER word order (Tulu sentence structure often puts the verb
+    # last: "youtube ... play", not just "play ... youtube"), OR
+    # youtube+search/find together. Explicit "youtube" mention always
+    # wins over the generic "song" trigger below.
+    elif (
+        re.search(r"\b(play|watch)\b.*\byoutube\b", text) or
+        re.search(r"\byoutube\b.*\b(play|watch)\b", text) or
+        (re.search(r"\byoutube\b", text) and re.search(r"\b(search|find)\b", text))
     ):
         return {"intent": "youtube", "confidence": 0.98}
+
+    # Spotify - excludes sentences that also explicitly mention youtube,
+    # since "song"/"music" alone shouldn't override an explicit platform name
+    elif re.search(r"\b(spotify|song|music)\b", text) and "youtube" not in text:
+        return {"intent": "spotify", "confidence": 0.95}
 
     # Open Websites
     elif re.search(
@@ -48,6 +53,7 @@ def detect_intent(text):
         r"pycharm|"
         r"steam|vlc|obs|"
         r"whatsapp|"
+        r"camera|"
         r"edge|firefox|brave|"
         r"cmd|terminal|"
         r"explorer|file explorer"

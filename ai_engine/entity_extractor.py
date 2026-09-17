@@ -2,9 +2,39 @@ import re
 from rapidfuzz import process
 
 
+TULU_LEFTOVER_MARKERS = {
+    "malpule", "malpule.", "malpu", "malpule?",
+    "deele", "deele.",
+    "naadle", "naadle.",
+    "panle", "panle.",
+    "paadule", "paadule.",
+}
+
+
+def clean_captured_text(text):
+    if not text:
+        return text
+    cleaned = text.strip()
+    cleaned = re.sub(
+        r"^(youtube\s+)?(and\s+)?(search\s+)?(for\s+)+",
+        "",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+    cleaned = re.sub(r"\s+on\s+(youtube|spotify)\.?$", "", cleaned, flags=re.IGNORECASE)
+    cleaned = cleaned.strip().rstrip(".")
+    return cleaned
+
+
+def is_leftover_marker(text):
+    if not text:
+        return False
+    return text.strip().lower() in TULU_LEFTOVER_MARKERS
+
+
 def extract_entities(text):
 
-    original_text = text.strip()      # Preserve original capitalization
+    original_text = text.strip()
     text = text.lower()
 
     entities = {}
@@ -33,7 +63,7 @@ def extract_entities(text):
             query = match.group(1).strip()
             query = re.sub(r"^[^\w]+", "", query)
             query = query.replace("-", " ")
-            entities["query"] = query
+            entities["query"] = clean_captured_text(query)
             break
 
     # --------------------------
@@ -55,46 +85,66 @@ def extract_entities(text):
     for pattern in search_patterns:
         match = re.search(pattern, original_text, re.IGNORECASE)
         if match:
-            entities["query"] = match.group(1).strip().rstrip("?")
+            entities["query"] = clean_captured_text(match.group(1).strip().rstrip("?"))
             break
 
     # --------------------------
-    # YouTube Video Detection
+    # YouTube Video Detection (scoped to when "youtube" is mentioned)
     # --------------------------
 
-    youtube_match = re.search(
-        r"(?:play|watch)\s+(.+?)(?:\s+on\s+youtube)?$",
-        original_text,
-        re.IGNORECASE
-    )
+    if "youtube" in text:
+        youtube_match = re.search(
+            r"(?:play|watch)\s+(.+?)(?:\s+on\s+youtube)?$",
+            original_text,
+            re.IGNORECASE
+        )
+        if youtube_match:
+            candidate = clean_captured_text(youtube_match.group(1).strip())
+            if candidate and not is_leftover_marker(candidate):
+                entities["video"] = candidate
 
-    if youtube_match:
-        entities["video"] = youtube_match.group(1).strip()
-
-    # YouTube search phrasing ("search/find X on youtube", "youtube search X")
-    youtube_search_match = re.search(
-        r"(?:search|find)\s+(.+?)\s+(?:on|in)\s+youtube|"
-        r"youtube\s+(?:search|find)\s+(.+)",
-        original_text,
-        re.IGNORECASE
-    )
-    if youtube_search_match:
-        captured = youtube_search_match.group(1) or youtube_search_match.group(2)
-        if captured:
-            entities["video"] = captured.strip().rstrip("?.!")
+        youtube_search_match = re.search(
+            r"(?:search|find)\s+(.+?)\s+(?:on|in)\s+youtube|"
+            r"youtube\s+(?:search|find)\s+(.+)",
+            original_text,
+            re.IGNORECASE
+        )
+        if youtube_search_match:
+            captured = youtube_search_match.group(1) or youtube_search_match.group(2)
+            if captured:
+                candidate = clean_captured_text(captured.strip().rstrip("?.!"))
+                if candidate and not is_leftover_marker(candidate):
+                    entities["video"] = candidate
 
     # --------------------------
-    # Spotify Search Detection
+    # Spotify Search/Play Detection (scoped to when "spotify" is mentioned)
     # --------------------------
+    # Mirrors the YouTube fix above: catches "play X on spotify",
+    # "search X on spotify", or "spotify ... play X" regardless of exact
+    # phrasing/word order, so "play a song" requests actually capture
+    # the song name instead of leaving query empty.
 
-    spotify_match = re.search(
-        r"(?:search|find)\s+(.+?)\s+(?:on|in)\s+spotify",
-        original_text,
-        re.IGNORECASE
-    )
+    if "spotify" in text:
+        spotify_match = re.search(
+            r"(?:search|find)\s+(.+?)\s+(?:on|in)\s+spotify",
+            original_text,
+            re.IGNORECASE
+        )
+        if spotify_match:
+            candidate = clean_captured_text(spotify_match.group(1).strip())
+            if candidate and not is_leftover_marker(candidate):
+                entities["query"] = candidate
 
-    if spotify_match:
-        entities["query"] = spotify_match.group(1).strip()
+        if not entities.get("query"):
+            spotify_play_match = re.search(
+                r"(?:play)\s+(.+?)(?:\s+on\s+spotify)?$",
+                original_text,
+                re.IGNORECASE
+            )
+            if spotify_play_match:
+                candidate = clean_captured_text(spotify_play_match.group(1).strip())
+                if candidate and not is_leftover_marker(candidate):
+                    entities["query"] = candidate
 
     # --------------------------
     # Spotify Open vs Play Detection
@@ -109,13 +159,6 @@ def extract_entities(text):
     # --------------------------
     # Alarm Time Phrase Detection
     # --------------------------
-    # Tries TWO word orders, since the trigger word ("alarm"/"remind me")
-    # can come either before or after the actual time phrase depending on
-    # phrasing/translation:
-    #   "set an alarm for 6am tomorrow"   (trigger ... time)
-    #   "10 second alarm delay"           (time ... trigger)
-    # Picks whichever captured phrase actually contains a digit or a
-    # recognizable time word, since that's the one likely to be real.
 
     TIME_HINT = re.compile(r"\d|noon|midnight|morning|evening|tonight|tomorrow|now", re.IGNORECASE)
 
@@ -138,7 +181,6 @@ def extract_entities(text):
     if before_match:
         candidates.append(before_match.group(1).strip().rstrip(".!?"))
 
-    # Prefer a candidate that actually looks like a time expression
     chosen = None
     for c in candidates:
         if c and TIME_HINT.search(c):
@@ -155,16 +197,8 @@ def extract_entities(text):
     # --------------------------
 
     websites = [
-        "youtube",
-        "google",
-        "instagram",
-        "gmail",
-        "github",
-        "linkedin",
-        "spotify",
-        "chatgpt",
-        "netflix",
-        "facebook"
+        "youtube", "google", "instagram", "gmail", "github",
+        "linkedin", "spotify", "chatgpt", "netflix", "facebook"
     ]
 
     for site in websites:
@@ -180,6 +214,15 @@ def extract_entities(text):
 
     if system_match:
         entities["app"] = system_match.group(1).strip()
+
+    # --------------------------
+    # YouTube fallback: reuse generic 'query' if 'video' wasn't set
+    # --------------------------
+
+    if entities.get("website") == "youtube" and not entities.get("video") and entities.get("query"):
+        candidate = clean_captured_text(entities["query"])
+        if candidate and not is_leftover_marker(candidate):
+            entities["video"] = candidate
 
     # --------------------------
     # Weather Location Detection
@@ -210,7 +253,7 @@ def extract_entities(text):
         entities["time"] = "tomorrow"
 
     # --------------------------
-    # Device Lock Detection (separate from time - not an elif on it)
+    # Device Lock Detection
     # --------------------------
 
     if re.search(r"\b(door|lock|latch)\b", text):

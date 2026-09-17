@@ -80,9 +80,11 @@ class AIEngine:
 
             entities = self._extract_entities(text, intent)
 
+            pending = self.context.get("pending_intent")
+
             if (
                 intent == "unknown"
-                and self.context.get("pending_intent") == "weather"
+                and pending == "weather"
             ):
                 location = entities.get("location")
 
@@ -108,24 +110,31 @@ class AIEngine:
                         entities["time"] = previous_entities["time"]
 
             if (
-                intent == "unknown"
-                and self.context.get("pending_intent") == "spotify"
+                pending == "spotify"
+                and not entities.get("query")
             ):
                 query = text.strip()
-
                 if query:
                     intent = "spotify"
                     entities["query"] = query
 
             if (
-                intent == "unknown"
-                and self.context.get("pending_intent") == "alarm"
+                pending == "alarm"
+                and not entities.get("alarm_time_text")
             ):
                 time_reply = text.strip()
-
                 if time_reply:
                     intent = "alarm"
                     entities["alarm_time_text"] = time_reply
+
+            if (
+                pending == "youtube"
+                and not entities.get("video")
+            ):
+                video_reply = text.strip()
+                if video_reply:
+                    intent = "youtube"
+                    entities["video"] = video_reply
 
             result["intent"] = intent
             result["entities"] = entities
@@ -240,6 +249,8 @@ class AIEngine:
             self.context["pending_intent"] = "spotify"
         elif intent == "alarm" and not success:
             self.context["pending_intent"] = "alarm"
+        elif intent == "youtube" and not entities.get("video"):
+            self.context["pending_intent"] = "youtube"
         else:
             self.context.pop("pending_intent", None)
 

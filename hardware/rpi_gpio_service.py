@@ -3,7 +3,16 @@ ISIRI 2.0 — Raspberry Pi Servo Lock Service Daemon
 
 Standalone daemon that runs on the Raspberry Pi. Listens for HTTP commands
 from the ISIRI 2.0 backend and drives an SG90 servo to lock/unlock a
-miniature 3D-printed latch.
+3D-printed rack-and-pinion latch.
+
+Hardware note: the built mechanism is a rack-and-pinion, not a simple flip
+latch. The servo horn carries a pinion gear that meshes with a toothed
+rack bar; rotating the servo drives the rack linearly to extend/retract
+the bolt. Because the rack needs its full travel, the servo sweeps the
+full 0-180 degree range (not the smaller 0-90 range a flip latch would
+need). CALIBRATE the two endpoint angles below once mounted, since the
+direction (which end is "locked") depends on how the pinion meshes with
+the rack on your print.
 
 Pin Mapping (BCM numbering):
 - GPIO 18 (Pin 12): Door Lock Servo (PWM signal pin)
@@ -25,8 +34,11 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger("RPi-Lock-Service")
 
 LOCK_SERVO_PIN = 18   # BCM 18 = hardware PWM capable, good choice for servo
-LOCK_ANGLE = 0        # servo angle when locked - CALIBRATE once mounted on your latch
-UNLOCK_ANGLE = 90     # servo angle when unlocked - CALIBRATE once mounted on your latch
+
+# Rack-and-pinion needs the servo's full sweep to drive the rack all the way
+# in/out. Swap these two values if your mechanism ends up locking backwards.
+LOCK_ANGLE = 180      # servo angle when locked (rack fully driven one way) - CALIBRATE
+UNLOCK_ANGLE = 0      # servo angle when unlocked (rack fully driven back)  - CALIBRATE
 
 LOCK_STATE = "locked"  # in-memory current state
 
@@ -38,9 +50,9 @@ try:
     lock_servo = AngularServo(
         LOCK_SERVO_PIN,
         min_angle=0,
-        max_angle=90,
-        min_pulse_width=0.0006,
-        max_pulse_width=0.0023,
+        max_angle=180,
+        min_pulse_width=0.0005,   # ~0.5ms - typical for 180° SG90s; fine-tune if it buzzes at the ends
+        max_pulse_width=0.0025,   # ~2.5ms
     )
     lock_servo.angle = LOCK_ANGLE  # start locked
     HAVE_SERVO = True

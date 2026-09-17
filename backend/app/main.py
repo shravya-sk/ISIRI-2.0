@@ -15,9 +15,30 @@ from fastapi.middleware.cors import CORSMiddleware
 from backend.app.voice.tts import speak
 from backend.app.plugins.alarm import get_scheduled_alarms
 from backend.app.plugins import hardware
+import os
+import subprocess
 import uuid
 import whisper
 from backend.app.voice.pipeline import VoicePipeline, PipelineConfig
+
+def _build_commit() -> str:
+    """Short git SHA of the running checkout, for /health.
+
+    Best-effort: a deploy without git, or without a .git directory, degrades to
+    "unknown" rather than breaking the route.
+    """
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "--short", "HEAD"],
+            cwd=str(_BACKEND_DIR.parent),
+            capture_output=True, text=True, timeout=3,
+        )
+        return result.stdout.strip() or "unknown"
+    except Exception:
+        return "unknown"
+
+
+BUILD_COMMIT = _build_commit()
 
 app = FastAPI(
     title="ISIRI 2.0 Backend",
@@ -54,6 +75,39 @@ pipeline.initialize()
 @app.get("/alarms")
 async def list_alarms():
     return {"scheduled_alarms": get_scheduled_alarms()}
+
+
+@app.get("/health")
+def health():
+    """Answers 'is the process on this port actually running my code?'
+
+    A stale uvicorn still bound to the port is the classic cause of the lock
+    routes 404-ing, and it is otherwise invisible. Compare `commit` here with
+    `git log --oneline -1` on disk.
+    """
+    lock_routes = sorted(
+        {route.path for route in app.routes
+         if getattr(route, "path", "").startswith("/device/lock")}
+    )
+
+    raw_host = os.environ.get("RPI_HOST", "")
+    try:
+        parsed = list(hardware.parse_rpi_host(raw_host))
+        parse_error = None
+    except ValueError as error:
+        parsed, parse_error = None, str(error)
+
+    status = hardware.get_status()
+
+    return {
+        "commit": BUILD_COMMIT,
+        "rpi_host": raw_host,
+        "parsed": parsed,
+        "parse_error": parse_error,
+        "lock_routes": lock_routes,
+        "pi_reachable": bool(status.get("rpi_connected")),
+        "lock_state": status.get("state"),
+    }
 
 
 @app.get("/device/lock/diag")
@@ -152,3 +206,16 @@ async def upload_audio(audio: UploadFile = File(...)):
         "state": ai_result.get("state"),
         "rpi_connected": ai_result.get("rpi_connected"),
     }
+
+
+# --- startup banner -------------------------------------------------------
+# Printed once at import, i.e. in the uvicorn console. Makes it immediately
+# obvious which build booted and where it will look for the Pi.
+print("=" * 62)
+print("ISIRI 2.0 backend  |  build %s" % BUILD_COMMIT)
+print("RPI_HOST           |  %s" % (os.environ.get("RPI_HOST") or "(unset)"))
+print("simulation         |  %s" % os.environ.get("HARDWARE_SIMULATION", "false"))
+for _route in sorted({r.path for r in app.routes
+                      if getattr(r, "path", "").startswith("/device/lock")}):
+    print("lock route         |  %s" % _route)
+print("=" * 62)

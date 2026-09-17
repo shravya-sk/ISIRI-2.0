@@ -179,6 +179,66 @@ journalctl -u isiri-lock -f      # watch lock commands arrive
 
 ---
 
+## 4b. SSH tunnel (use this when direct TCP to the Pi is blocked)
+
+If `ping -6` reaches the Pi but `curl` to port 5000 times out, the network is
+filtering TCP while allowing ICMP — Wi-Fi client isolation does exactly that. A
+firewall rule on the Pi does the same. Rather than fight it, tunnel port 5000
+over the SSH connection that already works:
+
+```bash
+# On the machine running the backend. Leave this window open.
+ssh -N -L 5000:127.0.0.1:5000 pi@fe80::ba27:ebff:fe12:3456%12
+```
+
+Then in `backend/.env`:
+
+```ini
+RPI_HOST=127.0.0.1:5000
+HARDWARE_SIMULATION=false
+```
+
+The backend now talks to its own loopback, SSH carries it to the Pi, and the
+zone ID, the Pi's firewall and client isolation all stop mattering. The
+`127.0.0.1:5000` in the `-L` argument is resolved **on the Pi**, so it reaches
+the daemon's own listener.
+
+Notes:
+- If port 5000 is taken locally, use `-L 5001:127.0.0.1:5000` and set
+  `RPI_HOST=127.0.0.1:5001`.
+- The tunnel dies with the SSH session. If it keeps dropping, add
+  `-o ServerAliveInterval=30 -o ExitOnForwardFailure=yes` — the latter makes SSH
+  fail loudly instead of connecting without the forward.
+- **Restart the backend after editing `.env`** — it is read at startup.
+
+---
+
+## 4c. Driving the lock without the backend
+
+`tools/lock.py` talks to the Pi using only the standard library — no FastAPI, no
+uvicorn, no Whisper, no torch. Use it to test the tunnel and the servo
+independently of the web app:
+
+```bash
+python tools/lock.py status
+python tools/lock.py unlock
+python tools/lock.py lock
+python tools/lock.py diag
+```
+
+It reads `backend/.env` like the backend does, and `--host` overrides it for a
+one-off test:
+
+```bash
+python tools/lock.py unlock --host 127.0.0.1:5000
+```
+
+It exits 0 on success and 1 on failure, printing the resolved address, whether
+the Pi confirmed the move, and a hint when it fails. **If this works but the
+HTTP API does not, the problem is the backend process, not the lock.**
+
+---
+
 ## 5. API Endpoints
 
 | Method | Endpoint | Description |

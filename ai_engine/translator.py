@@ -2,39 +2,24 @@ import json
 import logging
 import os
 import re
-from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Optional
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 import pandas as pd
+from rapidfuzz import fuzz
 
 logger = logging.getLogger(__name__)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DATASET_PATH = (
-    BASE_DIR
-    / "datasets"
-    / "processed"
-    / "clean_dataset.csv"
-)
+DATASET_PATH = BASE_DIR / "datasets" / "processed" / "clean_dataset.csv"
 
-DICTIONARY_PATH = (
-    BASE_DIR
-    / "datasets"
-    / "tulu_dictionary.json"
-)
+DICTIONARY_PATH = BASE_DIR / "datasets" / "tulu_dictionary.json"
 
-BYT5_MODEL_PATH = (
-    BASE_DIR
-    / "datasets"
-    / "models"
-    / "byt5_tulu_english"
-)
+BYT5_MODEL_PATH = BASE_DIR / "datasets" / "models" / "byt5_tulu_english"
 
-# Global lazy references for ByT5 model & tokenizer
 _BYT5_TOKENIZER = None
 _BYT5_MODEL = None
 _BYT5_FAILED = False
@@ -48,17 +33,12 @@ def normalize(text):
 
 
 def similarity(first, second):
-    return SequenceMatcher(
-        None,
-        first,
-        second,
-    ).ratio()
+    return fuzz.token_sort_ratio(first, second) / 100.0
 
 
 def load_dictionary():
     if not DICTIONARY_PATH.exists():
         return {}
-
     with open(DICTIONARY_PATH, "r", encoding="utf-8") as file:
         return json.load(file)
 
@@ -105,7 +85,7 @@ COMMAND_ALIASES = {
     "fan off malpule": "Turn off the fan",
     "baakil lock malpule": "Lock the door",
     "baakil unlock malpule": "Unlock the door",
-    "baakil unlockmalpule": "Unlock the door",   # common Whisper transcription variant
+    "baakil unlockmalpule": "Unlock the door",
     "door lock malpule": "Lock the door",
     "door unlock malpule": "Unlock the door",
     "door open malpule": "Unlock the door",
@@ -118,27 +98,17 @@ ENGLISH_STOPWORDS = {
     "are", "was", "were", "this", "that", "it", "be", "have", "has",
     "do", "does", "my", "your", "please", "some", "me",
 }
- 
- 
-def looks_like_english(text: str) -> bool:
-    """
-    Heuristic: if a sentence contains 2+ common English function words,
-    it's almost certainly already English, not Romanised Tulu (Tulu commands
-    don't naturally contain words like 'the', 'is', 'for', 'and', etc.).
-    Used to skip the Tulu translation pipeline entirely for such sentences,
-    preventing already-correct English from being "translated" into garbage.
-    """
+
+
+def looks_like_english(text):
     words = set(re.findall(r"[a-z']+", text.lower()))
     return len(words & ENGLISH_STOPWORDS) >= 2
+
 
 DICTIONARY = load_dictionary()
 
 
 def get_byt5_pipeline():
-    """
-    Lazily loads the fine-tuned ByT5-Small model and tokenizer if available.
-    Returns (tokenizer, model) or (None, None) if not present or failed.
-    """
     global _BYT5_TOKENIZER, _BYT5_MODEL, _BYT5_FAILED
 
     if _BYT5_FAILED:
@@ -154,26 +124,20 @@ def get_byt5_pipeline():
         import torch
         from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-        logger.info(f"Loading ByT5 neural translation model from: {BYT5_MODEL_PATH}")
+        logger.info("Loading ByT5 neural translation model from: %s" % BYT5_MODEL_PATH)
         _BYT5_TOKENIZER = AutoTokenizer.from_pretrained(str(BYT5_MODEL_PATH))
         device = "cuda" if torch.cuda.is_available() else "cpu"
-        _BYT5_MODEL = AutoModelForSeq2SeqLM.from_pretrained(
-            str(BYT5_MODEL_PATH)
-        ).to(device)
+        _BYT5_MODEL = AutoModelForSeq2SeqLM.from_pretrained(str(BYT5_MODEL_PATH)).to(device)
         _BYT5_MODEL.eval()
         logger.info("ByT5 neural translator loaded successfully.")
         return _BYT5_TOKENIZER, _BYT5_MODEL
     except Exception as e:
-        logger.warning(f"Failed to load ByT5 model: {e}. Falling back to rule/retrieval.")
+        logger.warning("Failed to load ByT5 model: %s. Falling back to rule/retrieval." % e)
         _BYT5_FAILED = True
         return None, None
 
 
-def neural_translate(text: str, direction: str = "tulu_to_en") -> Optional[str]:
-    """
-    Translates text using ByT5-Small Seq2Seq model.
-    Returns None if neural model is unavailable or encounters an error.
-    """
+def neural_translate(text, direction="tulu_to_en"):
     tokenizer, model = get_byt5_pipeline()
     if tokenizer is None or model is None:
         return None
@@ -183,9 +147,7 @@ def neural_translate(text: str, direction: str = "tulu_to_en") -> Optional[str]:
 
         prefix = "translate Tulu to English: " if direction == "tulu_to_en" else "translate English to Tulu: "
         prompt = prefix + text
-        inputs = tokenizer(
-            prompt, return_tensors="pt", max_length=128, truncation=True
-        ).to(model.device)
+        inputs = tokenizer(prompt, return_tensors="pt", max_length=128, truncation=True).to(model.device)
 
         with torch.no_grad():
             outputs = model.generate(
@@ -201,80 +163,72 @@ def neural_translate(text: str, direction: str = "tulu_to_en") -> Optional[str]:
             )
 
         decoded = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
-        # Clean prefix artifacts if present
-        for noise in ["translate Tulu to English:", "translate English to Tulu:", "Tulu to English:", "English to Tulu:"]:
+        noise_prefixes = [
+            "translate Tulu to English:",
+            "translate English to Tulu:",
+            "Tulu to English:",
+            "English to Tulu:",
+        ]
+        for noise in noise_prefixes:
             if decoded.lower().startswith(noise.lower()):
                 decoded = decoded[len(noise):].strip()
 
         return decoded if decoded else None
     except Exception as e:
-        logger.warning(f"Neural translation error: {e}")
+        logger.warning("Neural translation error: %s" % e)
         return None
 
 
-def translate_to_english(sentence: str) -> str:
+def translate_to_english(sentence):
     sentence = str(sentence).strip()
     sentence_key = normalize(sentence)
- 
+
     if not sentence_key:
         return sentence
- 
-    # NEW: if it already looks like English, don't touch it at all
+
     if looks_like_english(sentence):
         return sentence
- 
-    # 1. Alias lookup
+
     if sentence_key in COMMAND_ALIASES:
         return COMMAND_ALIASES[sentence_key]
 
-    # 2. English voice command: keep it unchanged if already English
     if sentence_key in ENGLISH_TO_TULU:
         return sentence
 
-    # 3. Exact Tulu command from dataset
     if sentence_key in TULU_TO_ENGLISH:
         return TULU_TO_ENGLISH[sentence_key]
 
-    # 4. Similar Tulu command from dataset
     best_tulu = ""
     best_score = 0.0
 
-    for tulu_sentence in TULU_TO_ENGLISH:
-        score = similarity(sentence_key, tulu_sentence)
-        if score > best_score:
-            best_score = score
-            best_tulu = tulu_sentence
+    if len(sentence_key.split()) >= 3:
+        for tulu_sentence in TULU_TO_ENGLISH:
+            score = similarity(sentence_key, tulu_sentence)
+            if score > best_score:
+                best_score = score
+                best_tulu = tulu_sentence
 
-    # High threshold prevents incorrect command changes
     if best_score >= 0.90:
         return TULU_TO_ENGLISH[best_tulu]
 
-    # 5. Try ByT5 neural translation if available
     neural_res = neural_translate(sentence, direction="tulu_to_en")
     if neural_res and len(neural_res) > 2:
         return neural_res
 
-    # 6. Final word-level fallback
-    translated_words = [
-        DICTIONARY.get(word, word)
-        for word in sentence.lower().split()
-    ]
-
+    translated_words = []
+    for raw_word in sentence.split():
+        stripped = re.sub(r"^[^\w]+|[^\w]+$", "", raw_word.lower())
+        translated_words.append(DICTIONARY.get(stripped, raw_word))
     return " ".join(translated_words)
 
 
-def translate_to_tulu(sentence: str) -> str:
-    """
-    Converts an English sentence to Romanised Tulu for display/TTS.
-    """
+def translate_to_tulu(sentence):
     sentence = str(sentence).strip()
     sentence_key = normalize(sentence)
 
-    # 1. Exact corpus lookup
     if sentence_key in ENGLISH_TO_TULU:
         return ENGLISH_TO_TULU[sentence_key]
 
-    # 2. Try ByT5 neural translation
     neural_res = neural_translate(sentence, direction="en_to_tulu")
     if neural_res and len(neural_res) > 2:
         return neural_res
@@ -282,9 +236,5 @@ def translate_to_tulu(sentence: str) -> str:
     return sentence
 
 
-def translate(sentence: str) -> str:
-    """
-    Backward-compatible default:
-    translate spoken Tulu command to English.
-    """
+def translate(sentence):
     return translate_to_english(sentence)

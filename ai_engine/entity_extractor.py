@@ -69,24 +69,28 @@ def extract_entities(text):
     # --------------------------
     # Google Search Detection
     # --------------------------
+    #
+    # Only runs if query isn't already set, so it can't overwrite a good
+    # value the Actor Detection block above already captured.
 
-    search_patterns = [
-        r"search (.+)",
-        r"google (.+)",
-        r"find (.+)",
-        r"who is (.+)",
-        r"what is (.+)",
-        r"who was (.+)",
-        r"where is (.+)",
-        r"when is (.+)",
-        r"tell me about (.+)"
-    ]
+    if not entities.get("query"):
+        search_patterns = [
+            r"search (.+)",
+            r"google (.+)",
+            r"find (.+)",
+            r"who is (.+)",
+            r"what is (.+)",
+            r"who was (.+)",
+            r"where is (.+)",
+            r"when is (.+)",
+            r"tell me about (.+)"
+        ]
 
-    for pattern in search_patterns:
-        match = re.search(pattern, original_text, re.IGNORECASE)
-        if match:
-            entities["query"] = clean_captured_text(match.group(1).strip().rstrip("?"))
-            break
+        for pattern in search_patterns:
+            match = re.search(pattern, original_text, re.IGNORECASE)
+            if match:
+                entities["query"] = clean_captured_text(match.group(1).strip().rstrip("?"))
+                break
 
     # --------------------------
     # YouTube Video Detection (scoped to when "youtube" is mentioned)
@@ -119,10 +123,6 @@ def extract_entities(text):
     # --------------------------
     # Spotify Search/Play Detection (scoped to when "spotify" is mentioned)
     # --------------------------
-    # Mirrors the YouTube fix above: catches "play X on spotify",
-    # "search X on spotify", or "spotify ... play X" regardless of exact
-    # phrasing/word order, so "play a song" requests actually capture
-    # the song name instead of leaving query empty.
 
     if "spotify" in text:
         spotify_match = re.search(

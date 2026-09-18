@@ -82,17 +82,45 @@ class AIEngine:
 
             pending = self.context.get("pending_intent")
 
+            # ------------------------------------------------------------
+            # Pending-intent follow-up handling.
+            #
+            # IMPORTANT: every one of these branches is gated on
+            # `intent == "unknown"`. A pending context (e.g. we just asked
+            # "what song?") should only be allowed to claim this turn when
+            # the fresh utterance did NOT clearly match any other intent
+            # on its own. Without that guard, an unrelated but
+            # unambiguous command arriving right after an unanswered
+            # follow-up question (e.g. "Youtube open." right after a
+            # pending Spotify question) gets silently relabeled into the
+            # stale pending intent instead of being handled on its own
+            # merits. This was previously inconsistent -- only the
+            # weather branch had the guard -- which is what caused
+            # commands to get swallowed into leftover spotify/alarm/
+            # youtube context.
+            # ------------------------------------------------------------
+
             if (
                 intent == "unknown"
                 and pending == "weather"
             ):
                 location = entities.get("location")
 
-                if not location and re.fullmatch(
-                    r"[A-Za-z][A-Za-z\s-]{1,60}",
-                    text.strip(),
-                ):
-                    location = text.strip().title()
+                if not location:
+                    # Whisper reliably tacks on trailing punctuation
+                    # ("Mangalore.", "Mangalore,") which fullmatch
+                    # rejects outright. Strip it before validating shape.
+                    cleaned_reply = re.sub(
+                        r"[^\w\s-]",
+                        "",
+                        text,
+                    ).strip()
+
+                    if re.fullmatch(
+                        r"[A-Za-z][A-Za-z\s-]{1,60}",
+                        cleaned_reply,
+                    ):
+                        location = cleaned_reply.title()
 
                 if location:
                     intent = "weather"
@@ -110,7 +138,8 @@ class AIEngine:
                         entities["time"] = previous_entities["time"]
 
             if (
-                pending == "spotify"
+                intent == "unknown"
+                and pending == "spotify"
                 and not entities.get("query")
             ):
                 query = text.strip()
@@ -119,7 +148,8 @@ class AIEngine:
                     entities["query"] = query
 
             if (
-                pending == "alarm"
+                intent == "unknown"
+                and pending == "alarm"
                 and not entities.get("alarm_time_text")
             ):
                 time_reply = text.strip()
@@ -128,7 +158,8 @@ class AIEngine:
                     entities["alarm_time_text"] = time_reply
 
             if (
-                pending == "youtube"
+                intent == "unknown"
+                and pending == "youtube"
                 and not entities.get("video")
             ):
                 video_reply = text.strip()
@@ -246,7 +277,9 @@ class AIEngine:
         self.context["last_intent"] = intent
         self.context["last_entities"] = entities.copy()
 
-        if intent == "weather" and not entities.get("location"):
+        if intent == "weather" and (
+            not entities.get("location") or not success
+        ):
             self.context["pending_intent"] = "weather"
         elif (
             intent == "spotify"
